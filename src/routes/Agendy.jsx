@@ -4,7 +4,7 @@ function Agendy(props) {
   return (
     <div className={styles.content}>
       <h1>Agendy</h1>
-      <input tabIndex={0} />
+      <input aria-label="Hľadať v agendach" />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 .submenu{
-    color: red;
+    margin: 0;
 }
 
-.submenu ul{
+/* .submenu ul{
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -22,4 +22,4 @@
 .submenu li:focus,
 .submenu li:active{
     background-color: rgb(247, 186, 186);
-}
+} */

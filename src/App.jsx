@@ -1,8 +1,12 @@
 import "./App.scss";
-import Submenu from "./components/homepageSubmenu/Submenu";
+import HomePage from "./components/homepage/HomePage";
 
 function App() {
-  return <Submenu />;
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 }
 
 export default App;
