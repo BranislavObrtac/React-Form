@@ -1,14 +1,14 @@
 .hp-header{
-    padding: 5vh 0;
+    padding: 2vh 10vw;
     display: flex;
-    align-items: center;
+    gap: 1rem;
     justify-content: center;
     flex-direction: column;
-
-    input{
-        padding: 1rem;
-        width: clamp(200px, 50%,  600px);
-    }
 }
 
+.bg-image{
+    background-image: url("https://media.istockphoto.com/vectors/abstract-creative-background-vector-id1222376322?k=20&m=1222376322&s=612x612&w=0&h=04zOjE7m93H7XMn3wKXBEyWkUkbqVw2GcWfd-he-_aw=");
+    background-size: cover;
+    padding: 2rem;
+}
 
