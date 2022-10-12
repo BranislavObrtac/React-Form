@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import UserBar from "./UserBar";
 import LangChoice from "./LangChoice";
 import styles from "./MainMenu.module.scss";
+import { Fragment } from "react";
 
 const MainMenu = () => {
   return (
@@ -27,7 +28,9 @@ const MainMenu = () => {
         </nav>
         <div className={styles["nav-right"]}>
           <UserBar />
-          <LangChoice />
+          <span className={styles["lang-choice"]}>
+            <LangChoice />
+          </span>
         </div>
       </div>
     </header>

@@ -5,8 +5,8 @@ import SearchIcon from "@mui/icons-material/Search";
 function HpHeader() {
   return (
     <div className={styles["hp-header"]}>
+      <h3 className={styles["hp-header-title"]}>Hľadajte na enviroportáli</h3>
       <input type="text" name="search" placeholder="Hladat" />
-      <SearchIcon />
     </div>
   );
 }
