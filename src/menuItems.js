@@ -137,22 +137,4 @@ export const menuItems = [
       },
     ],
   },
-  {
-    title: "Témy",
-    url: "#",
-    submenu: [
-      {
-        title: "1",
-        url: "#",
-      },
-      {
-        title: "2",
-        url: "#",
-      },
-      {
-        title: "3",
-        url: "#",
-      },
-    ],
-  },
 ];

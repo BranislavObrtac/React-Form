@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Menu, MenuItem, Tab } from "@mui/material";
+import { Box, createTheme, Tab, ThemeProvider } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import styles from "./TabWindow.module.scss";
 import Eia from "../../routes/Eia";
@@ -7,45 +7,34 @@ import Sea from "../../routes/Sea";
 import Agendy from "../../routes/Agendy";
 import Temy from "../../routes/Temy";
 
-//Import ICONS
-import ParkIcon from "@mui/icons-material/Park";
-
 function Submenu() {
   const [value, setValue] = useState("1");
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const openMenu = Boolean(anchorEl);
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget);
-    console.log(e.currentTarget);
-  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#f24822",
+      },
+    },
+  });
 
   return (
-    <Box>
+    <ThemeProvider theme={theme}>
       <TabContext value={value}>
         <Box className={styles.submenu}>
           <TabList
             aria-label="Rýchly prehľad kategórií "
             onChange={handleChange}
             centered
-            textColor="secondary"
-            indicatorColor="secondary"
+            textColor="primary"
+            indicatorColor="primary"
             variant="standard"
           >
-            <Tab
-              label="Agendy"
-              value="1"
-              icon={<ParkIcon />}
-              iconPosition={"end"}
-            />
+            <Tab label="Agendy" value="1" />
             <Tab label="Eia" value="2" />
             <Tab label="Sea" value="3" />
             <Tab label="Temy" value="4" />
@@ -64,7 +53,7 @@ function Submenu() {
           <Temy />
         </TabPanel>
       </TabContext>
-    </Box>
+    </ThemeProvider>
   );
 }
 

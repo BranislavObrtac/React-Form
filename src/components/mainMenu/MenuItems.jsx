@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
+import styles from "./MenuItems.module.scss";
 
 import { Link } from "react-router-dom";
 
@@ -37,7 +38,7 @@ const MenuItems = ({ items, depthLevel }) => {
 
   return (
     <li
-      className="menu-items"
+      className={styles["menu-items"]}
       ref={ref}
       /* onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave} */
@@ -61,7 +62,7 @@ const MenuItems = ({ items, depthLevel }) => {
                 0 && window.innerWidth > 960 ? (
               <span>&raquo;</span>
             ) : (
-              <span className="arrow" />
+              <span className={styles["arrow"]} />
             )}
           </button>
           <Dropdown
@@ -79,7 +80,11 @@ const MenuItems = ({ items, depthLevel }) => {
             onClick={() => setDropdown((prev) => !prev)}
           >
             {items.title}{" "}
-            {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
+            {depthLevel > 0 ? (
+              <span>&raquo;</span>
+            ) : (
+              <span className={styles["arrow"]} />
+            )}
           </button>
           <Dropdown
             depthLevel={depthLevel}
