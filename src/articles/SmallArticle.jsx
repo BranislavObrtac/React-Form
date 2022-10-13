@@ -6,7 +6,9 @@ function SmallArticle({ imgUrl, title, datum, kategoria }) {
     <div className={styles["small-aricle"]}>
       <img className={styles["small-aricle-img"]} src={imgUrl} alt={title} />
       <div>
-        <h2 className={styles["title"]}>{title}</h2>
+        <h2 className={styles["title"]}>
+          <a href="#">{title}</a>
+        </h2>
         <p className={styles["date-category"]}>{datum + "- " + kategoria}</p>
       </div>
     </div>
