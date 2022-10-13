@@ -3,11 +3,21 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    min-height: clamp(350px, 20vh, 400px);
 }
 
 .big-article img {
+    justify-content: center;
+    align-items: center;
     width: 100%;
     aspect-ratio: 16 / 9;
+}
+
+.big-article-info{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title{

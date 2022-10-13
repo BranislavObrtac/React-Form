@@ -9,16 +9,8 @@ function Agendy() {
         <h1>Najnovšie</h1>
         <BigArticle
           imgUrl={
-            "https://data.tvkosice.sk/images/fs/56/cf/06/31/45/26/ca/14/19/d7/1a/e8/56cf06314526ca1419d71ae8/videos/2017/6/6/534fb047-9ea8-4f6b-9028-37b3e782dbf1_image_5.jpg"
+            "https://cdn.pixabay.com/photo/2022/10/08/09/19/winter-7506621__340.jpg"
           }
-          title={
-            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
-          }
-          datum={"1.7.2020 "}
-          kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
-        />
-        <SmallArticle
-          imgUrl={"https://trnavske.radio/data/images/22191.jpg"}
           title={
             "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
           }
@@ -27,7 +19,17 @@ function Agendy() {
         />
         <SmallArticle
           imgUrl={
-            "https://www.enviroportal.sk/uploads/files/Sprava_ZP/horniny/mapy%202020/lokaliy%20svah_deform_2020"
+            "https://cdn.pixabay.com/photo/2022/10/07/11/02/autumn-7504819__340.jpg"
+          }
+          title={
+            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
+          }
+          datum={"1.7.2020 "}
+          kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
+        />
+        <SmallArticle
+          imgUrl={
+            "https://cdn.pixabay.com/photo/2022/03/31/01/05/bird-7102006__340.jpg"
           }
           title={
             "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
@@ -40,16 +42,8 @@ function Agendy() {
         <h1>Najčítanejšie</h1>
         <BigArticle
           imgUrl={
-            "https://data.tvkosice.sk/images/fs/56/cf/06/31/45/26/ca/14/19/d7/1a/e8/56cf06314526ca1419d71ae8/videos/2017/6/6/534fb047-9ea8-4f6b-9028-37b3e782dbf1_image_5.jpg"
+            "https://cdn.pixabay.com/photo/2022/09/04/12/24/hippos-7431581__340.jpg"
           }
-          title={
-            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
-          }
-          datum={"1.7.2020 "}
-          kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
-        />
-        <SmallArticle
-          imgUrl={"https://trnavske.radio/data/images/22191.jpg"}
           title={
             "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
           }
@@ -58,7 +52,17 @@ function Agendy() {
         />
         <SmallArticle
           imgUrl={
-            "https://www.enviroportal.sk/uploads/files/Sprava_ZP/horniny/mapy%202020/lokaliy%20svah_deform_2020"
+            "https://cdn.pixabay.com/photo/2022/09/08/10/19/eye-7440640__340.jpg"
+          }
+          title={
+            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
+          }
+          datum={"1.7.2020 "}
+          kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
+        />
+        <SmallArticle
+          imgUrl={
+            "https://cdn.pixabay.com/photo/2022/10/10/04/23/rottweiler-7510724__340.jpg"
           }
           title={
             "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
@@ -71,29 +75,25 @@ function Agendy() {
         <h1>Do pozornosti</h1>
         <BigArticle
           imgUrl={
-            "https://data.tvkosice.sk/images/fs/56/cf/06/31/45/26/ca/14/19/d7/1a/e8/56cf06314526ca1419d71ae8/videos/2017/6/6/534fb047-9ea8-4f6b-9028-37b3e782dbf1_image_5.jpg"
+            "https://cdn.pixabay.com/photo/2022/10/09/20/16/globe-7510104__340.jpg"
           }
-          title={
-            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
-          }
-          datum={"1.7.2020 "}
-          kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
-        />
-        <SmallArticle
-          imgUrl={"https://trnavske.radio/data/images/22191.jpg"}
-          title={
-            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
-          }
+          title={"Colníci zaistili 60 pávích pierok, "}
           datum={"1.7.2020 "}
           kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
         />
         <SmallArticle
           imgUrl={
-            "https://www.enviroportal.sk/uploads/files/Sprava_ZP/horniny/mapy%202020/lokaliy%20svah_deform_2020"
+            "https://cdn.pixabay.com/photo/2022/10/07/09/24/little-panda-7504633__340.jpg"
           }
-          title={
-            "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
+          title={"Chýbali im doklady potrebné na dovoz"}
+          datum={"1.7.2020 "}
+          kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
+        />
+        <SmallArticle
+          imgUrl={
+            "https://cdn.pixabay.com/photo/2021/09/11/15/43/outdoor-6615901__340.jpg"
           }
+          title={"Papagajos"}
           datum={"1.7.2020 "}
           kategoria={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
         />

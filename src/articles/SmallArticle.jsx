@@ -5,7 +5,7 @@ function SmallArticle({ imgUrl, title, datum, kategoria }) {
   return (
     <div className={styles["small-aricle"]}>
       <img className={styles["small-aricle-img"]} src={imgUrl} alt={title} />
-      <div>
+      <div className={styles["small-article-info"]}>
         <h2 className={styles["title"]}>
           <a href="#">{title}</a>
         </h2>
