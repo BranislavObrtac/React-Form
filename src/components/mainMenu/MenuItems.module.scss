@@ -4,7 +4,7 @@ button span {
 
 .menu-items {
     position: relative;
-    font-size: 14px;
+    font-size: clamp(1rem,1vw,1.5rem);
   }
 
   .menu-items a {

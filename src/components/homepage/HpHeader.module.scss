@@ -1,5 +1,5 @@
 .hp-header{
-    padding: 2vh 10vw;
+    padding: 2vh 20vw;
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -11,4 +11,14 @@
     background-size: cover;
     padding: 2rem;
 }
+
+.hp-header-title{
+    font-size: clamp(1rem, 1.5vw, 2rem); 
+}
+
+/* @media only screen and (min-width: 1200px) {
+    .hp-header{ 
+        padding: 2vw 20vw;
+    }
+  } */
 

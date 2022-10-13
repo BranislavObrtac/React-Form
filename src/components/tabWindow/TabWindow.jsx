@@ -34,10 +34,10 @@ function Submenu() {
             indicatorColor="primary"
             variant="standard"
           >
-            <Tab label="Agendy" value="1" />
-            <Tab label="Eia" value="2" />
-            <Tab label="Sea" value="3" />
-            <Tab label="Temy" value="4" />
+            <Tab className={styles["tab-header"]} label="Agendy" value="1" />
+            <Tab className={styles["tab-header"]} label="Eia" value="2" />
+            <Tab className={styles["tab-header"]} label="Sea" value="3" />
+            <Tab className={styles["tab-header"]} label="Temy" value="4" />
           </TabList>
         </Box>
         <TabPanel value="1" sx={{ padding: "1rem 0 0 0" }}>

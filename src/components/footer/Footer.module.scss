@@ -7,6 +7,7 @@
     color: #606060;
 
     a{
+        text-decoration: underline;
         color: inherit;
         font-weight: 600;
     }
@@ -46,3 +47,10 @@
 .footer-left-chyba{
     font-weight: 400;
 }
+
+@media only screen and (min-width: 1200px) {
+    .footer{ 
+        padding: 2vw 20vw;
+        margin-bottom: 2rem;
+    }
+  }

@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+.tab-header{
+    font-size: clamp(0.8rem, 1vw, 2rem) !important;
+    padding: clamp(0.8rem, 2vw, 1.5rem) !important;
+}
+
 /* .submenu ul{
     display: flex;
     gap: 1rem;

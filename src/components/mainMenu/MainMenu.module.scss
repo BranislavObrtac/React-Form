@@ -13,12 +13,12 @@ header {
 
   .logo {
     text-decoration: none;
-    font-size: 25px;
+    font-size: clamp(2rem,4vw,5rem);
     color: inherit;
     margin-right: 20px;
   }
   .logo img{
-    max-height: 3rem;
+    max-height: clamp(3rem,4vw,5rem);
   }
 
   .nav-right{
