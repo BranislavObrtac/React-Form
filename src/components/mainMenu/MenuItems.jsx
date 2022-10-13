@@ -55,7 +55,9 @@ const MenuItems = ({ items, depthLevel }) => {
             {window.innerWidth < 960 && depthLevel === 0 ? (
               items.title
             ) : (
-              <Link to={items.url}>{items.title}</Link>
+              <Link tabIndex={-1} to={items.url}>
+                {items.title}
+              </Link>
             )}
 
             {depthLevel > 0 && window.innerWidth < 960 ? null : depthLevel >
