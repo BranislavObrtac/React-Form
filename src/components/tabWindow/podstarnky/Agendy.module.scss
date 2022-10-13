@@ -1,0 +1,24 @@
+.agendy{
+    background-image: url("https://cdn.pixabay.com/photo/2015/09/13/20/30/wood-938698_960_720.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3vw;
+    margin-bottom: 5rem;
+}
+
+.agendy h1 {
+    padding: 0.3rem;
+    font-size: clamp(1rem, 2vw, 3rem); 
+    background-color: white;
+}
+
+.agendy-col{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

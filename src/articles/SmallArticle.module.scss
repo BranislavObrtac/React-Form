@@ -1,0 +1,11 @@
+.small-aricle{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.small-aricle img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}

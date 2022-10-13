@@ -4,7 +4,7 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import styles from "./TabWindow.module.scss";
 import Eia from "../../routes/Eia";
 import Sea from "../../routes/Sea";
-import Agendy from "../../routes/Agendy";
+import Agendy from "./podstarnky/Agendy";
 import Temy from "../../routes/Temy";
 
 function Submenu() {
