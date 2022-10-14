@@ -5,7 +5,7 @@ export const menuItems = [
     submenu: [
       {
         title: "1",
-        url: "#",
+        url: "/asd",
       },
       {
         title: "2",

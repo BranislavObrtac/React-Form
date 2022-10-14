@@ -6,11 +6,11 @@ import MenuItem from "./MenuItem";
 
 function MainMenu() {
   return (
-    <Fragment>
+    <div className={styles["main-menu"]}>
       {menuItems.map((menu, index) => {
         return <MenuItem items={menu} key={index} index={index} />;
       })}
-    </Fragment>
+    </div>
   );
 }
 
