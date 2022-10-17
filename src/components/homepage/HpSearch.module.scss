@@ -1,0 +1,53 @@
+.search-box{
+    display: flex;
+}
+
+.searchIcon {
+    color: white;
+    background-color: #757993;
+    display: grid;
+    place-items: center;
+  }
+
+.combobox-input{
+    padding: 0.5rem 0.75rem;
+    background-color: #F3F4F6; 
+    width: 100%; 
+    outline: 0; 
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.combobox-options{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem;
+    z-index: 1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-top: 1px solid black;
+}
+
+.combobox-options li{
+    list-style: none;
+    padding: 0.5rem 0.75rem;
+}
+.combobox-options a{
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 0.75rem;
+}
+
+.combobox-option-active{
+    background-color: rgb(228, 228, 228); 
+    color: #ffffff; 
+}
+
+.combobox-option-inactive{
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+.display-none{
+    list-style: none;
+    display: none;
+}
