@@ -1,4 +1,7 @@
 .lang{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: clamp(0.9rem,1vw,1.5rem);
 }
 
