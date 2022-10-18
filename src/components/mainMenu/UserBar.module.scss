@@ -1,0 +1,10 @@
+.user-bar{
+    font-size: clamp(0.9rem,1vw,1.5rem);
+    padding: 0.5rem;
+    background-color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}

@@ -1,8 +1,8 @@
 import BigArticle from "../../../articles/BigArticle";
 import SmallArticle from "../../../articles/SmallArticle";
-import styles from "./Agendy.module.scss";
+import styles from "./AktualneDianie.module.scss";
 
-function Agendy() {
+function AktualneDianie() {
   return (
     <div className={styles["agendy"]}>
       <div className={styles["agendy-col"]}>
@@ -102,4 +102,4 @@ function Agendy() {
   );
 }
 
-export default Agendy;
+export default AktualneDianie;

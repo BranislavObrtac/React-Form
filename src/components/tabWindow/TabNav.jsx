@@ -1,74 +1,38 @@
-import { Tab } from "@headlessui/react";
+import React from "react";
+//podstranky
+import AktualneDianie from "./podstarnky/AktualneDianie";
 import Agendy from "./podstarnky/Agendy";
-import Eia from "../../routes/Eia";
-import Sea from "../../routes/Sea";
+import Temy from "./podstarnky/Temy";
+import StavZP from "./podstarnky/StavZP";
+import Dokumenty from "./podstarnky/Dokumenty";
+import MapyData from "./podstarnky/MapyData";
+import Kalendar from "./podstarnky/Kalendar";
+//headlessUI
+import { Tab } from "@headlessui/react";
+import TabBtn from "./TabBtn";
+import TabPanel from "./TabPanel";
+//styly
 import styles from "./TabNav.module.scss";
-import { Fragment } from "react";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-
 export default function TabNav() {
   return (
     <Tab.Group>
       <Tab.List className={styles["tab-list"]}>
-        <Tab as={Fragment}>
-          {({ selected }) => (
-            <button
-              className={
-                selected ? styles["button-selected"] : styles["button"]
-              }
-            >
-              Agendy
-              {selected && (
-                <ArrowDropDownIcon
-                  className={styles["arrow"]}
-                ></ArrowDropDownIcon>
-              )}
-            </button>
-          )}
-        </Tab>
-        <Tab as={Fragment}>
-          {({ selected }) => (
-            <button
-              className={
-                selected ? styles["button-selected"] : styles["button"]
-              }
-            >
-              Eia
-              {selected && (
-                <ArrowDropDownIcon
-                  className={styles["arrow"]}
-                ></ArrowDropDownIcon>
-              )}
-            </button>
-          )}
-        </Tab>
-        <Tab as={Fragment}>
-          {({ selected }) => (
-            <button
-              className={
-                selected ? styles["button-selected"] : styles["button"]
-              }
-            >
-              Sea
-              {selected && (
-                <ArrowDropDownIcon
-                  className={styles["arrow"]}
-                ></ArrowDropDownIcon>
-              )}
-            </button>
-          )}
-        </Tab>
+        <TabBtn name={"aktuálne dianie"} />
+        <TabBtn name={"agendy"} />
+        <TabBtn name={"temy"} />
+        <TabBtn name={"Dokumenty"} />
+        <TabBtn name={"Mapy a dáta"} />
+        <TabBtn name={"kalendár"} />
       </Tab.List>
+
       <Tab.Panels>
-        <Tab.Panel>
-          <Agendy />
-        </Tab.Panel>
-        <Tab.Panel>
-          <Eia />
-        </Tab.Panel>
-        <Tab.Panel>
-          <Sea />
-        </Tab.Panel>
+        <TabPanel podstranka={<AktualneDianie />} />
+        <TabPanel podstranka={<Agendy />} />
+        <TabPanel podstranka={<Temy />} />
+        <TabPanel podstranka={<StavZP />} />
+        <TabPanel podstranka={<Dokumenty />} />
+        <TabPanel podstranka={<MapyData />} />
+        <TabPanel podstranka={<Kalendar />} />
       </Tab.Panels>
     </Tab.Group>
   );

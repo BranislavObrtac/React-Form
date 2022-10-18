@@ -5,11 +5,11 @@ export const menuItems = [
     submenu: [
       {
         title: "1",
-        url: "/asd",
+        url: "/1",
       },
       {
         title: "2",
-        url: "#",
+        url: "/2",
       },
     ],
   },
@@ -19,121 +19,121 @@ export const menuItems = [
     submenu: [
       {
         title: "Ochrana prírody",
-        url: "#",
+        url: "/ochrana-prirody",
       },
       {
         title: "Voda",
-        url: "#",
+        url: "/voda",
       },
       {
         title: "Odpady",
-        url: "#",
+        url: "/odpady",
       },
       {
         title: "Ovzdušie",
-        url: "#",
+        url: "/ovzdusie",
       },
       {
         title: "Pôda",
-        url: "#",
+        url: "/poda",
       },
       {
         title: "Zmena klimy",
-        url: "#",
+        url: "/zmena-klimy",
       },
       {
         title: "Udržatelný rozvoj",
-        url: "#",
+        url: "/udrzatelny-rozvoj",
       },
       {
         title: "Environmentálna výchova, vzdelavanie a osveta",
-        url: "#",
+        url: "/enviromentalna-vychovy-vzdelanie-osveta",
       },
     ],
   },
   {
     title: "Stav ŽP",
-    url: "#",
+    url: "/stav-zp",
     submenu: [
       {
         title: "Správy o stave životného prostredia",
-        url: "#",
+        url: "/spravy-o-stave-zivotneho-prostredia",
       },
       {
         title: "Envidat",
-        url: "#",
+        url: "/envidat",
       },
       {
         title: "Sektorové správy",
-        url: "#",
+        url: "/sektorove-spravy",
       },
       {
         title: "Kvalita vody  ",
-        url: "seo",
+        url: "/kvalita-vody",
       },
       {
         title: "Kvalita ovzdušia",
-        url: "#",
+        url: "/kvalita-ovzdusia",
       },
     ],
   },
   {
     title: "Dokumenty",
-    url: "#",
+    url: "/dokumenty",
     submenu: [
       {
         title: "Medzinárodné dohovory",
-        url: "#",
+        url: "/medzinarodne-dohovory",
       },
       {
         title: "Legislatíva",
-        url: "#",
+        url: "/legislativa",
       },
       {
         title: "Formuláre a tlačivá",
-        url: "#",
+        url: "/formulare-a-tlaciva",
       },
       {
         title: "Strategické dokumenty",
-        url: "#",
+        url: "/strategicke-dokumenty",
       },
       {
         title: "Metodiky, príručky a iné dokumenty",
-        url: "#",
+        url: "/metodika-prirucky-dokumenty",
       },
     ],
   },
   {
     title: "Mapy a dáta",
-    url: "#",
+    url: "/mapy-a-data",
     submenu: [
       {
         title: "Atlas krajiny Slovenskej republiky",
-        url: "#",
+        url: "/atlas-krajiny-slovenskej-republiky",
       },
       {
         title: "Enviromentálne záťaže",
-        url: "#",
+        url: "/enviromentalne-zataze",
       },
       {
         title: "Národné parky",
-        url: "#",
+        url: "/narodne-parky",
       },
       {
         title: "Eia",
-        url: "#",
+        url: "/eia",
       },
       {
         title: "Degradované územia",
-        url: "#",
+        url: "/degradovane-uzemia",
       },
       {
         title: "Seveso",
-        url: "#",
+        url: "/seveso",
       },
       {
         title: "POPS",
-        url: "#",
+        url: "/pops",
       },
     ],
   },

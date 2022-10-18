@@ -27,7 +27,7 @@ function HpSearch({ data }) {
             className={styles["combobox-input"]}
             placeholder={"Zadajte hľadaný výraz "}
           />
-          <div className={styles["searchIcon"]}>
+          <div className={styles["search-icon"]}>
             {loading ? <LoadingSpinner /> : <SearchIcon />}
           </div>
         </div>

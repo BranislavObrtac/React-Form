@@ -4,16 +4,17 @@ import { menuItems } from "../../menuItems";
 import MenuItem from "./MenuItem";
 import UserBar from "./UserBar";
 import LangChoice from "./LangChoice";
+import { Link } from "react-router-dom";
 
 function MainMenu() {
   return (
     <div className={styles["main-menu"]}>
-      <div className={styles["logo"]}>
+      <Link className={styles["logo"]} to="/">
         <img
           src="https://vykurovanie.enviroportal.sk/img-loga/logo_enviroportal_web-300x100.png"
           alt="enviroportal logo"
         />
-      </div>
+      </Link>
       <nav className={styles["menus"]}>
         {menuItems.map((menu, index) => {
           return <MenuItem items={menu} key={index} index={index} />;

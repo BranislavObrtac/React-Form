@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Menu } from "@headlessui/react";
 import styles from "./MenuItem.module.scss";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Link } from "react-router-dom";
 
 function MenuItem({ items, index }) {
   const [activeBtn, setActiveBtn] = useState(false);
@@ -16,15 +17,15 @@ function MenuItem({ items, index }) {
             }`}
           >
             {items.title}
-            <ArrowDropDownIcon />
+            <KeyboardArrowDownIcon />
           </Menu.Button>
 
           <Menu.Items as="div" key={index} className={styles["menu-items"]}>
             {items.submenu.map((submenu) => (
               <Menu.Item
-                as={"a"}
+                as={Link}
                 key={submenu + "_" + submenu.title}
-                href={submenu.url}
+                to={submenu.url}
                 className={styles["menu-item"]}
               >
                 {({ active }) => (
