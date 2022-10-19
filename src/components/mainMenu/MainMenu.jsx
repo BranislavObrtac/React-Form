@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 
 function MainMenu() {
-  const [showMainMenu, setShowMainMenu] = useState(true);
+  const [showMainMenu, setShowMainMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
