@@ -12,8 +12,8 @@ function Footer() {
           <a href="#">Cookies</a>
           <a href="#">Vyhlásenie o prístupnosti</a>
         </div>
-        <a href="#" className={styles["footer-left-chyba"]}>
-          Našli ste na stránke chybu ?
+        <a href="#">
+          <b>Našli ste na stránke chybu ?</b>
         </a>
       </div>
       <div className={styles["footer-right"]}>

@@ -1,18 +1,18 @@
+@import '../../App.scss';
+
 .footer{
     padding-top: 2vh !important;
     height: 10vh;
     display: grid;
     grid-template-columns: 1fr 1fr;    
     padding: 0 2.5vw;
-    color: #606060;
+    color: $footer-text-color;
 
     a{
         text-decoration: underline;
         color: inherit;
-        font-weight: 600;
     }
 }
-
 
 .footer-left{
     display: grid;
@@ -42,10 +42,6 @@
             max-width: 50px;
             object-fit: cover;
         }
-}
-
-.footer-left-chyba{
-    font-weight: 400;
 }
 
 @media only screen and (min-width: 1200px) {
