@@ -1,3 +1,5 @@
+@import "../../../Colors.scss";
+
 .agendy{
     background-image: url("https://cdn.pixabay.com/photo/2015/09/13/20/30/wood-938698_960_720.jpg");
     background-position: center;
@@ -31,7 +33,6 @@
 .agendy {
     justify-content: flex-start;
     padding: 1rem;
-
 }
 
 .agendy-col{
