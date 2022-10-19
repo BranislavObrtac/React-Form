@@ -16,17 +16,23 @@ function MainMenu() {
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);
     };
-
     window.addEventListener("resize", changeWidth);
-
     return () => {
       window.removeEventListener("resize", changeWidth);
     };
   }, []);
 
+  const hideMenu = () => {
+    setShowMainMenu(false);
+  };
+
   return (
     <nav className={styles["main-menu"]}>
-      <Link className={styles["logo"]} to="/">
+      <Link
+        className={styles["logo"]}
+        to="/"
+        onClick={() => setShowMainMenu(false)}
+      >
         <img
           src="https://vykurovanie.enviroportal.sk/img-loga/logo_enviroportal_web-300x100.png"
           alt="enviroportal logo"
@@ -35,7 +41,14 @@ function MainMenu() {
       {(showMainMenu || screenWidth >= 1000) && (
         <div className={styles["menus"]}>
           {menuItems.map((menu, index) => {
-            return <MenuItem items={menu} key={index} index={index} />;
+            return (
+              <MenuItem
+                hideMenu={hideMenu}
+                items={menu}
+                key={index}
+                index={index}
+              />
+            );
           })}
         </div>
       )}

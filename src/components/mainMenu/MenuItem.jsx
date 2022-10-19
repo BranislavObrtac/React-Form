@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { Link } from "react-router-dom";
 
-function MenuItem({ items, index }) {
+function MenuItem({ items, index, hideMenu }) {
   const [activeBtn, setActiveBtn] = useState(false);
 
   return (
@@ -25,6 +25,7 @@ function MenuItem({ items, index }) {
             {items.submenu.map((submenu) => (
               <Menu.Item
                 as={Link}
+                onClick={hideMenu}
                 key={submenu + "_" + submenu.title}
                 to={submenu.url}
                 className={styles["menu-item"]}
