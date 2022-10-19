@@ -1,0 +1,39 @@
+@import "../../Colors.scss";
+
+.agendy-vyber-obsahu{
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    height: 33%;
+}
+
+.agendy-title{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.85rem;
+}
+
+.square {
+    font-size: 1rem;
+    color: $agendy-stvorec-farba;
+}
+
+.agendy-subtitle{
+    padding: 0.5rem 0;
+}
+
+.agendy-subtitle a{
+    color: $agendy-subtitle-farba;
+}
+
+.agendy-zakon{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.85rem;
+}
+
+.agendy-stav{
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.85rem;
+}

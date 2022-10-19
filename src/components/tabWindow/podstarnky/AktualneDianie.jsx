@@ -1,5 +1,5 @@
-import BigArticle from "../../../articles/BigArticle";
-import SmallArticle from "../../../articles/SmallArticle";
+import BigArticle from "../../articles/BigArticle";
+import SmallArticle from "../../articles/SmallArticle";
 import styles from "./AktualneDianie.module.scss";
 
 function AktualneDianie() {
