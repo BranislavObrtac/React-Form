@@ -3,7 +3,6 @@
     padding: 0;
     margin-top: -5px;
     font-size: 1.5rem;
-    
 }
 
 .button{
@@ -12,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 
     cursor: pointer;
     background-color: #ffffff; 
@@ -27,6 +27,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     
     font-size: clamp(0.9rem,1vw,1.5rem);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

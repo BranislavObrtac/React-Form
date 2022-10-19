@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./LangChoice.module.scss";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import KeyboardArrowDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { Menu } from "@headlessui/react";
 import { Link } from "react-router-dom";
 
@@ -22,7 +23,7 @@ function LangChoice() {
               }`}
             >
               {lang}
-              <ArrowDropDownIcon />
+              {open ? <ArrowDropUpIcon /> : <KeyboardArrowDownIcon />}
             </Menu.Button>
 
             <Menu.Items as="div" className={styles["menu-items"]}>

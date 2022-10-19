@@ -26,8 +26,24 @@
     max-width: 400px;
 }
 
-/* @media only screen and (min-width: 1200px) {
-    .agendy{ 
-        padding: 2vw 20vw
-    }
-  } */
+@media (max-width:800px) {
+
+.agendy {
+    justify-content: flex-start;
+    padding: 1rem;
+
+}
+
+.agendy-col{
+    max-width: 100%;
+}
+.agendy h1 {
+    padding: 0.3rem;
+    font-size: clamp(1.5rem, 1vw, 2rem);
+    background-color: white;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}

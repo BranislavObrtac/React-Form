@@ -8,3 +8,10 @@
     justify-content: center;
     gap: 0.5rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .user-bar{
+      width: 100vw;
+      justify-content: flex-start;
+    }
+}

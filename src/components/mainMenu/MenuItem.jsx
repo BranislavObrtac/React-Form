@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Menu } from "@headlessui/react";
 import styles from "./MenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { Link } from "react-router-dom";
 
 function MenuItem({ items, index }) {
@@ -17,7 +18,7 @@ function MenuItem({ items, index }) {
             }`}
           >
             {items.title}
-            <KeyboardArrowDownIcon />
+            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </Menu.Button>
 
           <Menu.Items as="div" key={index} className={styles["menu-items"]}>
