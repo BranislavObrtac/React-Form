@@ -1,9 +1,104 @@
+@import "../../../Colors.scss";
+
 .temy{
+    background-image: url("https://cdn.pixabay.com/photo/2015/07/13/17/59/dandelion-843587_960_720.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    font-size:  1.5rem;
-    font-weight: bold;
-    height: 20vh;
-    background-color: rgb(230, 222, 222);
+    
+    gap: 1rem;
+    padding: 2vw 10vw;
+}
+
+.temy-headers{ 
+    display: flex;   
+    gap: 1rem;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.temy-headers h1{
+    flex-grow: 1;  
+    padding: 0.3rem;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    font-weight: 450;
+}
+
+.temy-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+
+.temy-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;   
+}
+
+.odkazy{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.odkazy a{
+    color: $tab-text-color-active;
+    padding: 0.5rem;
+}
+
+.temy-middle{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.temy-middle-articles{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.temy-right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.temy-right-articles{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (max-width:800px) {
+
+    .temy{
+        padding: 0;
+    }
+
+    .temy-content{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .temy-headers h1 {
+        padding: 0.3rem;
+        font-size: clamp(1.5rem, 1vw, 2rem);
+        background-color: white;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

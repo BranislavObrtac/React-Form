@@ -1,0 +1,42 @@
+@import "../../Colors.scss";
+
+.stav-zp-vyber-obsahu{
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    height: 25%;
+}
+
+.stav-zp-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: clamp(0.8rem, 0.9vw, 1.5rem);
+}
+
+.square {
+    font-size: clamp(0.8rem, 0.9vw, 1.5rem) !important;
+    color: $stav-zp-stvorec-farba;
+}
+
+.stav-zp-subtitle{
+    font-size: clamp(0.8rem, 0.9vw, 1.5rem);
+    padding: 0.5rem 0;
+}
+
+.stav-zp-subtitle a{
+    color: $stav-zp-subtitle-farba;
+}
+
+
+@media (max-width:800px) {
+    .stav-zp-title {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+      }
+      .stav-zp-subtitle{
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+    .square {
+        font-size: clamp(1rem, 3vw, 1.5rem) !important;
+        color: $stav-zp-stvorec-farba;
+    }
+}

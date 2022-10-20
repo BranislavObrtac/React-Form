@@ -20,9 +20,10 @@ export default function TabNav() {
         <TabBtn name={"aktuálne dianie"} />
         <TabBtn name={"agendy"} />
         <TabBtn name={"temy"} />
+        <TabBtn name={"Stav ŽP"} />
         <TabBtn name={"Dokumenty"} />
         <TabBtn name={"Mapy a dáta"} />
-        <TabBtn name={"kalendár"} />
+        <TabBtn name={"Kalendár"} />
       </Tab.List>
 
       <Tab.Panels>
