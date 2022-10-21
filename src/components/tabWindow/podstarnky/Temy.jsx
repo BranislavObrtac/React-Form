@@ -2,6 +2,7 @@ import React from "react";
 import SmallArticle from "../../articles/SmallArticle";
 import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
 
+import Odkazy from "../../articles/Odkazy";
 //styly
 import styles from "./Temy.module.scss";
 
@@ -9,25 +10,28 @@ function Temy() {
   return (
     <div className={styles["temy"]}>
       <div className={styles["temy-content"]}>
-        <div className={styles["temy-left"]}>
+        <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
             <h1>Prehľad oblasti</h1>
           </div>
           <div className={styles["odkazy"]}>
-            <a href="#">Ochrana prírody</a>
-            <a href="#">Voda</a>
-            <a href="#">Odpady</a>
-            <a href="#">Poda</a>
-            <a href="#">Zmena klimy</a>
-            <a href="#">Udržatelný rozvoj</a>
-            <a href="#">Environmentalna vychova, vzdelavanie a osveta</a>
+            <Odkazy link={"#"} title={"Ochrana prírody"} />
+            <Odkazy link={"#"} title={"Voda"} />
+            <Odkazy link={"#"} title={"Odpady"} />
+            <Odkazy link={"#"} title={"Poda"} />
+            <Odkazy link={"#"} title={"Zmena klimy"} />
+            <Odkazy link={"#"} title={"Udržatelný rozvoj"} />
+            <Odkazy
+              link={"#"}
+              title={"Environmentalna vychova, vzdelavanie a osveta"}
+            />
           </div>
         </div>
-        <div className={styles["temy-middle"]}>
+        <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
             <h1>Do pozornosti</h1>
           </div>
-          <div className={styles["temy-middle-articles"]}>
+          <div className={styles["temy-article"]}>
             <SmallArticle
               imgUrl={
                 "https://cdn.pixabay.com/photo/2017/03/02/16/54/iceland-2111810__340.jpg"
@@ -60,11 +64,11 @@ function Temy() {
             />
           </div>
         </div>
-        <div className={styles["temy-right"]}>
+        <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
             <h1>Zaujímavosti</h1>
           </div>
-          <div className={styles["temy-right-articles"]}>
+          <div className={styles["temy-article"]}>
             <AgendyDoPozornosti
               title={"ODBORNÁ KONFERENCIA ŽIVOTNÉ PROSTREDIE MIEST"}
               imgUrl={

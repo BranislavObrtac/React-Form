@@ -1,13 +1,19 @@
 @import "../../Colors.scss";
 
 .agendy-do-pozornosti{
+    display: flex;
+    flex-direction: column;
     background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .agendy-do-pozornosti img {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
     aspect-ratio: 16 / 9;
 }
 

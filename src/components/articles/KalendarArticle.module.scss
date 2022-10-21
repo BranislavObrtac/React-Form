@@ -1,0 +1,21 @@
+@import "../../Colors.scss";
+
+.kalendar{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.5rem;
+}
+
+.kalendar a{
+    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
+    color: $kalendar-title-farba;
+}
+
+.kalendar-date-place{
+    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
+}
+
+.kalendar-org{
+    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
+}

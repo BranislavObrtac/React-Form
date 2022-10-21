@@ -6,29 +6,30 @@ import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
 import styles from "./StavZP.module.scss";
 import StavZpGrafArticle from "../../articles/StavZpGrafArticle";
 import StavZpArticle from "../../articles/StavZpArticle";
+import Odkazy from "../../articles/Odkazy";
 
 function StavZP() {
   return (
     <div className={styles["stav-zp"]}>
       <div className={styles["stav-zp-content"]}>
-        <div className={styles["stav-zp-left"]}>
+        <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
             <h1>Prehľad oblasti</h1>
           </div>
           <div className={styles["odkazy"]}>
-            <a href="#">Správy o stave životného prostredia</a>
-            <a href="#">Envidat</a>
-            <a href="#">Sektorové správy</a>
-            <a href="#">Kvalita vody</a>
-            <a href="#">Kvalita ovzdušia</a>
-            <a href="#">Indikátory životného prostredia</a>
+            <Odkazy link={"#"} title={"Správy o stave životného prostredia"} />
+            <Odkazy link={"#"} title={"Envidat"} />
+            <Odkazy link={"#"} title={"Sektorové správy"} />
+            <Odkazy link={"#"} title={"Kvalita vody"} />
+            <Odkazy link={"#"} title={"Kvalita ovzdušia"} />
+            <Odkazy link={"#"} title={"Indikátory životného prostredia"} />
           </div>
         </div>
-        <div className={styles["stav-zp-middle"]}>
+        <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
             <h1>Výber obsahu</h1>
           </div>
-          <div className={styles["stav-zp-middle-articles"]}>
+          <div className={styles["stav-zp-article"]}>
             <StavZpGrafArticle
               title={"Envidat"}
               subtitle={
@@ -52,11 +53,11 @@ function StavZP() {
             />
           </div>
         </div>
-        <div className={styles["stav-zp-right"]}>
+        <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
             <h1>Do pozornosti</h1>
           </div>
-          <div className={styles["stav-zp-right-articles"]}>
+          <div className={styles["stav-zp-article"]}>
             <AgendyDoPozornosti
               title={"ODBORNÁ KONFERENCIA ŽIVOTNÉ PROSTREDIE MIEST"}
               imgUrl={

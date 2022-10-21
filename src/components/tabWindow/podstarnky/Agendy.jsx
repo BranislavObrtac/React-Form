@@ -4,31 +4,35 @@ import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
 
 //styly
 import styles from "./Agendy.module.scss";
+import Odkazy from "../../articles/Odkazy";
 
 function Agendy() {
   return (
     <div className={styles["agendy"]}>
       <div className={styles["agendy-content"]}>
-        <div className={styles["agendy-left"]}>
+        <div className={styles["agendy-col"]}>
           <div className={styles["agendy-headers"]}>
             <h1>Prehľad oblasti</h1>
           </div>
           <div className={styles["odkazy"]}>
-            <a href="#">Posudzovanie vplyvov na ŽP (EIA/SEA)</a>
-            <a href="#">
-              IPKZ - integrovaná prevencia a kontrola znečisťovania
-            </a>
-            <a href="#">Environmentálne záťaže</a>
-            <a href="#">Prevencia závažných priemyselných havárií</a>
-            <a href="#">Monitorovanie životného prostredia</a>
-            <a href="#">Krajine planovanie</a>
+            <Odkazy link={"#"} title={"Posudzovanie vplyvov na ŽP (EIA/SEA)"} />
+            <Odkazy
+              link={"#"}
+              title={"IPKZ - integrovaná prevencia a kontrola znečisťovania"}
+            />
+            <Odkazy link={"#"} title={"Environmentálne záťaže"} />
+            <Odkazy
+              link={"#"}
+              title={"Prevencia závažných priemyselných havárií"}
+            />
+            <Odkazy link={"#"} title={"Monitorovanie životného prostredia"} />
           </div>
         </div>
-        <div className={styles["agendy-middle"]}>
+        <div className={styles["agendy-col"]}>
           <div className={styles["agendy-headers"]}>
             <h1>Výber obsahu</h1>
           </div>
-          <div className={styles["agendy-middle-articles"]}>
+          <div className={styles["agendy-article"]}>
             <AgendyVyberObsahu
               title={"Posudzovanie vplyvov na životné prostredie"}
               subTitle={
@@ -55,15 +59,21 @@ function Agendy() {
             />
           </div>
         </div>
-        <div className={styles["agendy-right"]}>
+        <div className={styles["agendy-col"]}>
           <div className={styles["agendy-headers"]}>
             <h1>Do pozornosti</h1>
           </div>
-          <div className={styles["agendy-right-articles"]}>
+          <div className={styles["agendy-article"]}>
             <AgendyDoPozornosti
               title={"ODBORNÁ KONFERENCIA ŽIVOTNÉ PROSTREDIE MIEST"}
               imgUrl={
                 "https://cdn.pixabay.com/photo/2016/11/22/23/18/roses-1851124_960_720.jpg"
+              }
+            />
+            <AgendyDoPozornosti
+              title={"PRIPRAVUJEME KONFERENCIU O ZNEČISTENÝCH ÚZEMIACH"}
+              imgUrl={
+                "https://cdn.pixabay.com/photo/2013/08/20/15/47/poppies-174276_960_720.jpg"
               }
             />
             <AgendyDoPozornosti

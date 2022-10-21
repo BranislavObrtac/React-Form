@@ -1,9 +1,38 @@
+@import "../../../Colors.scss";
+
 .mapy-data{
+    /* background-image: url("https://cdn.pixabay.com/photo/2016/05/14/11/08/earth-1391672__340.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+    background-image: linear-gradient(to left,$gradient-left, $gradient-middle, $gradient-right);
+    padding: 2vw 10vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mapy-data-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.mapy-data-col{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size:  1.5rem;
-    font-weight: bold;
-    height: 20vh;
-    background-color: rgb(230, 222, 222);
+    flex-direction: column;
+    gap: 1rem;   
+}
+
+@media (max-width:800px) {
+
+    .mapy-data{
+        padding: 0;
+    }
+
+    .mapy-data-content{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }

@@ -27,16 +27,18 @@
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    
-    font-size: clamp(0.9rem,1vw,1.5rem);
-    cursor: pointer;
+
     padding: 0 1rem;
     padding-top: 1.5rem;
     margin-bottom: -25px;
+
+    text-decoration: underline;
+    font-size: clamp(0.9rem,1vw,1.5rem);
+    font-weight: bold;
     line-height: 0;
     text-transform: uppercase;
+    cursor: pointer;
     border: none;
-    text-decoration: underline;
+    border-radius: 1rem;
     color: $tab-text-color-active;
-    font-weight: bold;
 }

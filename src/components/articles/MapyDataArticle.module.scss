@@ -1,0 +1,38 @@
+@import "../../Colors.scss";
+
+.mapy-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    flex-grow: 1;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.mapy-data img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.mapy-data a {
+  color: $mapy-data-title-farba;
+}
+
+.mapy-data div {
+    display: flex;
+    text-align: center;
+    height: 10rem;
+  }
+
+@media (max-width:800px) {
+
+}

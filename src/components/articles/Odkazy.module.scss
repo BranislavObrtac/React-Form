@@ -1,0 +1,14 @@
+@import "../../Colors.scss";
+
+.odkazy{
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+
+    width: 100%;
+}
+
+.odkazy a{
+    color: $tab-text-color-active;
+    padding: 0.3rem;
+}
