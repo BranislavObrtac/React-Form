@@ -26,15 +26,17 @@
 .aktualne-dianie-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  justify-content: center;
   padding: 1rem;
+  gap: 1rem;
+  padding: 1rem 20vw;
 }
 
 .aktualne-dianie-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0.5rem;
+  min-width: 310px;
 }
 
 .aktualne-dianie-articles {
@@ -53,6 +55,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
   }
   .aktualne-dianie-headers h2 {
     font-weight: 400;

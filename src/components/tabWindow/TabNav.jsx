@@ -27,7 +27,7 @@ export default function TabNav() {
           <TabBtn name={"Kalendár"} />
         </Tab.List>
 
-        <Tab.Panels>
+        <Tab.Panels className={styles["tab-panel"]}>
           <TabPanel podstranka={<AktualneDianie />} />
           <TabPanel podstranka={<Agendy />} />
           <TabPanel podstranka={<Temy />} />
