@@ -1,19 +1,19 @@
 @import "../../Colors.scss";
 
-.user-bar{
-    font-size: clamp(0.9rem,1vw,1.5rem);
-    padding: 0.5rem;
-    background-color: inherit;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+.user-bar {
+  font-size: clamp(0.9rem, 1vw, 1.5rem);
+  padding: 0.5rem;
+  background-color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-@media screen and (max-width: 1000px) {
-    .user-bar{
-      width: 100vw;
-      justify-content: flex-start;
-    }
+@media (max-width: $show-mobile) {
+  .user-bar {
+    width: 100vw;
+    justify-content: flex-start;
+  }
 }

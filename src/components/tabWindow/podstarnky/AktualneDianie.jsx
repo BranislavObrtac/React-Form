@@ -8,7 +8,7 @@ function AktualneDianie() {
       <div className={styles["aktualne-dianie-content"]}>
         <div className={styles["aktualne-dianie-col"]}>
           <div className={styles["aktualne-dianie-headers"]}>
-            <h1>Najnovšie</h1>
+            <h2>Najnovšie</h2>
           </div>
           <div className={styles["aktualne-dianie-articles"]}>
             <BigArticle
@@ -45,7 +45,7 @@ function AktualneDianie() {
         </div>
         <div className={styles["aktualne-dianie-col"]}>
           <div className={styles["aktualne-dianie-headers"]}>
-            <h1>Najčítanejšie</h1>
+            <h2>Najčítanejšie</h2>
           </div>
           <div className={styles["aktualne-dianie-articles"]}>
             <BigArticle
@@ -82,7 +82,7 @@ function AktualneDianie() {
         </div>
         <div className={styles["aktualne-dianie-col"]}>
           <div className={styles["aktualne-dianie-headers"]}>
-            <h1>Do pozornosti</h1>
+            <h2>Do pozornosti</h2>
           </div>
           <div className={styles["aktualne-dianie-articles"]}>
             <BigArticle

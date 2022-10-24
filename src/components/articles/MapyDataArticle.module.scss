@@ -1,38 +1,48 @@
 @import "../../Colors.scss";
 
-.mapy-data{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    background-color: white;
-    flex-grow: 1;
-    padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+.mapy-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  background-color: white;
+  flex-grow: 1;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
 }
 
 .mapy-data img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    overflow: hidden;
-    aspect-ratio: 16 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 .mapy-data a {
   color: $mapy-data-title-farba;
+  height: 50px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  display: flex;
+  text-align: center;
+  text-decoration-line: underline;
 }
 
-.mapy-data div {
-    display: flex;
-    text-align: center;
-    height: 10rem;
-  }
+.mapy-data p {
+  height: 175px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  display: flex;
+  text-align: center;
+}
 
-@media (max-width:800px) {
-
+@media (max-width: $show-mobile) {
 }

@@ -1,45 +1,57 @@
 @import "../../Colors.scss";
 
-.agendy-vyber-obsahu{
-    background-color: rgb(255, 255, 255);
-    padding: 0.5rem;
-    display: flex;
-    gap: 0.75rem;
-    flex-direction: column;
-    flex-grow: 1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+.agendy-vyber-obsahu {
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  flex-grow: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.agendy-title{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 0.85rem;
+.agendy-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .square {
-    font-size: 1rem;
-    color: $agendy-stvorec-farba;
+  font-size: 1rem;
+  color: $agendy-stvorec-farba;
 }
 
-.agendy-subtitle{
-    padding: 0.5rem 0;
+.agendy-subtitle a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $agendy-subtitle-farba;
 }
 
-.agendy-subtitle a{
-    color: $agendy-subtitle-farba;
+.agendy-zakon,
+.agendy-stav {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  line-height: 16px;
 }
 
-.agendy-zakon{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 0.85rem;
-}
+@media (max-width: $show-mobile) {
+  .agendy-vyber-obsahu {
+    gap: 0;
+  }
 
-.agendy-stav{
-    padding-top: 0.5rem;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 0.85rem;
+  .agendy-title,
+  .agendy-subtitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .agendy-zakon,
+  .agendy-stav {
+    font-size: 14px;
+    line-height: 26px;
+  }
 }

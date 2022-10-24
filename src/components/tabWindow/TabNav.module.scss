@@ -1,21 +1,25 @@
-.tab-list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 5rem;
-    gap:  1rem;
-    padding-bottom: 2rem;
-    flex-shrink: 1 0 auto;
-    flex-shrink: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
+@import "../../Colors.scss";
+
+.tab-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5rem;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
-@media (max-width:800px) {
+@media (max-width: $show-mobile) {
   .tab-list {
-      justify-content: flex-start;
-      padding-left: 1rem;
-    }
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    gap: 0.2rem;
+    min-height: 2rem;
   }
-
+}

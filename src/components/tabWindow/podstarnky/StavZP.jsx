@@ -1,12 +1,10 @@
 import React from "react";
-import SmallArticle from "../../articles/SmallArticle";
 import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
+import Odkazy from "../../articles/Odkazy";
+import AgendyVyberObsahu from "../../articles/AgendyVyberObsahu";
 
 //styly
 import styles from "./StavZP.module.scss";
-import StavZpGrafArticle from "../../articles/StavZpGrafArticle";
-import StavZpArticle from "../../articles/StavZpArticle";
-import Odkazy from "../../articles/Odkazy";
 
 function StavZP() {
   return (
@@ -14,7 +12,7 @@ function StavZP() {
       <div className={styles["stav-zp-content"]}>
         <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
-            <h1>Prehľad oblasti</h1>
+            <h2>Prehľad oblasti</h2>
           </div>
           <div className={styles["odkazy"]}>
             <Odkazy link={"#"} title={"Správy o stave životného prostredia"} />
@@ -27,25 +25,25 @@ function StavZP() {
         </div>
         <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
-            <h1>Výber obsahu</h1>
+            <h2>Výber obsahu</h2>
           </div>
           <div className={styles["stav-zp-article"]}>
-            <StavZpGrafArticle
+            <AgendyVyberObsahu
               title={"Envidat"}
-              subtitle={
-                "Výmera poľnohospodárskej pôdy v ekologickej poľnohospodárskej výrobe"
-              }
-              graf={
+              imgUrl={
                 "https://www.open.edu/openlearn/pluginfile.php/1361832/mod_oucontent/oucontent/69747/99744364/1b3bb1d7/wk8_fig20.tif.jpg"
               }
+              subTitle={
+                "Výmera poľnohospodárskej pôdy v ekologickej poľnohospodárskej výrobe"
+              }
             />
-            <StavZpArticle
+            <AgendyVyberObsahu
               subTitle={
                 "Správa o stave životného prostredia Slovenskej republiky v roku 2020"
               }
               title={"ODBORNÁ KONFERENCIA ŽIVOTNÉ PROSTREDIE MIEST"}
             />
-            <StavZpArticle
+            <AgendyVyberObsahu
               subTitle={
                 "Správa o stave životného prostredia Slovenskej republiky v roku 2020"
               }
@@ -55,7 +53,7 @@ function StavZP() {
         </div>
         <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
-            <h1>Do pozornosti</h1>
+            <h2>Do pozornosti</h2>
           </div>
           <div className={styles["stav-zp-article"]}>
             <AgendyDoPozornosti

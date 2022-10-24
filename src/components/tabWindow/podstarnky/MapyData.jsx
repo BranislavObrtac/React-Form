@@ -14,7 +14,7 @@ function MapyData() {
             }
             title={"Atlas krajiny Slovenskej republiky"}
             content={
-              "Cieľom ATLASU KRAJINY SR bolo nielen zdokumentovať vývoj a stav krajiny v danom období, ale ju komplexne zhodnotiť ako zdroj pre trvalo udržateľný život spoločnosti, stanoviť jej potenciály, identifikovať limity rozvoja územia a predstaviť krajinu ako životný priestor pre budúce generácie."
+              "Cieľom ATLASU KRAJINY SR bolo nielen zdokumentovať vývoj a stav krajiny v danom období, ale ju komplexne zhodnotiť ako zdroj pre trvalo udržateľný život spoločnosti, stanoviť jej potenciály, identifikovať limity rozvoja územia a predstaviť krajinu ako "
             }
             link={"#"}
           />

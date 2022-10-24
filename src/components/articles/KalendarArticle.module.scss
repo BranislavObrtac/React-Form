@@ -1,21 +1,26 @@
 @import "../../Colors.scss";
 
-.kalendar{
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 0.5rem;
+.kalendar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.5rem;
 }
 
-.kalendar a{
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
-    color: $kalendar-title-farba;
+.kalendar a {
+  color: $kalendar-title-farba;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
 }
 
-.kalendar-date-place{
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
+.kalendar-date-place {
+  font-size: 14px;
 }
 
-.kalendar-org{
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
+.kalendar-org {
+  font-size: 14px;
 }

@@ -7,6 +7,8 @@ import LangChoice from "./LangChoice";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
+import HpSearch from "../homepage/HpSearch";
+import { people } from "../../PeopleData";
 
 function MainMenu() {
   const [showMainMenu, setShowMainMenu] = useState(false);
@@ -40,6 +42,12 @@ function MainMenu() {
       </Link>
       {(showMainMenu || screenWidth >= 1000) && (
         <div className={styles["menus"]}>
+          <div className={styles["menu-search"]}>
+            <HpSearch
+              searchMobileMenu={"combobox-input-mobile"}
+              data={people}
+            />
+          </div>
           {menuItems.map((menu, index) => {
             return (
               <MenuItem

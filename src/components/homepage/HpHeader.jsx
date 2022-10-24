@@ -5,13 +5,13 @@ import { people } from "../../PeopleData";
 
 function HpHeader() {
   return (
-    <div className={styles["hp-header"]}>
-      <h3 className={styles["hp-header-title"]}>Hľadajte na enviroportáli</h3>
+    <header className={styles["hp-header"]}>
+      <h1 className={styles["hp-header-title"]}>Hľadajte na enviroportáli</h1>
       <div className={styles["bg-image"]}>
         <HpSearch data={people} />
       </div>
       <p className={styles["preskumat"]}>alebo preskúmajte</p>
-    </div>
+    </header>
   );
 }
 

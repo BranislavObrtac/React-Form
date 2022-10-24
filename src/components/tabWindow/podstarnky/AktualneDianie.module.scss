@@ -1,88 +1,64 @@
 @import "../../../Colors.scss";
 
-.aktualne-dianie{
-    /* background-image: url("https://cdn.pixabay.com/photo/2015/09/13/20/30/wood-938698_960_720.jpg");
+.aktualne-dianie {
+  /* background-image: url("https://cdn.pixabay.com/photo/2015/09/13/20/30/wood-938698_960_720.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; */
-    padding: 2vw 10vw;
-    background-image: linear-gradient(to right top, $gradient-left, $gradient-middle, $gradient-right);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(
+    to right top,
+    $gradient-left,
+    $gradient-middle,
+    $gradient-right
+  );
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.aktualne-dianie-headers h1{
-    flex-grow: 1;  
-    padding: 0.3rem;
-    font-size: clamp(1rem, 1vw, 1.5rem);
-    font-weight: 450;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.aktualne-dianie-headers h2 {
+  flex-grow: 1;
+  padding: 0.3rem;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 450;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.aktualne-dianie-content{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.aktualne-dianie-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.aktualne-dianie-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.aktualne-dianie-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+@media (max-width: $show-mobile) {
+  .aktualne-dianie {
+    padding: 0;
+  }
+
+  .aktualne-dianie-content {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
-}
-
-.aktualne-dianie-col{
+  }
+  .aktualne-dianie-headers h2 {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 25px;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;   
-    padding: 0.5rem;
-}
-
-.aktualne-dianie-articles{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: white;
-    flex-grow: 1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-}
-
-.aktualne-dianie-articles-right{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0.5rem;
-    background-color: white;
-    flex-grow: 1;
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-}
-
-.aktualne-dianie-articles-right button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
-}
-
-@media (max-width:800px) {
-
-    .aktualne-dianie{
-        padding: 0;
-    }
-
-    .aktualne-dianie-content{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .aktualne-dianie-headers h1 {
-        padding: 0.3rem;
-        font-size: clamp(1.5rem, 1vw, 2rem);
-        background-color: white;
-        font-weight: 400;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  }
 }

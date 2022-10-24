@@ -3,7 +3,7 @@ import styles from "./SmallArticle.module.scss";
 
 function SmallArticle({ imgUrl, title, datum, kategoria }) {
   return (
-    <div className={styles["small-aricle"]}>
+    <article className={styles["small-aricle"]}>
       <img className={styles["small-aricle-img"]} src={imgUrl} alt={title} />
       <div className={styles["small-article-info"]}>
         <h2 className={styles["title"]}>
@@ -11,7 +11,7 @@ function SmallArticle({ imgUrl, title, datum, kategoria }) {
         </h2>
         <p className={styles["date-category"]}>{datum + "- " + kategoria}</p>
       </div>
-    </div>
+    </article>
   );
 }
 

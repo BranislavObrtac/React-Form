@@ -9,7 +9,7 @@ function Kalendar() {
       <div className={styles["kalendar-content"]}>
         <div className={styles["kalendar-col"]}>
           <div className={styles["kalendar-headers"]}>
-            <h1>Najbližšie udalosti</h1>
+            <h2>Najbližšie udalosti</h2>
           </div>
           <div className={styles["kalendar-articles"]}>
             <KalendarArticle
@@ -44,7 +44,7 @@ function Kalendar() {
         </div>
         <div className={styles["kalendar-col"]}>
           <div className={styles["kalendar-headers"]}>
-            <h1>Environmentálne významné dni</h1>
+            <h2>Environmentálne významné dni</h2>
           </div>
           <div className={styles["kalendar-articles"]}>
             <KalendarArticle

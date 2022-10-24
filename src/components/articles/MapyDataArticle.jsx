@@ -6,7 +6,7 @@ function MapyData({ imgUrl, title, content, link }) {
     <article className={styles["mapy-data"]}>
       <img src={imgUrl} alt="" />
       <a href={link}>{title}</a>
-      <div> {content} </div>
+      <p> {content} </p>
     </article>
   );
 }

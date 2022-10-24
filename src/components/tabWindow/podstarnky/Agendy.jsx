@@ -12,7 +12,7 @@ function Agendy() {
       <div className={styles["agendy-content"]}>
         <div className={styles["agendy-col"]}>
           <div className={styles["agendy-headers"]}>
-            <h1>Prehľad oblasti</h1>
+            <h2>Prehľad oblasti</h2>
           </div>
           <div className={styles["odkazy"]}>
             <Odkazy link={"#"} title={"Posudzovanie vplyvov na ŽP (EIA/SEA)"} />
@@ -30,7 +30,7 @@ function Agendy() {
         </div>
         <div className={styles["agendy-col"]}>
           <div className={styles["agendy-headers"]}>
-            <h1>Výber obsahu</h1>
+            <h2>Výber obsahu</h2>
           </div>
           <div className={styles["agendy-article"]}>
             <AgendyVyberObsahu
@@ -61,7 +61,7 @@ function Agendy() {
         </div>
         <div className={styles["agendy-col"]}>
           <div className={styles["agendy-headers"]}>
-            <h1>Do pozornosti</h1>
+            <h2>Do pozornosti</h2>
           </div>
           <div className={styles["agendy-article"]}>
             <AgendyDoPozornosti

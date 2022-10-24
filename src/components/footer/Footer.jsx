@@ -3,8 +3,8 @@ import styles from "./Footer.module.scss";
 
 function Footer() {
   return (
-    <div className={styles.footer}>
-      <div className={styles["footer-left"]}>
+    <footer className={styles.footer}>
+      <section className={styles["footer-left"]}>
         <div className={styles["footer-left-links"]}>
           <a href="#">Kontakt</a>
           <a href="#">Rss</a>
@@ -15,11 +15,10 @@ function Footer() {
         <a href="#">
           <b>Našli ste na stránke chybu ?</b>
         </a>
-      </div>
-      <div className={styles["footer-right"]}>
+      </section>
+      <section className={styles["footer-right"]}>
         <div className={styles["footer-right-logo"]}>
           <img src="https://bratislavafotogenicka.eu/wp-content/uploads/2016/12/enviroportal-logo-1.jpg" />
-
           <div>
             Prevádzku stránky <a href="#">www.enviroportal.sk</a> a správu jej
             obsahu zabezpečuje{" "}
@@ -29,8 +28,8 @@ function Footer() {
         <p>
           ©2005–2022 <a href="#">www.enviroportal.sk</a>
         </p>
-      </div>
-    </div>
+      </section>
+    </footer>
   );
 }
 

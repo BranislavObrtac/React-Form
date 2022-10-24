@@ -6,8 +6,6 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { Link } from "react-router-dom";
 
 function MenuItem({ items, index, hideMenu }) {
-  const [activeBtn, setActiveBtn] = useState(false);
-
   return (
     <Menu as={"div"} className={styles["menu"]}>
       {({ open }) => (

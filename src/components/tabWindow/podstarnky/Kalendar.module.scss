@@ -1,107 +1,104 @@
 @import "../../../Colors.scss";
 
+.kalendar {
+  background-image: linear-gradient(
+    to left top,
+    $gradient-left,
+    $gradient-middle,
+    $gradient-right
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-.kalendar{
-    background-image: linear-gradient(to left top,$gradient-left, $gradient-middle, $gradient-right);
+  gap: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.kalendar-headers {
+  display: flex;
+  gap: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.kalendar-headers h2 {
+  flex-grow: 1;
+  padding: 0.3rem;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 450;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.kalendar-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.kalendar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.kalendar-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  flex-grow: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.kalendar-articles-right {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.kalendar-articles-right button {
+  border: none;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  color: white;
+  background-color: $tab-text-color-active;
+  border-radius: 0.5rem;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding: 18px 27px;
+}
+
+@media (max-width: $show-mobile) {
+  .kalendar {
+    padding: 0;
+  }
+
+  .kalendar-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
     gap: 1rem;
-    padding: 2vw 10vw;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 
-}
-
-.kalendar-headers{ 
-    display: flex;   
-    gap: 1rem;
-    background-color: rgb(255, 255, 255);
-}
-
-.kalendar-headers h1{
-    flex-grow: 1;  
-    padding: 0.3rem;
-    font-size: clamp(1rem, 1vw, 1.5rem);
-    font-weight: 450;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-}
-
-.kalendar-content{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.kalendar-col{
+  .kalendar-headers h2 {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 25px;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;   
-    padding: 0.5rem;
-}
-
-.kalendar-articles{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: white;
-    flex-grow: 1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-}
-
-.kalendar-articles-right{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0.5rem;
-    background-color: white;
-    flex-grow: 1;
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-}
-
-.kalendar-articles-right-btn{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
+  }
 
-.kalendar-articles-right button{
-    border: none;
-    font-weight: 300;
-    letter-spacing: .8px;
-    color: white;
-    cursor: pointer;
-    background-color: $tab-text-color-active;    
-    border-radius: 0.5rem;
-    padding: 1rem;
-    font-size: clamp(0.9rem, 0.8vw, 1.3rem);
-}
-
-@media (max-width:800px) {
-
-    .kalendar{
-        padding: 0;
-    }
-
-    .kalendar-content{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .kalendar-headers h1 {
-        padding: 0.3rem;
-        font-size: clamp(1.5rem, 1vw, 2rem);
-        background-color: white;
-        font-weight: 400;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .kalendar-articles {
+    gap: 0.2rem;
+  }
 }

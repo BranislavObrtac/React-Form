@@ -12,7 +12,7 @@ function Temy() {
       <div className={styles["temy-content"]}>
         <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
-            <h1>Prehľad oblasti</h1>
+            <h2>Prehľad oblasti</h2>
           </div>
           <div className={styles["odkazy"]}>
             <Odkazy link={"#"} title={"Ochrana prírody"} />
@@ -29,7 +29,7 @@ function Temy() {
         </div>
         <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
-            <h1>Do pozornosti</h1>
+            <h2>Do pozornosti</h2>
           </div>
           <div className={styles["temy-article"]}>
             <SmallArticle
@@ -66,7 +66,7 @@ function Temy() {
         </div>
         <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
-            <h1>Zaujímavosti</h1>
+            <h2>Zaujímavosti</h2>
           </div>
           <div className={styles["temy-article"]}>
             <AgendyDoPozornosti

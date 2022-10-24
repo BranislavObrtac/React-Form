@@ -1,7 +1,7 @@
 @import "../../Colors.scss";
 
-.lang{
-  font-size: clamp(0.9rem,1vw,1.5rem);
+.lang {
+  font-size: clamp(0.9rem, 1vw, 1.5rem);
   background-color: inherit;
   cursor: pointer;
   display: flex;
@@ -10,18 +10,18 @@
   gap: 0.5rem;
 }
 
-.menu{
-  display: inline-block; 
-  position: relative; 
-  text-align: left; 
+.menu {
+  display: inline-block;
+  position: relative;
+  text-align: left;
 }
 
-.menu-button{
+.menu-button {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: clamp(0.9rem,1vw,1.5rem);
+  font-size: clamp(0.9rem, 1vw, 1.5rem);
   color: $main-menu;
   padding: 0.5rem;
   border: none;
@@ -29,39 +29,38 @@
   cursor: pointer;
 }
 
-.menu-button-active{
+.menu-button-active {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: clamp(0.9rem,1vw,1.5rem);
+  font-size: clamp(0.9rem, 1vw, 1.5rem);
   color: $main-menu-active;
   padding: 0.5rem;
   border: none;
   cursor: pointer;
   font-weight: bold;
-
 }
 
-.menu-items{
-  position: absolute; 
-  left: 0; 
+.menu-items {
+  position: absolute;
+  left: 0;
   background-color: rgb(255, 255, 255);
-  transform-origin: top left; 
-  width: 15rem; 
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+  transform-origin: top left;
+  width: 15rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   z-index: 1;
-
 }
 
-.menu-item{
+.menu-item {
   display: flex;
   align-items: center;
   justify-content: start;
   text-decoration: none;
 }
 
-.menu-item div{
+.menu-item div {
   display: flex;
   flex-grow: 1;
   text-decoration: none;
@@ -69,28 +68,26 @@
   padding: 0.5rem 0.75rem;
 }
 
-.menu-item-link-active{
+.menu-item-link-active {
   font-weight: bold;
 }
 .menu-item-link-active:hover,
-.menu-item-link-active:active
-{
+.menu-item-link-active:active {
   background-color: $main-menu-hover;
   font-weight: bold;
 }
 
-
-@media screen and (max-width: 1000px) {
-  .menu-button{
+@media screen and (max-width: $show-mobile) {
+  .menu-button {
     width: 100vw;
     justify-content: flex-start;
   }
-  .menu-items{
-      position: relative;
-      width: 100vw;
+  .menu-items {
+    position: relative;
+    width: 100vw;
   }
 
-  .menu-button-active{
+  .menu-button-active {
     border-bottom-left-radius: 0;
   }
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import DokumentyDoPozornosti from "../../articles/DokumentyDoPozornosti";
-import StavZpArticle from "../../articles/StavZpArticle";
 import Odkazy from "../../articles/Odkazy";
 
 //styly
 import styles from "./Dokumenty.module.scss";
 import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
+import AgendyVyberObsahu from "../../articles/AgendyVyberObsahu";
 
 function Dokumenty() {
   return (
@@ -13,7 +13,7 @@ function Dokumenty() {
       <div className={styles["dokumenty-content"]}>
         <div className={styles["dokumenty-col"]}>
           <div className={styles["dokumenty-headers"]}>
-            <h1>Prehľad oblasti</h1>
+            <h2>Prehľad oblasti</h2>
           </div>
           <div className={styles["odkazy"]}>
             <Odkazy link={"#"} title={"Správy o stave životného prostredia"} />
@@ -26,22 +26,22 @@ function Dokumenty() {
         </div>
         <div className={styles["dokumenty-col"]}>
           <div className={styles["dokumenty-headers"]}>
-            <h1>Výber obsahu</h1>
+            <h2>Výber obsahu</h2>
           </div>
           <div className={styles["dokumenty-article"]}>
-            <StavZpArticle
+            <AgendyVyberObsahu
               title={"Medzinárodné dohovory"}
               subTitle={
                 "Protokol k Dohovoru o diaľkovom znečisťovaní ovzdušia prechádzajúcom hranicami štátov z roku 1979, o dlhodobom financovaní Programu spolupráce pre monitorovanie a vyhodnocovanie diaľkového šírenia látok znečisťujúcich ovzdušie v Európe (EMEP)"
               }
             />
-            <StavZpArticle
+            <AgendyVyberObsahu
               title={"Medzinárodné dohovory"}
               subTitle={
                 "Dohovor o prístupe k informáciám, účasti verejnosti na rozhodovacom procese a prístupe k spravodlivosti v záležitostiach životného prostredia"
               }
             />
-            <StavZpArticle
+            <AgendyVyberObsahu
               title={"Strategické dokumenty"}
               subTitle={
                 "Stratégia environmentálnej politiky Slovenskej republiky do roku 2030 (Envirostratégia 2030)"
@@ -51,7 +51,7 @@ function Dokumenty() {
         </div>
         <div className={styles["dokumenty-col"]}>
           <div className={styles["dokumenty-headers"]}>
-            <h1>Do pozornosti</h1>
+            <h2>Do pozornosti</h2>
           </div>
           <div className={styles["dokumenty-article"]}>
             <DokumentyDoPozornosti

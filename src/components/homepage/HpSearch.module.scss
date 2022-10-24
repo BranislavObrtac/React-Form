@@ -1,61 +1,76 @@
-.search-box{
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+@import "../../Colors.scss";
 
+.search-box {
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .search-icon {
-    width: 3rem;
-    font-size: 2rem;
-    height: auto;
-    color: white;
-    background-color: #757993;
-    display: grid;
-    place-items: center;
-  }
-
-.combobox-input{
-    padding: 0.75rem;
-    font-size: clamp(1rem, 3vw, 1.5rem);    
-    background-color: #F3F4F6; 
-    width: 100%; 
-    outline: 0; 
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
+  width: 3rem;
+  font-size: 2rem;
+  height: auto;
+  color: white;
+  background-color: #757993;
+  display: grid;
+  place-items: center;
 }
 
-.combobox-options{
-    position: absolute;
-    background-color: white;
-    padding: 0.5rem;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    z-index: 1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-top: 1px solid black;
+.combobox-input {
+  padding: 0.75rem;
+  font-size: 21px;
+  background-color: #f3f4f6;
+  width: 100%;
+  outline: 0;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  font-weight: 400;
+  line-height: 26px;
 }
 
-.combobox-options li{
-    list-style: none;
-    padding: 0.5rem 0.75rem;
-}
-.combobox-options a{
-    text-decoration: none;
-    color: black;
-    padding: 0.5rem 0.75rem;
-}
-
-.combobox-option-active{
-    background-color: rgb(228, 228, 228); 
-    color: #ffffff; 
+.combobox-input-mobile {
+  padding: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  background-color: #f3f4f6;
+  width: 100%;
+  outline: 0;
+  border: none;
 }
 
-.combobox-option-inactive{
-    background-color: #ffffff; 
-    color: #000000; 
+.combobox-options {
+  position: absolute;
+  background-color: white;
+  padding: 0.5rem;
+  font-size: 21px;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-top: 1px solid black;
 }
 
-.display-none{
-    list-style: none;
-    display: none;
+.combobox-options li {
+  list-style: none;
+  padding: 0.5rem 0.75rem;
+}
+.combobox-options a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 0.75rem;
+}
+
+.combobox-option-active {
+  background-color: rgb(228, 228, 228);
+  color: #ffffff;
+}
+
+.combobox-option-inactive {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.display-none {
+  list-style: none;
+  display: none;
+}
+
+@media only screen and (max-width: $show-mobile) {
 }

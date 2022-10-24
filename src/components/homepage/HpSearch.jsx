@@ -4,7 +4,7 @@ import styles from "./HpSearch.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import LoadingSpinner from "../loading/LoadingSpinner";
 
-function HpSearch({ data }) {
+function HpSearch({ data, searchMobileMenu }) {
   const [selectedPerson, setSelectedPerson] = useState("");
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,7 +24,11 @@ function HpSearch({ data }) {
             autoComplete={"off"}
             onChange={(event) => setQuery(event.target.value)}
             displayValue={(person) => person.name}
-            className={styles["combobox-input"]}
+            className={`${
+              searchMobileMenu
+                ? styles[searchMobileMenu]
+                : styles["combobox-input"]
+            }`}
             placeholder={"Zadajte hľadaný výraz "}
           />
           <div className={styles["search-icon"]}>
