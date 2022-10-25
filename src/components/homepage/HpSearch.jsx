@@ -38,7 +38,13 @@ function HpSearch({ data, searchMobileMenu }) {
         {query === "" ? (
           <></>
         ) : (
-          <Combobox.Options className={styles["combobox-options"]}>
+          <Combobox.Options
+            className={`${
+              searchMobileMenu
+                ? styles["combobox-options-mobile"]
+                : styles["combobox-options"]
+            }`}
+          >
             {filteredPeople.length ? (
               filteredPeople.map((person, index) => (
                 <Combobox.Option

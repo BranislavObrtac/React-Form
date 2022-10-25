@@ -30,7 +30,7 @@
 
 .combobox-input-mobile {
   padding: 0.5rem;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: 16px;
   background-color: #f3f4f6;
   width: 100%;
   outline: 0;
@@ -47,11 +47,13 @@
   border-top: 1px solid black;
 }
 
-.combobox-options li {
+.combobox-options li,
+.combobox-options-mobile li {
   list-style: none;
   padding: 0.5rem 0.75rem;
 }
-.combobox-options a {
+.combobox-options a,
+.combobox-options-mobile a {
   text-decoration: none;
   color: black;
   padding: 0.5rem 0.75rem;
@@ -73,4 +75,20 @@
 }
 
 @media only screen and (max-width: $show-mobile) {
+  .combobox-input-mobile {
+    font-size: 16px;
+  }
+
+  .combobox-options a {
+    padding: 0;
+  }
+
+  .combobox-options-mobile {
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .combobox-options-mobile a {
+    padding: 0.5rem 0;
+  }
 }
