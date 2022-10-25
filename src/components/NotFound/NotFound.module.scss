@@ -1,0 +1,40 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  padding: 17vh 5vw;
+  background-color: rgb(202, 157, 157);
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.not-found p {
+  display: flex;
+  font-size: 2rem;
+  padding-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.not-found-color {
+  color: green;
+}
+
+.not-found-color-padding {
+  color: green;
+  padding-left: 1rem;
+}
+
+.not-found-color-red {
+  color: rgb(182, 25, 25);
+  font-size: 3rem !important;
+  height: 50px;
+  padding-bottom: 1rem;
+}
+
+.not-found-404 {
+  color: rgb(182, 25, 25);
+  font-size: 8rem !important;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+}

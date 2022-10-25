@@ -23,11 +23,11 @@ export const menuItems = [
       },
       {
         title: "Voda",
-        url: "/voda",
+        url: "/temy/voda",
       },
       {
         title: "Odpady",
-        url: "/odpady",
+        url: "/temy/odpady",
       },
       {
         title: "Ovzdušie",

@@ -7,10 +7,8 @@ import MainMenu from "../mainMenu/MainMenu";
 function HomePage() {
   return (
     <>
-      <MainMenu />
       <HpHeader />
       <TabWindow />
-      <Footer />
     </>
   );
 }

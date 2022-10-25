@@ -4,4 +4,5 @@ export const people = [
   { id: 3, name: "Therese Wunsch" },
   { id: 4, name: "Benedict Kessler" },
   { id: 5, name: "Katelyn Rohan" },
+  { id: 6, name: "Témy Stav ŽP" },
 ];
