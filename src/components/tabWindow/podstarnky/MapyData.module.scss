@@ -12,7 +12,6 @@
     $gradient-middle,
     $gradient-right
   );
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .mapy-data-content {
@@ -20,12 +19,15 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   padding: 1rem;
+  padding: 1rem 20vw;
+  justify-content: center;
 }
 
 .mapy-data-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 310px;
 }
 
 @media (max-width: $show-mobile) {

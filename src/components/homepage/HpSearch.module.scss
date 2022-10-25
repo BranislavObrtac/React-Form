@@ -2,7 +2,6 @@
 
 .search-box {
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .search-icon {
@@ -22,7 +21,6 @@
   width: 100%;
   outline: 0;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   font-weight: 400;
   line-height: 26px;
@@ -44,7 +42,6 @@
   font-size: 21px;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-top: 1px solid black;
 }
 
 .combobox-options li,
