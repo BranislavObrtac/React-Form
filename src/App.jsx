@@ -12,9 +12,7 @@ function App() {
       <Routes>
         <Route element={<MainMenu />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/temy">
-            <Route path="odpady" element={<Odpady />} />
-          </Route>
+          <Route path="odpady" element={<Odpady />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

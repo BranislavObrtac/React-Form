@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu } from "@headlessui/react";
 import styles from "./MenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function MenuItem({ items, index, hideMenu }) {
+  const [btnActive, setBtnActive] = useState(false);
+  let location = useLocation();
+
+  useEffect(() => {
+    setBtnActive(false);
+    let insideOfUrl;
+    items.submenu.map((submenu) => {
+      insideOfUrl = window.location.href
+        .toLowerCase()
+        .includes(submenu.url.toLowerCase());
+      if (insideOfUrl === true) {
+        setBtnActive(true);
+      }
+    });
+  }, [location]);
+
   return (
     <Menu as={"div"} className={styles["menu"]}>
       {({ open }) => (
         <>
           <Menu.Button
-            className={`${
-              open ? styles["menu-button-active"] : styles["menu-button"]
-            }`}
+            className={`
+            ${btnActive === true ? styles["btn-active"] : ""}
+            ${open ? styles["menu-button-active"] : styles["menu-button"]}
+            `}
           >
             {items.title}
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}

@@ -32,6 +32,11 @@
   font-weight: bold;
 }
 
+.btn-active {
+  color: $active-main-menu-btn !important;
+  font-weight: bold;
+}
+
 .menu-items {
   position: absolute;
   left: 0;

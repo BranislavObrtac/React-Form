@@ -20,7 +20,7 @@ function NotFound() {
         <p>
           Myslel si ?
           <span className={styles["not-found-color-padding"]}>
-            {window.location.pathname}
+            {location.pathname}
           </span>
         </p>
         <p className={styles["not-found-color-red"]}>
