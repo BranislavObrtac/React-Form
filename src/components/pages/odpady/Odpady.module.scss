@@ -1,7 +1,7 @@
 @import "../../../Colors.scss";
 
 .odpady {
-  padding-top: 60px;
+  padding: 60px 10vw;
 }
 
 .odpady h1 {
@@ -17,16 +17,21 @@
 
 .odpady-bg-image {
   height: 250px;
-  width: 100%;
+  width: 100vw;
   position: absolute;
   z-index: -1;
-
+  left: 0;
   background-image: linear-gradient(
-    to right,
+    to bottom,
     $gradient-left,
     $gradient-middle,
     $gradient-right
   );
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .odpady-content {
@@ -49,15 +54,71 @@
 .odpady-aside nav {
   background-color: white;
   padding: 15px;
+}
+
+.tab-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.odpady-main {
+.tab-list-link {
+  color: $odkazy-color;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.odpady-right {
   background-color: white;
+}
+
+.odpady-main {
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
   padding: 20px;
+}
+.menu-item-link-active {
+  font-weight: bold;
+}
+
+.bottom-section {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.bottom-section h2 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+}
+.bottom-section-do-pozornosti {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.bottom-section-do-pozornosti-articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.bottom-section-popularny-obsah {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.bottom-section-popularny-obsah-btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: $show-mobile) {
+  .bottom-section-do-pozornosti-articles {
+    grid-template-columns: 1fr;
+  }
+  .bottom-section-popularny-obsah-btn {
+    grid-template-columns: 1fr;
+  }
 }

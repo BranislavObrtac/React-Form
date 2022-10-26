@@ -3,7 +3,7 @@ import { Menu } from "@headlessui/react";
 import styles from "./MenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 function MenuItem({ items, index, hideMenu }) {
   const [btnActive, setBtnActive] = useState(false);
@@ -39,7 +39,7 @@ function MenuItem({ items, index, hideMenu }) {
           <Menu.Items as="div" key={index} className={styles["menu-items"]}>
             {items.submenu.map((submenu) => (
               <Menu.Item
-                as={Link}
+                as={NavLink}
                 onClick={hideMenu}
                 key={submenu + "_" + submenu.title}
                 to={submenu.url}

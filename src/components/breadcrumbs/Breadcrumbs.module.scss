@@ -1,0 +1,40 @@
+@import "../../Colors.scss";
+
+.breadcrumbs {
+  padding: 1rem;
+  padding-bottom: 0;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.breadcrumbs-home-icon {
+  font-size: 16px !important;
+  margin-top: 4px;
+  color: black;
+}
+
+.breadcrumbs-arrow-icon {
+  color: gray;
+}
+
+.breadcrumbs-title {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $breadcrumbs-color-title;
+}
+
+.breadcrumbs-active-title {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: $breadcrumbs-color-active-title;
+}

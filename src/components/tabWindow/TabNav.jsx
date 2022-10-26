@@ -16,7 +16,7 @@ import styles from "./TabNav.module.scss";
 export default function TabNav() {
   return (
     <main>
-      <Tab.Group>
+      <Tab.Group manual>
         <Tab.List as="div" className={styles["tab-list"]}>
           <TabBtn name={"aktuálne dianie"} />
           <TabBtn name={"agendy"} />
