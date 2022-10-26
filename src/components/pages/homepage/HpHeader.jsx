@@ -1,7 +1,7 @@
 import React from "react";
 import HpSearch from "./HpSearch";
 import styles from "./HpHeader.module.scss";
-import { people } from "../../PeopleData";
+import { people } from "../../../PeopleData";
 
 function HpHeader() {
   return (

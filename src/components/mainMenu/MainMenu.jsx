@@ -7,7 +7,7 @@ import LangChoice from "./LangChoice";
 import { Link, Outlet } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
-import HpSearch from "../homepage/HpSearch";
+import HpSearch from "../pages/homepage/HpSearch";
 import { people } from "../../PeopleData";
 
 function MainMenu() {

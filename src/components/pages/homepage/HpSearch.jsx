@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Combobox } from "@headlessui/react";
 import styles from "./HpSearch.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
-import LoadingSpinner from "../loading/LoadingSpinner";
 
 function HpSearch({ data, searchMobileMenu }) {
   const [selectedPerson, setSelectedPerson] = useState("");
@@ -32,7 +31,7 @@ function HpSearch({ data, searchMobileMenu }) {
             placeholder={"Zadajte hľadaný výraz "}
           />
           <div className={styles["search-icon"]}>
-            {loading ? <LoadingSpinner /> : <SearchIcon />}
+            <SearchIcon />
           </div>
         </div>
         {query === "" ? (

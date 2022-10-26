@@ -1,10 +1,10 @@
 import "./App.scss";
-import HomePage from "./components/homepage/HomePage";
 import { Route, Routes } from "react-router-dom";
-import Odpady from "./components/odpady/Odpady";
+import Footer from "./components/footer/Footer";
+import Odpady from "./components/pages/odpady/Odpady";
+import HomePage from "./components/pages/homepage/HomePage";
 import NotFound from "./components/NotFound/NotFound";
 import MainMenu from "./components/mainMenu/MainMenu";
-import Footer from "./components/footer/Footer";
 
 function App() {
   return (
