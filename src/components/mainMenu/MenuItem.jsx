@@ -24,7 +24,7 @@ function MenuItem({ items, index, hideMenu }) {
         .includes(submenu.url.toLowerCase());
       if (insideOfUrl === true) {
         setBtnActive(true);
-        dispatch(navActions.getLocation({ btn: items, submenu: submenu }));
+        dispatch(navActions.activeMenus({ btn: items, submenu: submenu }));
       }
     });
   }, [location]);

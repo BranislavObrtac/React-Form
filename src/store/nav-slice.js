@@ -7,11 +7,7 @@ const navSlice = createSlice({
     activeSubmenu: {},
   },
   reducers: {
-    getLocation(state, action) {
-      const menu = action.payload.btn;
-      const submenu = action.payload.submenu;
-      console.log(menu);
-      console.log(submenu);
+    activeMenus(state, action) {
       state.activeMenu = action.payload.btn;
       state.activeSubmenu = action.payload.submenu;
     },
