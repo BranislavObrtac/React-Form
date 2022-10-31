@@ -1,4 +1,6 @@
-export const menuItems = [
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = [
   {
     title: "Agendy",
     url: "/",
@@ -138,3 +140,13 @@ export const menuItems = [
     ],
   },
 ];
+
+const menuItemsSlice = createSlice({
+  name: "menuItems",
+  initialState,
+  reducers: {},
+});
+
+export const allMenuItems = (state) => state.menuItems;
+
+export default menuItemsSlice;

@@ -7,13 +7,17 @@ import { Link, Outlet } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 import HpSearch from "../pages/homepage/HpSearch";
+
+import { useSelector } from "react-redux";
 //data
-import { people } from "../../PeopleData";
-import { menuItems } from "../../menuItems";
+import { allMenuItems } from "../../store/menuItems-slice";
+import { allSearchData } from "../../store/search-slice";
 
 function MainMenu() {
   const [showMainMenu, setShowMainMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const menuItems = useSelector(allMenuItems);
+  const searchData = useSelector(allSearchData);
 
   useEffect(() => {
     const changeWidth = () => {
@@ -47,7 +51,7 @@ function MainMenu() {
             <div className={styles["menu-search"]}>
               <HpSearch
                 searchMobileMenu={"combobox-input-mobile"}
-                data={people}
+                data={searchData}
               />
             </div>
             {menuItems.map((menu, index) => {

@@ -1,5 +1,4 @@
 import React from "react";
-import { people } from "../../../PeopleData";
 import HpSearch from "../homepage/HpSearch";
 import styles from "./Odpady.module.scss";
 import { Tab } from "@headlessui/react";
@@ -8,8 +7,11 @@ import SmallArticle from "../../articles/SmallArticle";
 import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
 import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
+import { useSelector } from "react-redux";
+import { allSearchData } from "../../../store/search-slice";
 
 function Odpady() {
+  const searchData = useSelector(allSearchData);
   const navigate = useNavigate();
 
   const test = (event, state, to) => {
@@ -30,7 +32,7 @@ function Odpady() {
             <div className={styles["wrapper-aside-search"]}>
               <HpSearch
                 searchMobileMenu={"combobox-input-mobile"}
-                data={people}
+                data={searchData}
               />
             </div>
             <Tab.Group as={"nav"}>
