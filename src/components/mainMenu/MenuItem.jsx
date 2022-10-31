@@ -12,11 +12,8 @@ import { navActions } from "../../store/nav-slice";
 function MenuItem({ items, index, hideMenu }) {
   const [btnActive, setBtnActive] = useState(false);
   let location = useLocation();
-  const dispatch = useDispatch();
 
-  const testRedux = () => {
-    dispatch(navActions.toggle());
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setBtnActive(false);
@@ -27,6 +24,7 @@ function MenuItem({ items, index, hideMenu }) {
         .includes(submenu.url.toLowerCase());
       if (insideOfUrl === true) {
         setBtnActive(true);
+        dispatch(navActions.getLocation({ btn: items, submenu: submenu }));
       }
     });
   }, [location]);
@@ -37,10 +35,9 @@ function MenuItem({ items, index, hideMenu }) {
         <>
           <Menu.Button
             className={`
-            ${btnActive === true ? styles["btn-active"] : ""}
+            ${btnActive && styles["btn-active"]}
             ${open ? styles["menu-button-active"] : styles["menu-button"]}
             `}
-            onClick={testRedux}
           >
             {items.title}
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}

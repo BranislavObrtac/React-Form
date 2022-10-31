@@ -1,12 +1,15 @@
 import React from "react";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import styles from "./Breadcrumbs.module.scss";
 
-function Breadcrumbs({ title, titleUrl }) {
+import { useSelector } from "react-redux";
+
+function Breadcrumbs() {
   let location = useLocation();
-  const { id } = useParams();
+  const activeMenu = useSelector((state) => state.nav.activeMenu);
+  const activeSubmenu = useSelector((state) => state.nav.activeSubmenu);
 
   return (
     <div className={styles["breadcrumbs"]}>
@@ -14,14 +17,16 @@ function Breadcrumbs({ title, titleUrl }) {
         <HomeIcon className={styles["breadcrumbs-home-icon"]} />
       </NavLink>
       <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
-      <NavLink className={styles["breadcrumbs-title"]} to={titleUrl}>
-        {title}
+
+      <p className={styles["breadcrumbs-title"]}>{activeMenu.title}</p>
+      <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
+
+      <NavLink className={styles["breadcrumbs-title"]} to={activeSubmenu.url}>
+        {activeSubmenu.title}
       </NavLink>
       <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
-      <NavLink className={styles["breadcrumbs-active-title"]} to={titleUrl}>
-        {location.state}
-        {id}
-      </NavLink>
+
+      <p className={styles["breadcrumbs-active-title"]}>{location.state}</p>
     </div>
   );
 }
