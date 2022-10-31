@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
 import styles from "./MainMenu.module.scss";
-import { menuItems } from "../../menuItems";
 import MenuItem from "./MenuItem";
 import UserBar from "./UserBar";
 import LangChoice from "./LangChoice";
@@ -8,7 +7,9 @@ import { Link, Outlet } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 import HpSearch from "../pages/homepage/HpSearch";
+//data
 import { people } from "../../PeopleData";
+import { menuItems } from "../../menuItems";
 
 function MainMenu() {
   const [showMainMenu, setShowMainMenu] = useState(false);
