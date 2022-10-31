@@ -3,11 +3,20 @@ import { Menu } from "@headlessui/react";
 import styles from "./MenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+
+//redux
+import { useDispatch } from "react-redux";
+import { navActions } from "../../store/nav-slice";
 
 function MenuItem({ items, index, hideMenu }) {
   const [btnActive, setBtnActive] = useState(false);
   let location = useLocation();
+  const dispatch = useDispatch();
+
+  const testRedux = () => {
+    dispatch(navActions.toggle());
+  };
 
   useEffect(() => {
     setBtnActive(false);
@@ -31,6 +40,7 @@ function MenuItem({ items, index, hideMenu }) {
             ${btnActive === true ? styles["btn-active"] : ""}
             ${open ? styles["menu-button-active"] : styles["menu-button"]}
             `}
+            onClick={testRedux}
           >
             {items.title}
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
