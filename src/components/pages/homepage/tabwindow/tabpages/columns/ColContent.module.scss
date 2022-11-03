@@ -1,13 +1,13 @@
-@import "../../../../common/Colors.scss";
+@import "../../../../../../common/Colors.scss";
 
-.col-promo-col {
+.col-content-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   min-width: 310px;
 }
 
-.col-promo-headers {
+.col-content-headers {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -15,7 +15,7 @@
   background-color: white;
 }
 
-.col-promo-headers h2 {
+.col-content-headers h2 {
   font-weight: 400;
   font-size: 19px;
   line-height: 25px;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.col-promo-article {
+.col-content-article {
   display: flex;
   flex-direction: column;
   flex-grow: 1;

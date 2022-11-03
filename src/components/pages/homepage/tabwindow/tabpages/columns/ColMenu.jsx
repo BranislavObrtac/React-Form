@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ColMenu.module.scss";
-import Odkazy from "../../../articles/Odkazy";
+import Odkazy from "../../../../../articles/Odkazy";
 
 function ColMenu({ data }) {
   return (

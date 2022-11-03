@@ -1,11 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { tabsData } from "../../../store/tab-slice";
+import { tabsData } from "../../../../../store/tab-slice";
 import ColMenu from "./columns/ColMenu";
 import ColPromo from "./columns/ColPromo";
 import ColContent from "./columns/ColContent";
-import { Fragment } from "react";
 
 //styly
 import styles from "./TabPageAgendy.module.scss";

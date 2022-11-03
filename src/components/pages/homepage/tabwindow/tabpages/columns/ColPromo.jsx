@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlePromo from "../../../articles/ArticlePromo";
+import ArticlePromo from "../../../../../articles/ArticlePromo";
 import styles from "./ColPromo.module.scss";
 
 function ColPromo({ data }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import KalendarArticle from "../../articles/KalendarArticle";
+import KalendarArticle from "../../../../articles/KalendarArticle";
 //styly
 import styles from "./TabPageKalendar.module.scss";
 

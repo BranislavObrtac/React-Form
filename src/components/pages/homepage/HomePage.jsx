@@ -1,7 +1,6 @@
 import React from "react";
 import HpHeader from "./HpHeader.jsx";
-import TabWindow from "../../tabwindow/TabWindow";
-
+import TabWindow from "./tabwindow/TabWindow";
 import { useDispatch } from "react-redux";
 import { getArticles } from "../../../store/tab-slice";
 import { useEffect } from "react";

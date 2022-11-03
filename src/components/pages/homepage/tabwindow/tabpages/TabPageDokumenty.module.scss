@@ -1,15 +1,20 @@
-@import "../../../common/Colors.scss";
+@import "../../../../../common/Colors.scss";
 
-.kalendar {
+.dokumenty {
+  /* background-image: url("https://cdn.pixabay.com/photo/2016/12/14/04/13/wave-1905610__340.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
   background-image: linear-gradient(
-    to left top,
+    to left bottom,
     $gradient-left,
     $gradient-middle,
     $gradient-right
   );
 }
 
-.kalendar-headers {
+.dokumenty-headers {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -17,7 +22,7 @@
   background-color: white;
 }
 
-.kalendar-headers h2 {
+.dokumenty-headers h2 {
   font-weight: 400;
   font-size: 19px;
   line-height: 25px;
@@ -25,68 +30,56 @@
   align-items: center;
 }
 
-.kalendar-content {
+.dokumenty-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
   padding: 1rem;
   padding: 1rem 20vw;
   justify-content: center;
 }
 
-.kalendar-col {
+.dokumenty-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0.5rem;
   min-width: 310px;
 }
 
-.kalendar-articles {
+.odkazy {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
   gap: 1rem;
+  padding: 0.5rem 1rem;
   background-color: white;
   flex-grow: 1;
 }
 
-.kalendar-articles-right {
-  background-color: white;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
-  display: flex;
-  align-items: center;
+.odkazy a {
   flex-grow: 1;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
 }
 
-.kalendar-articles-right button {
-  border: none;
-  font-weight: 300;
-  letter-spacing: 0.8px;
-  color: white;
-  background-color: $tab-text-color-active;
-  border-radius: 0.5rem;
-  font-size: 20px;
+.dokumenty-article {
   display: flex;
-  align-items: center;
-  padding: 18px 27px;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
 }
 
 @media (max-width: $show-mobile) {
-  .kalendar {
+  .dokumenty {
     padding: 0;
   }
 
-  .kalendar-content {
+  .dokumenty-content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .kalendar-articles {
-    gap: 0.2rem;
+  .odkazy {
+    gap: 10px;
   }
 }

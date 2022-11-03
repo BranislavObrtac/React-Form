@@ -1,20 +1,20 @@
-@import "../../../common/Colors.scss";
+@import "../../../../../common/Colors.scss";
 
-.agendy {
-  /* background-image: url("https://media.istockphoto.com/photos/organic-drop-shadow-on-a-white-wall-picture-id1220932948?b=1&k=20&m=1220932948&s=170667a&w=0&h=ZqpcmywVhXZT8QTVS1vwrDyjfd8LjeTOZTsgBRxuV_c=");
+.mapy-data {
+  /* background-image: url("https://cdn.pixabay.com/photo/2016/05/14/11/08/earth-1391672__340.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; */
 
   background-image: linear-gradient(
-    to right,
+    to left,
     $gradient-left,
     $gradient-middle,
     $gradient-right
   );
 }
 
-.agendy-content {
+.mapy-data-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
@@ -23,24 +23,21 @@
   justify-content: center;
 }
 
-.agendy-article {
+.mapy-data-col {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   gap: 1rem;
+  min-width: 310px;
 }
 
 @media (max-width: $show-mobile) {
-  .agendy {
+  .mapy-data {
     padding: 0;
   }
 
-  .agendy-content {
+  .mapy-data-content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  .odkazy {
-    gap: 10px;
   }
 }

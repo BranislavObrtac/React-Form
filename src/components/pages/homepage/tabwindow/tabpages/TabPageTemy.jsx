@@ -1,8 +1,8 @@
 import React from "react";
-import SmallArticle from "../../articles/ArticleSmall";
-import ArticlePromo from "../../articles/ArticlePromo";
+import SmallArticle from "../../../../articles/ArticleSmall";
+import ArticlePromo from "../../../../articles/ArticlePromo";
 
-import Odkazy from "../../articles/Odkazy";
+import Odkazy from "../../../../articles/Odkazy";
 //styly
 import styles from "./TabPageTemy.module.scss";
 
