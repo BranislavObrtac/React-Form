@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./AgendyVyberObsahu.module.scss";
+import styles from "./ArticleContent.module.scss";
 import SquareIcon from "@mui/icons-material/Square";
-import AgendyDoPozornosti from "./AgendyDoPozornosti";
+import AgendyDoPozornosti from "./ArticlePromo";
 
-function AgendyVyberObsahu({ title, subTitle, zakon, stav, imgUrl }) {
+function ArticleContent({ title, subTitle, zakon, stav, imgUrl }) {
   return (
     <article className={styles["agendy-vyber-obsahu"]}>
       <p className={styles["agendy-title"]}>
@@ -28,4 +28,4 @@ function AgendyVyberObsahu({ title, subTitle, zakon, stav, imgUrl }) {
   );
 }
 
-export default AgendyVyberObsahu;
+export default ArticleContent;

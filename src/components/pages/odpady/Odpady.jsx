@@ -2,9 +2,9 @@ import React from "react";
 import HpSearch from "../homepage/HpSearch";
 import styles from "./Odpady.module.scss";
 import { Tab } from "@headlessui/react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import SmallArticle from "../../articles/SmallArticle";
-import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
+import { NavLink, useNavigate } from "react-router-dom";
+import SmallArticle from "../../articles/ArticleSmall";
+import ArticlePromo from "../../articles/ArticlePromo";
 import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
 import { useSelector } from "react-redux";
@@ -217,7 +217,7 @@ function Odpady() {
                       "Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"
                     }
                   />
-                  <AgendyDoPozornosti
+                  <ArticlePromo
                     title={"PRIPRAVUJEME KONFERENCIU O ZNEČISTENÝCH ÚZEMIACH"}
                     imgUrl={
                       "https://cdn.pixabay.com/photo/2013/08/20/15/47/poppies-174276_960_720.jpg"

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./SmallArticle.module.scss";
+import styles from "./ArticleSmall.module.scss";
 
-function SmallArticle({ imgUrl, title, datum, kategoria }) {
+function ArticleSmall({ imgUrl, title, date, category }) {
   return (
     <article className={styles["small-aricle"]}>
       <img className={styles["small-aricle-img"]} src={imgUrl} alt={title} />
@@ -9,10 +9,10 @@ function SmallArticle({ imgUrl, title, datum, kategoria }) {
         <h2 className={styles["title"]}>
           <a href="#">{title}</a>
         </h2>
-        <p className={styles["date-category"]}>{datum + "- " + kategoria}</p>
+        <p className={styles["date-category"]}>{date + "- " + category}</p>
       </div>
     </article>
   );
 }
 
-export default SmallArticle;
+export default ArticleSmall;

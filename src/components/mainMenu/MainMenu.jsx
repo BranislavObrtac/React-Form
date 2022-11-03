@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./MainMenu.module.scss";
-import MenuItem from "./MenuItem";
-import UserBar from "./UserBar";
-import LangChoice from "./LangChoice";
+import MenuItem from "./MainMenuMenuItem";
+import UserBar from "./MainMenuUserBar";
+import LangChoice from "./MainMenuLangChoice";
 import { Link, Outlet } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";

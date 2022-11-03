@@ -1,12 +1,12 @@
 import React from "react";
 import MapyDataArticle from "../../articles/MapyDataArticle";
 //styly
-import styles from "./MapyData.module.scss";
+import styles from "./TabPageMapyData.module.scss";
 
 function MapyData() {
   return (
     <div className={styles["mapy-data"]}>
-      <div className={styles["mapy-data-content"]}>
+      {/* <div className={styles["mapy-data-content"]}>
         <div className={styles["mapy-data-col"]}>
           <MapyDataArticle
             imgUrl={
@@ -103,7 +103,7 @@ function MapyData() {
             link={"#"}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

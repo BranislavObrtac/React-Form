@@ -1,12 +1,12 @@
 import React from "react";
 import KalendarArticle from "../../articles/KalendarArticle";
 //styly
-import styles from "./Kalendar.module.scss";
+import styles from "./TabPageKalendar.module.scss";
 
 function Kalendar() {
   return (
     <div className={styles["kalendar"]}>
-      <div className={styles["kalendar-content"]}>
+      {/* <div className={styles["kalendar-content"]}>
         <div className={styles["kalendar-col"]}>
           <div className={styles["kalendar-headers"]}>
             <h2>Najbližšie udalosti</h2>
@@ -84,7 +84,7 @@ function Kalendar() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

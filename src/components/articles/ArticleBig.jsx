@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./BigArticle.module.scss";
+import styles from "./ArticleBig.module.scss";
 
-function BigArticle({ imgUrl, title, datum, kategoria }) {
+function ArticleBig({ imgUrl, title, date, category }) {
   return (
     <article className={styles["big-article"]}>
       <img src={imgUrl} alt={title} />
@@ -9,10 +9,10 @@ function BigArticle({ imgUrl, title, datum, kategoria }) {
         <h2 className={styles["title"]}>
           <a href="#">{title}</a>
         </h2>
-        <p className={styles["date-category"]}>{datum + "- " + kategoria}</p>
+        <p className={styles["date-category"]}>{date + "- " + category}</p>
       </div>
     </article>
   );
 }
 
-export default BigArticle;
+export default ArticleBig;

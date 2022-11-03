@@ -1,16 +1,16 @@
 import React from "react";
 import DokumentyDoPozornosti from "../../articles/DokumentyDoPozornosti";
 import Odkazy from "../../articles/Odkazy";
+import ArticlePromo from "../../articles/ArticlePromo";
+import ArticleContent from "../../articles/ArticleContent";
 
 //styly
-import styles from "./Dokumenty.module.scss";
-import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
-import AgendyVyberObsahu from "../../articles/AgendyVyberObsahu";
+import styles from "./TabPageDokumenty.module.scss";
 
 function Dokumenty() {
   return (
     <div className={styles["dokumenty"]}>
-      <div className={styles["dokumenty-content"]}>
+      {/* <div className={styles["dokumenty-content"]}>
         <div className={styles["dokumenty-col"]}>
           <div className={styles["dokumenty-headers"]}>
             <h2>Prehľad oblasti</h2>
@@ -68,7 +68,7 @@ function Dokumenty() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

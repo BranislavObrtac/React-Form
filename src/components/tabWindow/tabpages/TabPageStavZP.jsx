@@ -1,15 +1,15 @@
 import React from "react";
-import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
+import ArticlePromo from "../../articles/ArticlePromo";
 import Odkazy from "../../articles/Odkazy";
-import AgendyVyberObsahu from "../../articles/AgendyVyberObsahu";
+import ArticleContent from "../../articles/ArticleContent";
 
 //styly
-import styles from "./StavZP.module.scss";
+import styles from "./TabPageStavZP.module.scss";
 
 function StavZP() {
   return (
     <div className={styles["stav-zp"]}>
-      <div className={styles["stav-zp-content"]}>
+      {/* <div className={styles["stav-zp-content"]}>
         <div className={styles["stav-zp-col"]}>
           <div className={styles["stav-zp-headers"]}>
             <h2>Prehľad oblasti</h2>
@@ -70,7 +70,7 @@ function StavZP() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from "@headlessui/react";
-import styles from "./MenuItem.module.scss";
+import styles from "./MainMenuMenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { NavLink, useLocation } from "react-router-dom";

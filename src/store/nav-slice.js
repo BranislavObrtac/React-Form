@@ -15,5 +15,4 @@ const navSlice = createSlice({
 });
 
 export const navActions = navSlice.actions;
-
 export default navSlice;

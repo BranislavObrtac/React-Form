@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import styles from "./LangChoice.module.scss";
+import styles from "./MainMenuLangChoice.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { Menu } from "@headlessui/react";
 import { Link } from "react-router-dom";
-
-/* import { langItems } from "../../langItems";
-import MenuItems from "./MenuItems";
-import styles from "./LangChoice.module.scss"; */
 
 function LangChoice() {
   const [lang, setLang] = useState("Slovenčina");

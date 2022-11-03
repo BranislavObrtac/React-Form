@@ -1,15 +1,15 @@
 import React from "react";
-import SmallArticle from "../../articles/SmallArticle";
-import AgendyDoPozornosti from "../../articles/AgendyDoPozornosti";
+import SmallArticle from "../../articles/ArticleSmall";
+import ArticlePromo from "../../articles/ArticlePromo";
 
 import Odkazy from "../../articles/Odkazy";
 //styly
-import styles from "./Temy.module.scss";
+import styles from "./TabPageTemy.module.scss";
 
 function Temy() {
   return (
     <div className={styles["temy"]}>
-      <div className={styles["temy-content"]}>
+      {/*  <div className={styles["temy-content"]}>
         <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
             <h2>Prehľad oblasti</h2>
@@ -83,7 +83,7 @@ function Temy() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

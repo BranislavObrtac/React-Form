@@ -6,7 +6,6 @@ import SearchIcon from "@mui/icons-material/Search";
 function HpSearch({ data, searchMobileMenu }) {
   const [selectedPerson, setSelectedPerson] = useState("");
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const filteredPeople =
     query === ""
