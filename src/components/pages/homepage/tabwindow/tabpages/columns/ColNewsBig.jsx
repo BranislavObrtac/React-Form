@@ -6,7 +6,7 @@ import styles from "./ColNewsBig.module.scss";
 function ColNewsBig({ data }) {
   return (
     <>
-      {data && (
+      {data.type === "col-news-big" && (
         <div className={styles["cbn-col"]}>
           <div className={styles["cbn-headers"]}>
             <h2>{data.title}</h2>

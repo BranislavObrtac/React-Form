@@ -3,9 +3,10 @@ import ArticlePromo from "../../../../../articles/ArticlePromo";
 import styles from "./ColPromo.module.scss";
 
 function ColPromo({ data }) {
+  console.log(data);
   return (
     <>
-      {data && (
+      {data.type === "promo" && (
         <div className={styles["col-promo-col"]}>
           <div className={styles["col-promo-headers"]}>
             <h2>{data.title}</h2>

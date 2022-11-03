@@ -5,7 +5,7 @@ import styles from "./ColContent.module.scss";
 function ColContent({ data }) {
   return (
     <>
-      {data && (
+      {data.type === "content" && (
         <div className={styles["col-content-col"]}>
           <div className={styles["col-content-headers"]}>
             <h2>Výber obsahu</h2>

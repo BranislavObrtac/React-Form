@@ -9,7 +9,7 @@ import styles from "./TabPageTemy.module.scss";
 function Temy() {
   return (
     <div className={styles["temy"]}>
-      {/*  <div className={styles["temy-content"]}>
+      {/* <div className={styles["temy-content"]}>
         <div className={styles["temy-col"]}>
           <div className={styles["temy-headers"]}>
             <h2>Prehľad oblasti</h2>

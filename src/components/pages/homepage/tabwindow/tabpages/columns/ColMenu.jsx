@@ -5,7 +5,7 @@ import Odkazy from "../../../../../articles/Odkazy";
 function ColMenu({ data }) {
   return (
     <>
-      {data && (
+      {data.type === "menu" && (
         <div className={styles["col-menu-col"]}>
           <div className={styles["col-menu-headers"]}>
             <h2>{data.title}</h2>
