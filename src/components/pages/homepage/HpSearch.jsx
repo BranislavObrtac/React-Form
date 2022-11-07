@@ -3,23 +3,30 @@ import { Combobox } from "@headlessui/react";
 import styles from "./HpSearch.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 
-function HpSearch({ data, searchMobileMenu }) {
+import { useDispatch, useSelector } from "react-redux";
+import { getResultData, resultData } from "../../../store/search-slice";
+
+function HpSearch({ searchMobileMenu }) {
+  const dispatch = useDispatch();
+  const searchResultData = useSelector(resultData);
+
   const [selectedPerson, setSelectedPerson] = useState("");
-  const [filteredPeople, setFilteredPeople] = useState([]);
   const [query, setQuery] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
+    if (!query) {
+      return;
+    }
     const timer = setTimeout(() => {
-      setFilteredPeople(
-        query === ""
-          ? data
-          : data.filter((person) => {
-              return person.name.toLowerCase().includes(query.toLowerCase());
-            })
-      );
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [query, data]);
+      dispatch(getResultData(query));
+      setIsSearching(false);
+    }, 250);
+    return () => {
+      clearTimeout(timer);
+      setIsSearching(true);
+    };
+  }, [query, dispatch]);
 
   return (
     <div className={styles["combobox"]}>
@@ -40,7 +47,7 @@ function HpSearch({ data, searchMobileMenu }) {
             <SearchIcon />
           </div>
         </div>
-        {query === "" ? (
+        {query === "" || isSearching ? (
           <></>
         ) : (
           <Combobox.Options
@@ -50,8 +57,8 @@ function HpSearch({ data, searchMobileMenu }) {
                 : styles["combobox-options"]
             }`}
           >
-            {filteredPeople.length ? (
-              filteredPeople.map((person, index) => (
+            {searchResultData.length ? (
+              searchResultData.map((person, index) => (
                 <Combobox.Option
                   key={index + "_" + person}
                   value={person}

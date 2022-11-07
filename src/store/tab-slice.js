@@ -45,4 +45,5 @@ const tabSlice = createSlice({
 });
 
 export const tabsData = (state) => state.tabs;
+
 export default tabSlice;
