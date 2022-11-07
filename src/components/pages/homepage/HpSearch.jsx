@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Combobox } from "@headlessui/react";
 import styles from "./HpSearch.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 
 function HpSearch({ data, searchMobileMenu }) {
   const [selectedPerson, setSelectedPerson] = useState("");
+  const [filteredPeople, setFilteredPeople] = useState([]);
   const [query, setQuery] = useState("");
 
-  const filteredPeople =
-    query === ""
-      ? data
-      : data.filter((person) => {
-          return person.name.toLowerCase().includes(query.toLowerCase());
-        });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFilteredPeople(
+        query === ""
+          ? data
+          : data.filter((person) => {
+              return person.name.toLowerCase().includes(query.toLowerCase());
+            })
+      );
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [query, data]);
 
   return (
     <div className={styles["combobox"]}>
@@ -20,7 +27,7 @@ function HpSearch({ data, searchMobileMenu }) {
         <div className={styles["search-box"]}>
           <Combobox.Input
             autoComplete={"off"}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
             displayValue={(person) => person.name}
             className={`${
               searchMobileMenu
@@ -58,7 +65,7 @@ function HpSearch({ data, searchMobileMenu }) {
                           : styles["combobox-option-inactive"]
                       }`}
                     >
-                      <a href="#">{person.name}</a>
+                      <a href="/">{person.name}</a>
                     </li>
                   )}
                 </Combobox.Option>

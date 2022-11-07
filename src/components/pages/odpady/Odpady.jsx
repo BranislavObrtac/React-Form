@@ -14,7 +14,7 @@ function Odpady() {
   const searchData = useSelector(allSearchData);
   const navigate = useNavigate();
 
-  const test = (event, state, to) => {
+  const onEnterPressed = (event, state, to) => {
     if (event.key === "Enter") {
       navigate(to, { state: state });
     }
@@ -39,7 +39,11 @@ function Odpady() {
               <Tab.Panels className={styles["tab-list"]}>
                 <Tab
                   onKeyDown={(event) =>
-                    test(event, "Prúdy odpadov", "/odpady/prudy-odpadov")
+                    onEnterPressed(
+                      event,
+                      "Prúdy odpadov",
+                      "/odpady/prudy-odpadov"
+                    )
                   }
                   className={styles["tab-list-link"]}
                   as={NavLink}
@@ -50,7 +54,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(
+                    onEnterPressed(
                       event,
                       "Ciele odpadového hospodárstva",
                       "/odpady/ciele-odpadoveho-hospodarstva"
@@ -65,7 +69,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(
+                    onEnterPressed(
                       event,
                       "Rozšírená zodpovednosť výrobcov",
                       "/odpady/rozsirena-zodpevednost-vyrobcov"
@@ -80,7 +84,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(
+                    onEnterPressed(
                       event,
                       "Cezhraničný pohyb odpadov",
                       "/odpady/cezhranicny-pohyb-odpadov"
@@ -95,7 +99,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(
+                    onEnterPressed(
                       event,
                       "Predchádzanie vzniku odpadov",
                       "/odpady/predchadzanie-vzniku-odpadov"
@@ -110,7 +114,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(event, "Dokumenty", "/odpady/dokumenty")
+                    onEnterPressed(event, "Dokumenty", "/odpady/dokumenty")
                   }
                   className={styles["tab-list-link"]}
                   as={NavLink}
@@ -121,7 +125,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(
+                    onEnterPressed(
                       event,
                       "Informačné systémy",
                       "/odpady/informacne-systemy"
@@ -136,7 +140,7 @@ function Odpady() {
                 </Tab>
                 <Tab
                   onKeyDown={(event) =>
-                    test(
+                    onEnterPressed(
                       event,
                       "Kontakty/kompetencie",
                       "/odpady/kontanky-kompetencie"
