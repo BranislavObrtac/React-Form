@@ -1,4 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+const MENU_URL = "http://enviroportal.deviant.sazp.sk/api/menus";
 
 const initialState = [
   {
@@ -140,6 +143,22 @@ const initialState = [
     ],
   },
 ];
+
+export const getMenu = createAsyncThunk(
+  "articleSlice/getArticles",
+  async () => {
+    try {
+      const response = await axios.get(MENU_URL, {
+        params: {
+          page: "1",
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 const menuItemsSlice = createSlice({
   name: "menuItems",

@@ -6,16 +6,19 @@ import { getArticles } from "../../../store/tab-slice";
 import { useEffect } from "react";
 
 let fisrtStart = true;
+
 function HomePage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (fisrtStart === true) {
-      fisrtStart = false;
-      return;
+    if (fisrtStart) {
+      dispatch(getArticles());
     }
-    dispatch(getArticles());
-  }, []);
+    return () => {
+      fisrtStart = false;
+    };
+  }, [dispatch]);
+
   return (
     <>
       <HpHeader />

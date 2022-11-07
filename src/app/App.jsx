@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "../components/footer/Footer";
 import Odpady from "../components/pages/odpady/Odpady";
 import HomePage from "../components/pages/homepage/HomePage";
-import NotFound from "../components/notfound/NotFound";
+import NotFound from "../components/pages/notfound/NotFound";
 import MainMenu from "../components/mainmenu/MainMenu";
 
 function App() {
