@@ -1,5 +1,5 @@
 import React from "react";
-import MapyDataArticle from "../../../../articles/MapyDataArticle";
+//import MapyDataArticle from "../../../../articles/MapyDataArticle";
 //styly
 import styles from "./TabPageMapyData.module.scss";
 

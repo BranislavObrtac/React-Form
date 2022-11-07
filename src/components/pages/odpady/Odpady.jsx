@@ -8,7 +8,7 @@ import ArticlePromo from "../../articles/ArticlePromo";
 import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
 import { useSelector } from "react-redux";
-import { allSearchData } from "../../../store/search-slice";
+import { allSearchData } from "../../../store/searchSlice";
 
 function Odpady() {
   const searchData = useSelector(allSearchData);

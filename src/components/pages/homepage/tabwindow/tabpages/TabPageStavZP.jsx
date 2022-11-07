@@ -1,7 +1,7 @@
 import React from "react";
-import ArticlePromo from "../../../../articles/ArticlePromo";
+/* import ArticlePromo from "../../../../articles/ArticlePromo";
 import Odkazy from "../../../../articles/Odkazy";
-import ArticleContent from "../../../../articles/ArticleContent";
+import ArticleContent from "../../../../articles/ArticleContent"; */
 
 //styly
 import styles from "./TabPageStavZP.module.scss";

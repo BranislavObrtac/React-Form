@@ -10,8 +10,8 @@ import HpSearch from "../pages/homepage/HpSearch";
 
 import { useSelector } from "react-redux";
 //data
-import { allMenuItems } from "../../store/menuItems-slice";
-import { allSearchData } from "../../store/search-slice";
+import { allMenuItems } from "../../store/menuSlice";
+import { allSearchData } from "../../store/searchSlice";
 
 function MainMenu() {
   const [showMainMenu, setShowMainMenu] = useState(false);

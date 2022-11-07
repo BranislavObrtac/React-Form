@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import navSlice from "./nav-slice";
-import menuItemsSlice from "./menuItems-slice";
-import searchSlice from "./search-slice";
-import tabSlice from "./tab-slice";
+import navSlice from "./navSlice";
+import menuItemsSlice from "./menuSlice";
+import searchSlice from "./searchSlice";
+import tabSlice from "./tabSlice";
 
 const store = configureStore({
   reducer: {

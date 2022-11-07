@@ -4,10 +4,9 @@ import styles from "./MainMenuMenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { NavLink, useLocation } from "react-router-dom";
-
 //redux
 import { useDispatch } from "react-redux";
-import { navActions } from "../../store/nav-slice";
+import { navActions } from "../../store/navSlice";
 
 function MenuItem({ items, index, hideMenu }) {
   const [btnActive, setBtnActive] = useState(false);
@@ -24,10 +23,13 @@ function MenuItem({ items, index, hideMenu }) {
         .includes(submenu.url.toLowerCase());
       if (insideOfUrl === true) {
         setBtnActive(true);
-        dispatch(navActions.activeMenus({ btn: items, submenu: submenu }));
+        return dispatch(
+          navActions.activeMenus({ btn: items, submenu: submenu })
+        );
       }
+      return null;
     });
-  }, [location]);
+  }, [location, dispatch, items]);
 
   return (
     <Menu as={"div"} className={styles["menu"]}>

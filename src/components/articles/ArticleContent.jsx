@@ -3,7 +3,7 @@ import styles from "./ArticleContent.module.scss";
 import SquareIcon from "@mui/icons-material/Square";
 import AgendyDoPozornosti from "./ArticlePromo";
 
-function ArticleContent({ title, subTitle, zakon, stav, imgUrl }) {
+function ArticleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
   return (
     <article className={styles["agendy-vyber-obsahu"]}>
       <p className={styles["agendy-title"]}>
@@ -12,7 +12,7 @@ function ArticleContent({ title, subTitle, zakon, stav, imgUrl }) {
       </p>
       {imgUrl && <AgendyDoPozornosti imgUrl={imgUrl} />}
       <div className={styles["agendy-subtitle"]}>
-        <a href="#">{subTitle}</a>
+        <a href={link}>{subTitle}</a>
       </div>
       {zakon && (
         <p className={styles["agendy-zakon"]}>

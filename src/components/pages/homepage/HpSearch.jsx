@@ -4,12 +4,11 @@ import styles from "./HpSearch.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getResultData, resultData } from "../../../store/search-slice";
+import { getResultData, resultData } from "../../../store/searchSlice";
 
 function HpSearch({ searchMobileMenu }) {
   const dispatch = useDispatch();
   const searchResultData = useSelector(resultData);
-
   const [selectedPerson, setSelectedPerson] = useState("");
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
@@ -64,7 +63,7 @@ function HpSearch({ searchMobileMenu }) {
                   value={person}
                   as={"ul"}
                 >
-                  {({ active, selected }) => (
+                  {({ active }) => (
                     <li
                       className={`${
                         active

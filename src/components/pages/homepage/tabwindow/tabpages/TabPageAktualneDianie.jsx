@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
-import { tabsData } from "../../../../../store/tab-slice";
+import { tabsData } from "../../../../../store/tabSlice";
 import ColNewsBig from "./columns/ColNewsBig";
 
 import styles from "./TabPageAktualneDianie.module.scss";
 
 function AktualneDianie() {
-  const [tabData, setTabData] = useState(useSelector(tabsData).data[0].content);
+  const tabData = useSelector(tabsData).data[0].content;
 
   return (
     <div className={styles["aktualne-dianie"]}>

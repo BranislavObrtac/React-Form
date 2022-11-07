@@ -27,6 +27,7 @@ function LangChoice() {
                 {({ active }) => (
                   <div
                     className={`${active && styles["menu-item-link-active"]}`}
+                    onClick={setLang("Angličtina")}
                   >
                     Angličtina
                   </div>

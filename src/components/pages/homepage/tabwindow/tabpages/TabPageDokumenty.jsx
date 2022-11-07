@@ -1,8 +1,8 @@
 import React from "react";
-import DokumentyDoPozornosti from "../../../../articles/DokumentyDoPozornosti";
+/* import DokumentyDoPozornosti from "../../../../articles/DokumentyDoPozornosti";
 import Odkazy from "../../../../articles/Odkazy";
 import ArticlePromo from "../../../../articles/ArticlePromo";
-import ArticleContent from "../../../../articles/ArticleContent";
+import ArticleContent from "../../../../articles/ArticleContent"; */
 
 //styly
 import styles from "./TabPageDokumenty.module.scss";

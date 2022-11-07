@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { useState } from "react";
-import { tabsData } from "../../../../../store/tab-slice";
+import { tabsData } from "../../../../../store/tabSlice";
 import ColMenu from "./columns/ColMenu";
 import ColPromo from "./columns/ColPromo";
 import ColContent from "./columns/ColContent";
@@ -10,7 +9,7 @@ import ColContent from "./columns/ColContent";
 import styles from "./TabPageAgendy.module.scss";
 
 function Agendy() {
-  const [tabData, setTabData] = useState(useSelector(tabsData).data[1].content);
+  const tabData = useSelector(tabsData).data[1].content;
 
   return (
     <div className={styles["agendy"]}>
