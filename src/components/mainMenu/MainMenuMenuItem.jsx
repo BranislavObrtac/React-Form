@@ -1,20 +1,69 @@
-import React, { useEffect, useState } from "react";
-import { Menu } from "@headlessui/react";
+import React from "react";
+//import styles
 import styles from "./MainMenuMenuItem.module.scss";
+//import icons
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { NavLink, useLocation } from "react-router-dom";
-//redux
-import { useDispatch } from "react-redux";
-import { navActions } from "../../store/navSlice";
+
+import { Menu } from "@headlessui/react";
+import { NavLink } from "react-router-dom";
+import { mainMenuActiveMenuID } from "../../store/mainMenuSlice";
+import { useSelector } from "react-redux";
 
 function MenuItem({ items, index, hideMenu }) {
-  const [btnActive, setBtnActive] = useState(false);
-  let location = useLocation();
+  const activeMenuId = useSelector(mainMenuActiveMenuID);
 
-  const dispatch = useDispatch();
+  return (
+    <Menu as={"div"} className={styles["menu"]}>
+      {({ open }) => (
+        <>
+          <Menu.Button
+            className={`
+            ${activeMenuId === items.node.id ? styles["btn-active"] : null}
+            ${open ? styles["menu-button-active"] : styles["menu-button"]}
+            `}
+          >
+            {items.node.name ? items.node.name : ""}
+            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          </Menu.Button>
 
-  useEffect(() => {
+          <Menu.Items as="div" key={index} className={styles["menu-items"]}>
+            {items.children
+              ? Object.keys(items.children).map((key) => {
+                  if (items.children[key]) {
+                    let submenu = items.children[key].node;
+                    return (
+                      <Menu.Item
+                        as={NavLink}
+                        onClick={hideMenu}
+                        key={submenu.name + "_" + submenu.parentID}
+                        to={submenu.link}
+                        className={styles["menu-item"]}
+                      >
+                        {({ active }) => (
+                          <div
+                            className={`${
+                              active && styles["menu-item-link-active"]
+                            }`}
+                          >
+                            {submenu.name}
+                          </div>
+                        )}
+                      </Menu.Item>
+                    );
+                  }
+                })
+              : null}
+          </Menu.Items>
+        </>
+      )}
+    </Menu>
+  );
+}
+
+export default MenuItem;
+
+/*   useEffect(() => {
     setBtnActive(false);
     let insideOfUrl;
     items.submenu.map((submenu) => {
@@ -27,47 +76,5 @@ function MenuItem({ items, index, hideMenu }) {
           navActions.activeMenus({ btn: items, submenu: submenu })
         );
       }
-      return null;
     });
-  }, [location, dispatch, items]);
-
-  return (
-    <Menu as={"div"} className={styles["menu"]}>
-      {({ open }) => (
-        <>
-          <Menu.Button
-            className={`
-            ${btnActive && styles["btn-active"]}
-            ${open ? styles["menu-button-active"] : styles["menu-button"]}
-            `}
-          >
-            {items.title}
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </Menu.Button>
-
-          <Menu.Items as="div" key={index} className={styles["menu-items"]}>
-            {items.submenu.map((submenu) => (
-              <Menu.Item
-                as={NavLink}
-                onClick={hideMenu}
-                key={submenu + "_" + submenu.title}
-                to={submenu.url}
-                className={styles["menu-item"]}
-              >
-                {({ active }) => (
-                  <div
-                    className={`${active && styles["menu-item-link-active"]}`}
-                  >
-                    {submenu.title}
-                  </div>
-                )}
-              </Menu.Item>
-            ))}
-          </Menu.Items>
-        </>
-      )}
-    </Menu>
-  );
-}
-
-export default MenuItem;
+  }, [location, dispatch, items]); */
