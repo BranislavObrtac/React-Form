@@ -28,7 +28,7 @@ const tabSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [getArticles.pending]: (state, { payload }) => {
+    [getArticles.pending]: (state) => {
       state.loading = true;
     },
     [getArticles.fulfilled]: (state, { payload }) => {
