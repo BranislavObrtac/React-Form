@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from "react-redux";
 //data
 import { allSearchData } from "../../store/searchSlice";
 import {
-  mainMenuData,
   getMainMenu,
   mainMenuIsSuccess,
   mainMenuButtons,
@@ -30,7 +29,6 @@ function MainMenu() {
 
   const searchData = useSelector(allSearchData);
   const isSuccess = useSelector(mainMenuIsSuccess);
-  const menuItems = useSelector(mainMenuData);
   const menuButtons = useSelector(mainMenuButtons);
 
   useEffect(() => {
@@ -47,7 +45,7 @@ function MainMenu() {
       dispatch(mainMenuActions.getMenuButtons());
     }
     return () => {};
-  }, [isSuccess]);
+  }, [isSuccess, dispatch]);
 
   useEffect(() => {
     if (isSuccess) {

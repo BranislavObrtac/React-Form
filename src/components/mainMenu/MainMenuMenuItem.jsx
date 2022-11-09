@@ -52,6 +52,7 @@ function MenuItem({ items, index, hideMenu }) {
                       </Menu.Item>
                     );
                   }
+                  return null;
                 })
               : null}
           </Menu.Items>

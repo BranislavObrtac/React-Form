@@ -34,7 +34,7 @@ const mainMenuSlice = createSlice({
     getMenuButtons(state) {
       if (state.isSuccess) {
         let menu = current(state.data.children);
-        Object.keys(menu).map((key) => {
+        Object.keys(menu).forEach((key) => {
           if (menu[key]) {
             state.menu = [...state.menu, menu[key]];
           }
@@ -43,10 +43,10 @@ const mainMenuSlice = createSlice({
     },
     setActiveMenu(state, { payload }) {
       if (state.menu) {
-        state.menu.map((menuButton) => {
+        state.menu.forEach((menuButton) => {
           if (menuButton.children) {
             let submenu = current(menuButton.children);
-            Object.keys(submenu).map((key) => {
+            Object.keys(submenu).forEach((key) => {
               // mapping menu items
               if (submenu[key].node) {
                 let link = submenu[key].node.link; //getting link of each menu item
@@ -70,7 +70,7 @@ const mainMenuSlice = createSlice({
     getMenu(state, { payload }) {
       if (state.isSuccess) {
         let menuChildren = current(state.data.children); //getting all children from menu API
-        Object.keys(menuChildren).map((key) => {
+        Object.keys(menuChildren).forEach((key) => {
           if (menuChildren[key].node) {
             let menu = menuChildren[key].node;
             if (menu.id === payload) {
@@ -84,13 +84,13 @@ const mainMenuSlice = createSlice({
     getSubmenu(state, { payload }) {
       if (state.isSuccess) {
         let menuChildren = current(state.data.children);
-        Object.keys(menuChildren).map((key) => {
+        Object.keys(menuChildren).forEach((key) => {
           if (menuChildren[key]) {
             let menuId = menuChildren[key].node.id; // getting menu IDs from API
             if (menuId === payload.menuId) {
               let excatMenuChildren = menuChildren[key].children; // getting manu children acording to menu id
 
-              Object.keys(excatMenuChildren).map((key) => {
+              Object.keys(excatMenuChildren).forEach((key) => {
                 //mapping all children
                 let excatMenuChildrenObject = excatMenuChildren[key].node;
                 if (excatMenuChildrenObject.id === payload.submenuId) {
