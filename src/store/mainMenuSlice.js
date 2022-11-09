@@ -31,7 +31,7 @@ const mainMenuSlice = createSlice({
   name: "mainMenu",
   initialState,
   reducers: {
-    getMenuButtons(state) {
+    setMenuButtons(state) {
       if (state.isSuccess) {
         let menu = current(state.data.children);
         Object.keys(menu).forEach((key) => {
@@ -67,7 +67,7 @@ const mainMenuSlice = createSlice({
         });
       }
     },
-    getMenu(state, { payload }) {
+    setMenu(state, { payload }) {
       if (state.isSuccess) {
         let menuChildren = current(state.data.children); //getting all children from menu API
         Object.keys(menuChildren).forEach((key) => {
@@ -81,7 +81,7 @@ const mainMenuSlice = createSlice({
         console.log();
       }
     },
-    getSubmenu(state, { payload }) {
+    setSubmenu(state, { payload }) {
       if (state.isSuccess) {
         let menuChildren = current(state.data.children);
         Object.keys(menuChildren).forEach((key) => {

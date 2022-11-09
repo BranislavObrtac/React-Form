@@ -42,7 +42,7 @@ function MainMenu() {
 
   useEffect(() => {
     if (isSuccess) {
-      dispatch(mainMenuActions.getMenuButtons());
+      dispatch(mainMenuActions.setMenuButtons());
     }
     return () => {};
   }, [isSuccess, dispatch]);

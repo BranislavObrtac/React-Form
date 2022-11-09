@@ -31,9 +31,9 @@ function Breadcrumbs() {
     if (activeMenuId === 0) {
       return;
     }
-    dispatch(mainMenuActions.getMenu(activeMenuId));
+    dispatch(mainMenuActions.setMenu(activeMenuId));
     dispatch(
-      mainMenuActions.getSubmenu({
+      mainMenuActions.setSubmenu({
         menuId: activeMenuId,
         submenuId: activeSubmenuId,
       })
