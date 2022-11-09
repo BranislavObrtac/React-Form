@@ -1,15 +1,44 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import styles from "./Breadcrumbs.module.scss";
 
-import { useSelector } from "react-redux";
+import {
+  mainMenuActiveMenuID,
+  mainMenuActiveSubmenuID,
+  mainMenuActions,
+  mainMenuMenuObject,
+  mainMenuSubmenuObject,
+} from "../../store/mainMenuSlice";
+import { useSelector, useDispatch } from "react-redux";
+
+let fisrtStart = true;
 
 function Breadcrumbs() {
-  let location = useLocation();
-  const activeMenu = useSelector((state) => state.nav.activeMenu);
-  const activeSubmenu = useSelector((state) => state.nav.activeSubmenu);
+  const dispatch = useDispatch();
+
+  const activeMenuId = useSelector(mainMenuActiveMenuID);
+  const activeSubmenuId = useSelector(mainMenuActiveSubmenuID);
+  const menuObject = useSelector(mainMenuMenuObject);
+  const submenuObject = useSelector(mainMenuSubmenuObject);
+
+  useEffect(() => {
+    if (fisrtStart) {
+      fisrtStart = false;
+      return;
+    }
+    if (activeMenuId === 0) {
+      return;
+    }
+    dispatch(mainMenuActions.getMenu(activeMenuId));
+    dispatch(
+      mainMenuActions.getSubmenu({
+        menuId: activeMenuId,
+        submenuId: activeSubmenuId,
+      })
+    );
+  }, [activeMenuId, activeSubmenuId, dispatch]);
 
   return (
     <div className={styles["breadcrumbs"]}>
@@ -18,15 +47,30 @@ function Breadcrumbs() {
       </NavLink>
       <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
 
-      <p className={styles["breadcrumbs-title"]}>{activeMenu.title}</p>
-      <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
+      {menuObject ? (
+        <>
+          <p className={styles["breadcrumbs-title"]}>{menuObject.name}</p>
+          <KeyboardArrowRightIcon
+            className={styles["breadcrumbs-arrow-icon"]}
+          />
+        </>
+      ) : null}
 
-      <NavLink className={styles["breadcrumbs-title"]} to={activeSubmenu.url}>
-        {activeSubmenu.title}
-      </NavLink>
-      <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
+      {submenuObject ? (
+        <>
+          <NavLink
+            className={styles["breadcrumbs-title"]}
+            to={submenuObject.link}
+          >
+            {submenuObject.name}
+          </NavLink>
+          <KeyboardArrowRightIcon
+            className={styles["breadcrumbs-arrow-icon"]}
+          />
+        </>
+      ) : null}
 
-      <p className={styles["breadcrumbs-active-title"]}>{location.state}</p>
+      <p className={styles["breadcrumbs-active-title"]}>{}</p>
     </div>
   );
 }
