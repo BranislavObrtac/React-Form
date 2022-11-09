@@ -192,10 +192,8 @@ function Odpady() {
                     title={
                       "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
                     }
-                    datum={"1.7.2020 "}
-                    kategoria={
-                      "Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"
-                    }
+                    date={"1.7.2020 "}
+                    category={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
                   />
                   <SmallArticle
                     imgUrl={
@@ -204,10 +202,8 @@ function Odpady() {
                     title={
                       "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
                     }
-                    datum={"1.7.2020 "}
-                    kategoria={
-                      "Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"
-                    }
+                    date={"1.7.2020 "}
+                    category={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
                   />
                   <SmallArticle
                     imgUrl={
@@ -216,10 +212,8 @@ function Odpady() {
                     title={
                       "Colníci zaistili 60 pávích pierok, chýbali im doklady potrebné na dovoz"
                     }
-                    datum={"1.7.2020 "}
-                    kategoria={
-                      "Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"
-                    }
+                    date={"1.7.2020 "}
+                    category={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
                   />
                   <ArticlePromo
                     title={"PRIPRAVUJEME KONFERENCIU O ZNEČISTENÝCH ÚZEMIACH"}
