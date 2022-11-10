@@ -16,15 +16,14 @@ export const getMainMenu = createAsyncThunk(
 );
 
 const initialState = {
-  data: [],
-  menu: [],
-  message: "",
-  activeMenuID: 0,
-  activeSubmenuID: 0,
-  menuObject: {},
-  submenuObject: {},
-  isSuccess: false,
-  loading: false,
+  data: [], //hlavne menu z API http://enviroportal.deviant.sazp.sk/api/menus/1
+  menu: [], //hlavne menu Buttony + ich Submenu
+  activeMenuID: 0, //hlavne menu button ID ak som na stránke témy ID=639
+  activeSubmenuID: 0, //submenu ak som na stránke temy/odpady ID=644
+  menuObject: {}, //Ak som v odpadoch tak: info o Temach => {@type: 'Menu', id: 639, name: 'Témy', link: '/odpady', parentId: 1, …}
+  submenuObject: {}, //Ak som v odpadoch tak: ifo o Odpadoch => {@type: 'Menu', id: 644, name: 'Odpady', link: 'odpady', parentId: 639, …}
+  isSuccess: false, //fetchovanie dát prebehlo úspešne
+  loading: false, //načítava sa
 };
 
 const mainMenuSlice = createSlice({
@@ -78,7 +77,6 @@ const mainMenuSlice = createSlice({
             }
           }
         });
-        console.log();
       }
     },
     setSubmenu(state, { payload }) {
@@ -101,7 +99,7 @@ const mainMenuSlice = createSlice({
             }
           }
         });
-        console.log();
+        console.log(state.submenuObject);
       }
     },
   },
