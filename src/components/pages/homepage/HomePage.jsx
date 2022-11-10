@@ -2,7 +2,7 @@ import React from "react";
 import HpHeader from "./HpHeader.jsx";
 import TabWindow from "./tabwindow/TabWindow";
 import { useDispatch } from "react-redux";
-import { getArticles } from "../../../store/tabSlice";
+import { getArticles } from "../../../store/homePageStore/tabSlice";
 import { useEffect } from "react";
 
 let fisrtStart = true;

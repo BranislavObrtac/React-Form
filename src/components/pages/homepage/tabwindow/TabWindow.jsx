@@ -15,7 +15,7 @@ import TabPanel from "./TabPanel";
 import styles from "./TabWindow.module.scss";
 //redux
 import { useSelector } from "react-redux";
-import { tabsData } from "../../../../store/tabSlice";
+import { tabsData } from "../../../../store/homePageStore/tabSlice";
 
 function TabWindow() {
   const allTabsData = useSelector(tabsData);

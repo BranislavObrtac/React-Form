@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { tabsData } from "../../../../../store/tabSlice";
+import { tabsData } from "../../../../../store/homePageStore/tabSlice";
 import ColNewsBig from "./columns/ColNewsBig";
 
 import styles from "./TabPageAktualneDianie.module.scss";

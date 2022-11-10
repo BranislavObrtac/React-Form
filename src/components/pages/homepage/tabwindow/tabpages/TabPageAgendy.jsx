@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { tabsData } from "../../../../../store/tabSlice";
+import { tabsData } from "../../../../../store/homePageStore/tabSlice";
 import ColMenu from "./columns/ColMenu";
 import ColPromo from "./columns/ColPromo";
 import ColContent from "./columns/ColContent";
