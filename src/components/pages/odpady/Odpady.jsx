@@ -1,18 +1,39 @@
 import React from "react";
-import HpSearch from "../homepage/HpSearch";
-import styles from "./Odpady.module.scss";
+import { useDispatch, useSelector } from "react-redux";
 import { Tab } from "@headlessui/react";
 import { NavLink, useNavigate } from "react-router-dom";
+
+import HpSearch from "../homepage/HpSearch";
+import styles from "./Odpady.module.scss";
 import SmallArticle from "../../articles/ArticleSmall";
 import ArticlePromo from "../../articles/ArticlePromo";
 import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
-import { useSelector } from "react-redux";
 import { allSearchData } from "../../../store/searchSlice";
+import {
+  odpadyPageData,
+  odpadyIsSuccess,
+  getPage,
+} from "../../../store/temyPageStore/odpadySlice";
+import { useEffect } from "react";
+
+let fisrtStart = true;
 
 function Odpady() {
   const searchData = useSelector(allSearchData);
+  const pageData = useSelector(odpadyPageData);
+  const isSucces = useSelector(odpadyPageData);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (fisrtStart) {
+      dispatch(getPage(41));
+    }
+    return () => {
+      fisrtStart = false;
+    };
+  }, [dispatch]);
 
   const onEnterPressed = (event, state, to) => {
     if (event.key === "Enter") {
