@@ -11,10 +11,12 @@ import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
 import { allSearchData } from "../../../store/searchSlice";
 import {
+  getPage,
+  getSideMenu,
   odpadyActions,
   odpadyPageData,
   odpadyIsSuccess,
-  getPage,
+  odpadySideMenuId,
 } from "../../../store/temyPageStore/odpadySlice";
 import { useEffect } from "react";
 
@@ -24,6 +26,7 @@ function Odpady() {
   const searchData = useSelector(allSearchData);
   const pageData = useSelector(odpadyPageData);
   const isSuccess = useSelector(odpadyIsSuccess);
+  const sideMenuId = useSelector(odpadySideMenuId);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -37,10 +40,10 @@ function Odpady() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (isSuccess) {
-      dispatch(odpadyActions.setSideMenu());
+    if (isSuccess && sideMenuId) {
+      dispatch(getSideMenu(sideMenuId));
     }
-  }, [isSuccess]);
+  }, [isSuccess, sideMenuId]);
 
   const onEnterPressed = (event, state, to) => {
     if (event.key === "Enter") {
