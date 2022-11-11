@@ -11,6 +11,7 @@ import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
 import { allSearchData } from "../../../store/searchSlice";
 import {
+  odpadyActions,
   odpadyPageData,
   odpadyIsSuccess,
   getPage,
@@ -22,7 +23,7 @@ let fisrtStart = true;
 function Odpady() {
   const searchData = useSelector(allSearchData);
   const pageData = useSelector(odpadyPageData);
-  const isSucces = useSelector(odpadyPageData);
+  const isSuccess = useSelector(odpadyIsSuccess);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -34,6 +35,12 @@ function Odpady() {
       fisrtStart = false;
     };
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(odpadyActions.setSideMenu());
+    }
+  }, [isSuccess]);
 
   const onEnterPressed = (event, state, to) => {
     if (event.key === "Enter") {
