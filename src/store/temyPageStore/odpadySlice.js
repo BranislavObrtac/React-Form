@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const PAGE_URL = "http://enviroportal.deviant.sazp.sk/api/pages/";
@@ -21,7 +21,6 @@ export const getSideMenu = createAsyncThunk(
   async (menuId) => {
     try {
       const response = await axios.get(SIDE_MENU_URL + menuId);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -81,7 +80,6 @@ const odpadySlice = createSlice({
       state.sideMenuLoading = false;
       state.sideMenu = payload;
       state.isSideMenuSuccess = true;
-      console.log("ola");
     },
     [getSideMenu.rejected]: (state, { payload }) => {
       state.sideMenuErrorMessage = payload;
@@ -94,6 +92,9 @@ const odpadySlice = createSlice({
 export const odpadyPageData = (state) => state.odpady.data;
 export const odpadyIsSuccess = (state) => state.odpady.isSuccess;
 export const odpadySideMenuId = (state) => state.odpady.sideMenuId;
+export const odpadyIsSideMenuSuccess = (state) =>
+  state.odpady.isSideMenuSuccess;
+export const odpadySideMenu = (state) => state.odpady.sideMenu;
 
 export const odpadyActions = odpadySlice.actions;
 

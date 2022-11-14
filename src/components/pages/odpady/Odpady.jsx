@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Tab } from "@headlessui/react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -10,40 +10,41 @@ import ArticlePromo from "../../articles/ArticlePromo";
 import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
 import { allSearchData } from "../../../store/searchSlice";
+
+//redux
 import {
   getPage,
   getSideMenu,
-  odpadyActions,
   odpadyPageData,
   odpadyIsSuccess,
   odpadySideMenuId,
+  odpadySideMenu,
+  odpadyIsSideMenuSuccess,
 } from "../../../store/temyPageStore/odpadySlice";
-import { useEffect } from "react";
-
-let fisrtStart = true;
+import { mainMenuSubmenuObject } from "../../../store/mainMenuSlice";
 
 function Odpady() {
-  const searchData = useSelector(allSearchData);
+  const odpadyObject = useSelector(mainMenuSubmenuObject);
   const pageData = useSelector(odpadyPageData);
+  const searchData = useSelector(allSearchData);
   const isSuccess = useSelector(odpadyIsSuccess);
   const sideMenuId = useSelector(odpadySideMenuId);
+  const sideMenu = useSelector(odpadySideMenu);
+  const isSideMenuSuccess = useSelector(odpadyIsSideMenuSuccess);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (fisrtStart) {
-      dispatch(getPage(41));
+    if (odpadyObject.linkTypeId) {
+      dispatch(getPage(odpadyObject.linkTypeId));
     }
-    return () => {
-      fisrtStart = false;
-    };
-  }, [dispatch]);
+  }, [odpadyObject, dispatch]);
 
   useEffect(() => {
     if (isSuccess && sideMenuId) {
       dispatch(getSideMenu(sideMenuId));
     }
-  }, [isSuccess, sideMenuId]);
+  }, [isSuccess, sideMenuId, dispatch]);
 
   const onEnterPressed = (event, state, to) => {
     if (event.key === "Enter") {
@@ -68,122 +69,30 @@ function Odpady() {
             </div>
             <Tab.Group as={"nav"}>
               <Tab.Panels className={styles["tab-list"]}>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Prúdy odpadov",
-                      "/odpady/prudy-odpadov"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Prúdy odpadov"}
-                  to={"/odpady/prudy-odpadov"}
-                >
-                  Prúdy odpadov
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Ciele odpadového hospodárstva",
-                      "/odpady/ciele-odpadoveho-hospodarstva"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Ciele odpadového hospodárstva"}
-                  to={"/odpady/ciele-odpadoveho-hospodarstva"}
-                >
-                  Ciele odpadového hospodárstva
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Rozšírená zodpovednosť výrobcov",
-                      "/odpady/rozsirena-zodpevednost-vyrobcov"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Rozšírená zodpovednosť výrobcov"}
-                  to={"/odpady/rozsirena-zodpevednost-vyrobcov"}
-                >
-                  Rozšírená zodpovednosť výrobcov{" "}
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Cezhraničný pohyb odpadov",
-                      "/odpady/cezhranicny-pohyb-odpadov"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Cezhraničný pohyb odpadov"}
-                  to={"/odpady/cezhranicny-pohyb-odpadov"}
-                >
-                  Cezhraničný pohyb odpadov{" "}
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Predchádzanie vzniku odpadov",
-                      "/odpady/predchadzanie-vzniku-odpadov"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Predchádzanie vzniku odpadov"}
-                  to={"/odpady/predchadzanie-vzniku-odpadov"}
-                >
-                  Predchádzanie vzniku odpadov{" "}
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(event, "Dokumenty", "/odpady/dokumenty")
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Dokumenty"}
-                  to={"/odpady/dokumenty"}
-                >
-                  Dokumenty{" "}
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Informačné systémy",
-                      "/odpady/informacne-systemy"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Informačné systémy"}
-                  to={"/odpady/informacne-systemy"}
-                >
-                  Informačné systémy
-                </Tab>
-                <Tab
-                  onKeyDown={(event) =>
-                    onEnterPressed(
-                      event,
-                      "Kontakty/kompetencie",
-                      "/odpady/kontanky-kompetencie"
-                    )
-                  }
-                  className={styles["tab-list-link"]}
-                  as={NavLink}
-                  state={"Kontakty/kompetencie"}
-                  to={"/odpady/kontanky-kompetencie"}
-                >
-                  Kontakty/kompetencie
-                </Tab>
+                {isSideMenuSuccess && sideMenu ? (
+                  Object.keys(sideMenu.children).map((key) => {
+                    let menuItem = sideMenu.children[key];
+                    return (
+                      <Tab
+                        onKeyDown={(event) =>
+                          onEnterPressed(
+                            event,
+                            menuItem.node.name,
+                            menuItem.node.link
+                          )
+                        }
+                        className={styles["tab-list-link"]}
+                        as={NavLink}
+                        to={menuItem.node.link}
+                        key={menuItem.node.id}
+                      >
+                        {menuItem.node.name}
+                      </Tab>
+                    );
+                  })
+                ) : (
+                  <div>Načítavam...</div>
+                )}
               </Tab.Panels>
             </Tab.Group>
           </aside>
@@ -191,22 +100,11 @@ function Odpady() {
             <>
               <Breadcrumbs title={"Odpady"} titleUrl={"/odpady"} />
               <main className={styles["odpady-main"]}>
-                Problematiku odpadov upravuje zákon č. 79/2015 Z. z. o odpadoch.
-                Zákon vymedzuje kľúčové pojmy, stanovuje základné požiadavky pre
-                odpadové hospodárstvo a povinnosti prevádzkovateľov zariadení,
-                ktoré vykonávajú činnosti nakladania s odpadom. Definuje tiež
-                súbor činností zameraných na predchádzanie a obmedzovanie vzniku
-                odpadov, na nakladanie s odpadmi a znižovanie ich nebezpečnosti
-                pre životné prostredie. Zákon určuje aj hierarchiu odpadového
-                hospodárstva, ktorej cieľom je minimalizovať nepriaznivé vplyvy
-                odpadov na životné prostredie a zefektívniť zdroje odpadového
-                hospodárstva. Hierarchia odpadového hospodárstva stanovuje 5
-                možných spôsobov nakladania s odpadmi, pričom posledná možnosť
-                je najnevhodnejšia: 1. predchádzanie vzniku odpadu, 2. príprava
-                na opätovné použitie, 3. recyklácia, 4. iné zhodnocovanie, napr.
-                energetické zhodnocovanie, 5. zneškodňovanie. Odkloniť sa od
-                spôsobu nakladania s odpadom je možné iba pri určitých prúdoch
-                odpadov. Konkrétne podmienky stanovuje zákon o odpadoch.
+                {pageData.content ? (
+                  <div dangerouslySetInnerHTML={{ __html: pageData.content }} />
+                ) : (
+                  <div>Načítavam...</div>
+                )}
               </main>
             </>
             <div className={styles["bottom-section"]}>
