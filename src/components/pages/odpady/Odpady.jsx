@@ -10,6 +10,7 @@ import ArticlePromo from "../../articles/ArticlePromo";
 import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
 import PopularnyObsahBtn from "../../articles/PopularnyObsahBtn";
 import { allSearchData } from "../../../store/searchSlice";
+import renderHTML from "../../../helpers/renderHTML";
 
 //redux
 import {
@@ -101,7 +102,7 @@ function Odpady() {
               <Breadcrumbs title={"Odpady"} titleUrl={"/odpady"} />
               <main className={styles["odpady-main"]}>
                 {pageData.content ? (
-                  <div dangerouslySetInnerHTML={{ __html: pageData.content }} />
+                  renderHTML(pageData.content)
                 ) : (
                   <div>Načítavam...</div>
                 )}
