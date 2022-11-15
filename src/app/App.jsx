@@ -4,10 +4,9 @@ import { Route, Routes } from "react-router-dom";
 
 //components
 import MainMenu from "../components/mainmenu/MainMenu";
-import HomePage from "../components/pages/homepage/HomePage";
+import Page from "../components/pages/Page";
 
 //lazy load => CODE SPLITTING
-const Odpady = lazy(() => import("../components/pages/odpady/Odpady"));
 const Footer = lazy(() => import("../components/footer/Footer"));
 const NotFound = lazy(() => import("../components/pages/notfound/NotFound"));
 
@@ -15,16 +14,15 @@ function App() {
   return (
     <>
       <Suspense fallback={<h5>Načítavanie...</h5>}>
+        <MainMenu />
         <Routes>
-          <Route element={<MainMenu />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="odpady" element={<Odpady />}>
-              <Route path=":id" element={<Odpady />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Route>
+          {/* <Route path="odpady" element={<Odpady />}>
+            <Route path=":id" element={<Odpady />} />
+          </Route> */}
+          <Route path="404" element={<NotFound />} />
+          <Route path="*" element={<Page />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Suspense>
     </>
   );

@@ -1,0 +1,20 @@
+@import "../../common/Colors.scss";
+
+.page-header {
+  display: flex;
+  padding: 1rem;
+  padding-top: 5rem;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.page-header-title {
+  padding-bottom: 1rem;
+  color: $odpady-nadpis-pady-color;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 36px;
+}
+.page-header-search {
+  max-width: 600px;
+}

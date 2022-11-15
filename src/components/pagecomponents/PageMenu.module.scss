@@ -1,0 +1,47 @@
+@import "../../common/Colors.scss";
+
+.menu {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  z-index: 0;
+}
+
+.menu-button {
+  display: flex;
+  text-align: start;
+  width: 100%;
+  cursor: pointer;
+
+  font-size: 16px;
+  text-decoration: underline;
+  border: none;
+  background-color: inherit;
+
+  color: $odkazy-color;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+
+  padding-bottom: 0.5rem;
+}
+
+.menu-button-active {
+  color: $main-menu-active;
+  font-weight: bold;
+}
+
+.menu-item-link-active {
+  font-weight: bold;
+}
+
+.menu-item div {
+  display: flex;
+  text-decoration: none;
+  color: $main-menu-active;
+  padding: 0.5rem 0.75rem;
+}
+
+.menu-items {
+  padding-bottom: 1rem;
+}

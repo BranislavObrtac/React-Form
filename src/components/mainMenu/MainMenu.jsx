@@ -119,7 +119,7 @@ function MainMenu() {
           </IconButton>
         </nav>
       ) : null}
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 }

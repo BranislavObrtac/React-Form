@@ -3,14 +3,16 @@ import { configureStore } from "@reduxjs/toolkit";
 import searchSlice from "./searchSlice";
 import tabSlice from "./homePageStore/tabSlice";
 import mainMenuSlice from "./mainMenuSlice";
-import odpadySlice from "./temyPageStore/odpadySlice";
+import menuSlice from "./menuSlice";
+import pageSlice from "./pageSlice";
 
 const store = configureStore({
   reducer: {
     searchData: searchSlice.reducer,
     tabs: tabSlice.reducer,
     mainMenu: mainMenuSlice.reducer,
-    odpady: odpadySlice.reducer,
+    menu: menuSlice.reducer,
+    page: pageSlice.reducer,
   },
 });
 export default store;

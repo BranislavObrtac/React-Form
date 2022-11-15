@@ -1,33 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import styles from "./NotFound.module.scss";
+import { pageDataError } from "../../../store/pageSlice";
 
 function NotFound() {
-  const [url, setUrl] = useState(window.location.href);
-  let location = useLocation();
-
-  useEffect(() => {
-    setUrl(window.location.href);
-  }, [location]);
+  const error = useSelector(pageDataError);
 
   return (
     <div className={styles["not-found"]}>
-      <div>
-        <span className={styles["not-found-color"]}>Kamarát</span> asi si zadal
-        dačo zle skontroluj routu !<p>{url}</p>
-      </div>
-      <div>
-        <p>
-          Myslel si ?
-          <span className={styles["not-found-color-padding"]}>
-            {location.pathname}
-          </span>
-        </p>
-        <p className={styles["not-found-color-red"]}>
-          Get better work harder !
-        </p>
-        <p className={styles["not-found-404"]}>404</p>
-      </div>
+      <p className={styles["not-found-404"]}>404</p>
+      <div>{error}</div>
     </div>
   );
 }
