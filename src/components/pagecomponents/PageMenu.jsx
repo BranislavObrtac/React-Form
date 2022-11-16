@@ -27,103 +27,99 @@ const PageMenu = ({ menuID }) => {
 
   return (
     <Tab.Group as={"nav"}>
-      <Tab.Panels>
-        <Menu as={"div"} className={styles["menu"]}>
-          {({ open }) => (
-            <>
-              {isSuccess
-                ? Object.keys(menu.children).map((menuKey) => {
-                    const menuChildren = menu.children[menuKey].children;
-                    const menuNode = menu.children[menuKey].node;
-                    if (menuChildren) {
-                      return (
-                        <div key={"key" + menuKey}>
-                          <Tab
-                            as={Menu.Button}
-                            key={menuNode.name}
-                            className={`${
-                              open
-                                ? styles["menu-button"] +
-                                  " " +
-                                  styles["menu-button-active"]
-                                : styles["menu-button"]
-                            }`}
-                          >
-                            {menuNode.name}
-                            {open ? (
-                              <KeyboardArrowUpIcon />
-                            ) : (
-                              <KeyboardArrowDownIcon />
-                            )}
-                          </Tab>
-
-                          <Menu.Items
-                            key={menuNode.id}
-                            as="div"
-                            className={styles["menu-items"]}
-                          >
-                            {menuChildren
-                              ? Object.keys(menuChildren).map(
-                                  (menuChildrenKey) => {
-                                    if (menuChildren[menuChildrenKey]) {
-                                      return (
-                                        <Menu.Item
-                                          as={NavLink}
-                                          key={
-                                            menuChildren[menuChildrenKey].node
-                                              .id
-                                          }
-                                          to={
-                                            menuChildren[menuChildrenKey].node
-                                              .link
-                                          }
-                                          className={styles["menu-item"]}
-                                        >
-                                          {({ active }) => (
-                                            <div
-                                              key={menuChildrenKey}
-                                              className={`${
-                                                active &&
-                                                styles["menu-item-link-active"]
-                                              }`}
-                                            >
-                                              {
-                                                menuChildren[menuChildrenKey]
-                                                  .node.name
-                                              }
-                                            </div>
-                                          )}
-                                        </Menu.Item>
-                                      );
-                                    }
-                                    return null;
-                                  }
-                                )
-                              : null}
-                          </Menu.Items>
-                        </div>
-                      );
-                    } else {
-                      return (
+      <Menu as={"div"} className={styles["menu"]}>
+        {({ open }) => (
+          <>
+            {isSuccess
+              ? Object.keys(menu.children).map((menuKey) => {
+                  const menuChildren = menu.children[menuKey].children;
+                  const menuNode = menu.children[menuKey].node;
+                  if (menuChildren) {
+                    return (
+                      <div key={"key" + menuKey}>
                         <Tab
-                          as={NavLink}
-                          key={menuNode.id + "_" + menuNode.name}
-                          onKeyDown={(event) =>
-                            onEnterPressed(event, menuNode.link)
-                          }
-                          to={menuNode.link}
-                          className={styles["menu-button"]}
+                          as={Menu.Button}
+                          key={menuNode.name}
+                          className={`${
+                            open
+                              ? styles["menu-button"] +
+                                " " +
+                                styles["menu-button-active"]
+                              : styles["menu-button"]
+                          }`}
                         >
                           {menuNode.name}
+                          {open ? (
+                            <KeyboardArrowUpIcon />
+                          ) : (
+                            <KeyboardArrowDownIcon />
+                          )}
                         </Tab>
-                      );
-                    }
-                  })
-                : null}
-            </>
-          )}
-        </Menu>
-      </Tab.Panels>
+                        <Menu.Items
+                          key={menuNode.id}
+                          as="div"
+                          className={styles["menu-items"]}
+                        >
+                          {menuChildren
+                            ? Object.keys(menuChildren).map(
+                                (menuChildrenKey) => {
+                                  if (menuChildren[menuChildrenKey]) {
+                                    return (
+                                      <Menu.Item
+                                        as={NavLink}
+                                        key={
+                                          menuChildren[menuChildrenKey].node.id
+                                        }
+                                        to={
+                                          menuChildren[menuChildrenKey].node
+                                            .link
+                                        }
+                                        className={styles["menu-item"]}
+                                      >
+                                        {({ active }) => (
+                                          <div
+                                            key={menuChildrenKey}
+                                            className={`${
+                                              active &&
+                                              styles["menu-item-link-active"]
+                                            }`}
+                                          >
+                                            {
+                                              menuChildren[menuChildrenKey].node
+                                                .name
+                                            }
+                                          </div>
+                                        )}
+                                      </Menu.Item>
+                                    );
+                                  }
+                                  return null;
+                                }
+                              )
+                            : null}
+                        </Menu.Items>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <Tab
+                        as={NavLink}
+                        key={menuNode.id + "_" + menuNode.name}
+                        onKeyDown={(event) =>
+                          onEnterPressed(event, menuNode.link)
+                        }
+                        to={menuNode.link}
+                        className={styles["menu-button"]}
+                      >
+                        {menuNode.name}
+                      </Tab>
+                    );
+                  }
+                })
+              : null}
+          </>
+        )}
+      </Menu>
     </Tab.Group>
   );
 };

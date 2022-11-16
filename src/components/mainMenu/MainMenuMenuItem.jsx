@@ -5,7 +5,7 @@ import styles from "./MainMenuMenuItem.module.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
-import { Menu } from "@headlessui/react";
+import { Menu, Tab } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
 import { mainMenuActiveMenuID } from "../../store/mainMenuSlice";
 import { useSelector } from "react-redux";
@@ -17,15 +17,16 @@ function MenuItem({ items, index, hideMenu }) {
     <Menu as={"div"} className={styles["menu"]}>
       {({ open }) => (
         <>
-          <Menu.Button
+          <Tab
+            as={Menu.Button}
             className={`
-            ${activeMenuId === items.node.id ? styles["btn-active"] : null}
-            ${open ? styles["menu-button-active"] : styles["menu-button"]}
-            `}
+                ${activeMenuId === items.node.id ? styles["btn-active"] : null}
+                ${open ? styles["menu-button-active"] : styles["menu-button"]}
+                `}
           >
             {items.node.name ? items.node.name : ""}
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </Menu.Button>
+          </Tab>
 
           <Menu.Items as="div" key={index} className={styles["menu-items"]}>
             {items.children

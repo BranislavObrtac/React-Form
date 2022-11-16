@@ -17,6 +17,7 @@ import {
   mainMenuButtons,
   mainMenuActions,
 } from "../../store/mainMenuSlice";
+import { Tab } from "@headlessui/react";
 
 let fisrtStart = true;
 
@@ -89,16 +90,18 @@ function MainMenu() {
                   data={searchData}
                 />
               </div>
-              {Object.keys(menuButtons).map((key, index) => {
-                return (
-                  <MenuItem
-                    hideMenu={hideMenu}
-                    items={menuButtons[key]}
-                    key={key}
-                    index={index}
-                  />
-                );
-              })}
+              <Tab.Group>
+                {Object.keys(menuButtons).map((key, index) => {
+                  return (
+                    <MenuItem
+                      hideMenu={hideMenu}
+                      items={menuButtons[key]}
+                      key={key}
+                      index={index}
+                    />
+                  );
+                })}
+              </Tab.Group>
             </div>
           )}
           {(showMainMenu || screenWidth >= 1000) && (
