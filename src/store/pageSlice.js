@@ -21,6 +21,7 @@ const initialState = {
   isSuccess: false, //fetchovanie dát prebehlo úspešne
   loading: false, //načítava sa
   error: "", //chybova hláška ak nasta chyba pri fetchovaní dát z API
+  pageName: "",
 };
 
 const pageSlice = createSlice({
@@ -34,6 +35,7 @@ const pageSlice = createSlice({
     [getPage.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.data = payload;
+      state.pageName = payload.name;
       state.isSuccess = true;
     },
     [getPage.rejected]: (state, { payload }) => {
@@ -46,6 +48,7 @@ const pageSlice = createSlice({
 });
 
 export const pageData = (state) => state.page.data;
+export const pageName = (state) => state.page.pageName;
 export const pageDataIsSuccess = (state) => state.page.isSuccess;
 export const pageDataError = (state) => state.page.error;
 

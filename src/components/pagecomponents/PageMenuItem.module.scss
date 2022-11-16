@@ -1,12 +1,5 @@
 @import "../../common/Colors.scss";
 
-.menu {
-  display: inline-block;
-  position: relative;
-  text-align: left;
-  z-index: 0;
-}
-
 .menu-button {
   display: flex;
   text-align: start;
@@ -27,7 +20,27 @@
   padding-bottom: 0.5rem;
 }
 
-.menu-button:hover,
-.menu-button:active {
+.menu-button:hover {
   font-weight: bold;
+}
+
+.menu-button-active {
+  color: $main-menu-active;
+  font-weight: bold;
+}
+.menu-items {
+  padding-bottom: 1rem;
+}
+.menu-items li {
+  list-style: none;
+}
+.menu-item-link-active {
+  font-weight: bold;
+}
+
+.menu-item div {
+  display: flex;
+  text-decoration: none;
+  color: $main-menu-active;
+  padding: 0.5rem 0.75rem;
 }

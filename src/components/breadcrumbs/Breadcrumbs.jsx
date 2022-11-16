@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import styles from "./Breadcrumbs.module.scss";
+import { pageName } from "../../store/pageSlice";
 
 import {
   mainMenuActiveMenuID,
@@ -22,6 +23,7 @@ function Breadcrumbs() {
   const activeSubmenuId = useSelector(mainMenuActiveSubmenuID);
   const menuObject = useSelector(mainMenuMenuObject);
   const submenuObject = useSelector(mainMenuSubmenuObject);
+  const nameOfPage = useSelector(pageName);
 
   useEffect(() => {
     if (fisrtStart) {
@@ -64,9 +66,14 @@ function Breadcrumbs() {
           >
             {submenuObject.name}
           </NavLink>
-          <KeyboardArrowRightIcon
-            className={styles["breadcrumbs-arrow-icon"]}
-          />
+          {submenuObject.name !== nameOfPage ? (
+            <>
+              <KeyboardArrowRightIcon
+                className={styles["breadcrumbs-arrow-icon"]}
+              />
+              <p className={styles["breadcrumbs-title"]}>{nameOfPage}</p>
+            </>
+          ) : null}
         </>
       ) : null}
 

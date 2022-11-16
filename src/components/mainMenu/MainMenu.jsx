@@ -3,7 +3,7 @@ import styles from "./MainMenu.module.scss";
 import MenuItem from "./MainMenuMenuItem";
 import UserBar from "./MainMenuUserBar";
 import LangChoice from "./MainMenuLangChoice";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 import HpSearch from "../pages/homepage/HpSearch";
