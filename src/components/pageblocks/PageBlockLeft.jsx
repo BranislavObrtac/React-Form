@@ -7,6 +7,7 @@ const PageBlockLeft = ({ data }) => {
   return (
     <aside className={styles["block"]}>
       {data.type === "static" ? renderHTML(data.content) : null}
+      {data.type === "pageContent" ? renderHTML(data.content) : null}
       {data.type === "menu" ? (
         <PageMenu key={data.params.menuId} menuID={data.params.menuId} />
       ) : null}

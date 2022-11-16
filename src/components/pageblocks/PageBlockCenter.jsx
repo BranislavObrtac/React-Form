@@ -9,6 +9,7 @@ const PageBlockCenter = ({ data }) => {
       <Breadcrumbs />
       <main>
         {data.type === "static" ? renderHTML(data.content) : null}
+        {data.type === "pageContent" ? renderHTML(data.content) : null}
         {data.type === "menu" ? <PageMenu menuID={data.params.menuId} /> : null}
       </main>
     </div>

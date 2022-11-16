@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { getPage, pageData, pageDataIsSuccess } from "../../store/pageSlice";
+import {
+  getPage,
+  pageData,
+  pageDataIsSuccess,
+  pageLeftData,
+  pageCenterData,
+  pageRightData,
+} from "../../store/pageSlice";
 import styles from "./Page.module.scss";
 //page imports
 import HomePage from "./homepage/HomePage";
@@ -19,6 +26,9 @@ function Page() {
 
   const fetchPageDataIsSuccess = useSelector(pageDataIsSuccess);
   const data = useSelector(pageData);
+  const dataLeftPage = useSelector(pageLeftData);
+  const dataCenterPage = useSelector(pageCenterData);
+  const dataRightPage = useSelector(pageRightData);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -43,9 +53,9 @@ function Page() {
         <>
           {data.name ? <PageHeader title={data.name} /> : null}
           <div className={styles["page-blocks"]}>
-            {data.block[0] ? <PageBlockLeft data={data.block[0]} /> : null}
-            {data.block[1] ? <PageBlockCenter data={data.block[1]} /> : null}
-            {data.block[2] ? <PageBlockRight data={data.block[2]} /> : null}
+            <PageBlockLeft data={dataLeftPage} />
+            <PageBlockCenter data={dataCenterPage} />
+            <PageBlockRight data={dataRightPage} />
           </div>
         </>
       ) : null}

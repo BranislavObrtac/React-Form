@@ -14,6 +14,7 @@ const PageMenuItem = ({ menuChildren, menuNode, index }) => {
   useEffect(() => {
     const urlWithoutSlash = location.pathname.substring(1);
     setUrl(urlWithoutSlash);
+    setShowMenu(false);
     Object.keys(menuChildren).forEach((key) => {
       let childrenLink = menuChildren[key].node.link;
       if (urlWithoutSlash === childrenLink) {
