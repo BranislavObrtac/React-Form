@@ -22,6 +22,9 @@ const initialState = {
   loading: false, //načítava sa
   error: "", //chybova hláška ak nasta chyba pri fetchovaní dát z API
   pageName: "",
+  pageLeftData: {},
+  pageCenterData: {},
+  pageRightData: {},
 };
 
 const pageSlice = createSlice({
@@ -37,6 +40,18 @@ const pageSlice = createSlice({
       state.data = payload;
       state.pageName = payload.name;
       state.isSuccess = true;
+
+      Object.keys(payload.block).map((index) => {
+        if (payload.block[index].place === "left") {
+          state.pageLeftData = payload.block[index];
+        }
+        if (payload.block[index].place === "center") {
+          state.pageCenterData = payload.block[index];
+        }
+        if (payload.block[index].place === "right") {
+          state.pageRightData = payload.block[index];
+        }
+      });
     },
     [getPage.rejected]: (state, { payload }) => {
       console.log("ERROR pageSlice Extra reducer REJECTED");
@@ -51,6 +66,9 @@ export const pageData = (state) => state.page.data;
 export const pageName = (state) => state.page.pageName;
 export const pageDataIsSuccess = (state) => state.page.isSuccess;
 export const pageDataError = (state) => state.page.error;
+export const pageLeftData = (state) => state.page.pageLeftData;
+export const pageCenterData = (state) => state.page.pageCenterData;
+export const pageRightData = (state) => state.page.pageRightData;
 
 export const pageActions = pageSlice.actions;
 
