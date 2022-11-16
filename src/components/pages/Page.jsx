@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { getPage, pageData, pageDataIsSuccess } from "../../store/pageSlice";
 import styles from "./Page.module.scss";
 //page imports
@@ -16,7 +16,6 @@ function Page() {
 
   const dispatch = useDispatch();
   const location = useLocation();
-  const navigate = useNavigate();
 
   const fetchPageDataIsSuccess = useSelector(pageDataIsSuccess);
   const data = useSelector(pageData);
@@ -26,6 +25,7 @@ function Page() {
       setLoadingPage(false);
       return;
     } else {
+      setLoadingPage(true);
       const urlWithoutSlash = location.pathname.substring(1);
       dispatch(getPage(urlWithoutSlash));
       setLoadingPage(false);
@@ -35,20 +35,13 @@ function Page() {
     };
   }, [location, dispatch]);
 
-  useEffect(() => {
-    if (fetchPageDataIsSuccess) {
-      //console.log(data);
-    }
-    return () => {};
-  }, [fetchPageDataIsSuccess]);
-
   return (
     <>
       {location.pathname === "/" ? (
         <HomePage />
       ) : fetchPageDataIsSuccess ? (
         <>
-          <PageHeader title={data.name} />
+          {data.name ? <PageHeader title={data.name} /> : null}
           <div className={styles["page-blocks"]}>
             {data.block[0] ? <PageBlockLeft data={data.block[0]} /> : null}
             {data.block[1] ? <PageBlockCenter data={data.block[1]} /> : null}

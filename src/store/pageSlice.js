@@ -6,8 +6,12 @@ const PAGE_URL = "http://enviroportal.deviant.sazp.sk/api/pages?seoId=";
 export const getPage = createAsyncThunk("pageSlice/getPage", async (seoID) => {
   try {
     const response = await axios.get(PAGE_URL + seoID);
+    if (response.data["hydra:totalItems"] === 0) {
+      window.location.href = "/404";
+    }
     return response.data["hydra:member"][0];
   } catch (error) {
+    console.log("ERROR page slice get Page");
     console.log(error);
   }
 });
@@ -33,7 +37,7 @@ const pageSlice = createSlice({
       state.isSuccess = true;
     },
     [getPage.rejected]: (state, { payload }) => {
-      console.log(payload);
+      console.log("ERROR pageSlice Extra reducer REJECTED");
       state.error = payload;
       state.loading = false;
       state.isSuccess = false;
