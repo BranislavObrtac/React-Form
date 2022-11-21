@@ -4,16 +4,12 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import styles from "./PageMenuItem.module.scss";
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const PageMenuItem = ({ menuChildren, menuNode, index }) => {
+const PageMenuItem = ({ menuChildren, menuNode, index, urlWithoutSlash }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [url, setUrl] = useState("");
-  const location = useLocation();
 
   useEffect(() => {
-    const urlWithoutSlash = location.pathname.substring(1);
-    setUrl(urlWithoutSlash);
     setShowMenu(false);
     Object.keys(menuChildren).forEach((key) => {
       let childrenLink = menuChildren[key].node.link;
@@ -21,7 +17,7 @@ const PageMenuItem = ({ menuChildren, menuNode, index }) => {
         setShowMenu(true);
       }
     });
-  }, [location, menuChildren]);
+  }, [menuChildren, urlWithoutSlash]);
 
   const onMenuClick = () => {
     setShowMenu(!showMenu);
@@ -74,7 +70,8 @@ const PageMenuItem = ({ menuChildren, menuNode, index }) => {
                             className={`
                             ${active && styles["menu-item-link-active"]}
                             ${
-                              url === menuChildren[menuChildrenKey].node.link &&
+                              urlWithoutSlash ===
+                                menuChildren[menuChildrenKey].node.link &&
                               styles["menu-item-link-active"]
                             }
                             `}

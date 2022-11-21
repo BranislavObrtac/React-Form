@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getMenu, menuData, isFetchMenuSuccess } from "../../store/menuSlice";
+import { mainMenuUrlWithoutSlash } from "../../store/mainMenuSlice";
 import styles from "./PageMenu.module.scss";
 import PageMenuItem from "./PageMenuItem";
 
@@ -12,6 +13,7 @@ const PageMenu = ({ menuID }) => {
   const isSuccess = useSelector(isFetchMenuSuccess);
   const menu = useSelector(menuData);
   const navigate = useNavigate();
+  const urlWithoutSlash = useSelector(mainMenuUrlWithoutSlash);
 
   useEffect(() => {
     dispatch(getMenu(menuID));
@@ -37,16 +39,27 @@ const PageMenu = ({ menuID }) => {
                     index={menuKey}
                     menuChildren={menuChildren}
                     menuNode={menuNode}
+                    urlWithoutSlash={urlWithoutSlash}
                   />
                 );
               } else {
+                let setActiveLink = false;
+                if (menuNode.link === urlWithoutSlash) {
+                  setActiveLink = true;
+                }
                 return (
                   <Tab
                     as={NavLink}
                     key={menuNode.id + "_" + menuNode.name}
                     onKeyDown={(event) => onEnterPressed(event, menuNode.link)}
                     to={menuNode.link}
-                    className={styles["menu-button"]}
+                    className={`${
+                      setActiveLink
+                        ? styles["menu-button"] +
+                          " " +
+                          styles["menu-button-active"]
+                        : styles["menu-button"]
+                    }`}
                   >
                     {menuNode.name}
                   </Tab>

@@ -27,6 +27,11 @@
   padding-bottom: 0.5rem;
 }
 
+.menu-button-active {
+  color: $main-menu-active;
+  font-weight: bold;
+}
+
 .menu-button:hover,
 .menu-button:active {
   font-weight: bold;
