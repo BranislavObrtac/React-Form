@@ -9,6 +9,7 @@ export const getArticles = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(ARTICLES_URL);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);

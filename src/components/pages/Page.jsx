@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -19,8 +19,6 @@ import PageBlockCenter from "../pageblocks/PageBlockCenter";
 import PageBlockRight from "../pageblocks/PageBlockRight";
 
 function Page() {
-  const [loadingPage, setLoadingPage] = useState(false);
-
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -32,17 +30,12 @@ function Page() {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      setLoadingPage(false);
       return;
     } else {
-      setLoadingPage(true);
       const urlWithoutSlash = location.pathname.substring(1);
       dispatch(getPage(urlWithoutSlash));
-      setLoadingPage(false);
     }
-    return () => {
-      setLoadingPage(true);
-    };
+    return () => {};
   }, [location, dispatch]);
 
   return (

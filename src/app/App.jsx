@@ -7,7 +7,7 @@ import MainMenu from "../components/mainmenu/MainMenu";
 import Page from "../components/pages/Page";
 
 //lazy load => CODE SPLITTING
-const Footer = lazy(() => import("../components/footer/Footer"));
+//const Footer = lazy(() => import("../components/footer/Footer"));
 const NotFound = lazy(() => import("../components/pages/notfound/NotFound"));
 
 function App() {
