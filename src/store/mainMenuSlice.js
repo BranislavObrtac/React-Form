@@ -24,6 +24,7 @@ const initialState = {
   submenuObject: {}, //Ak som v odpadoch tak: ifo o Odpadoch => {@type: 'Menu', id: 644, name: 'Odpady', link: 'odpady', parentId: 639, …}
   isSuccess: false, //fetchovanie dát prebehlo úspešne
   loading: false, //načítava sa
+  urlWithoutSlash: "",
   error: "",
 };
 
@@ -42,6 +43,7 @@ const mainMenuSlice = createSlice({
       }
     },
     setActiveMenu(state, { payload }) {
+      state.urlWithoutSlash = payload.pathname.substring(1);
       if (state.menu) {
         state.menu.forEach((menuButton) => {
           if (menuButton.children) {
@@ -130,6 +132,8 @@ export const mainMenuActiveSubmenuID = (state) =>
   state.mainMenu.activeSubmenuID;
 export const mainMenuMenuObject = (state) => state.mainMenu.menuObject;
 export const mainMenuSubmenuObject = (state) => state.mainMenu.submenuObject;
+export const mainMenuUrlWithoutSlash = (state) =>
+  state.mainMenu.urlWithoutSlash;
 
 export const mainMenuActions = mainMenuSlice.actions;
 
