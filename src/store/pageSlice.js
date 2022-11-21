@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { enviroportalUrl } from "../common/config";
 
-const PAGE_URL = "http://enviroportal.deviant.sazp.sk/api/pages?seoId=";
+const PAGE_URL = enviroportalUrl + "/pages?seoId=";
 
 export const getPage = createAsyncThunk("pageSlice/getPage", async (seoID) => {
   try {
@@ -41,7 +42,7 @@ const pageSlice = createSlice({
       state.pageName = payload.name;
       state.isSuccess = true;
 
-      Object.keys(payload.block).map((index) => {
+      Object.keys(payload.block).forEach((index) => {
         if (payload.block[index].place === "left") {
           state.pageLeftData = payload.block[index];
         }

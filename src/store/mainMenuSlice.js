@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import axios from "axios";
+import { enviroportalUrl } from "../common/config";
 
-const MAIN_MENU_URL = "http://enviroportal.deviant.sazp.sk/api/menus/1";
+const MAIN_MENU_URL = enviroportalUrl + "/menus/1";
 
 export const getMainMenu = createAsyncThunk(
   "mainMenuSlice/getMainMenu",
