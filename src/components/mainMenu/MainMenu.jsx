@@ -19,8 +19,6 @@ import {
 } from "../../store/mainMenuSlice";
 import { Tab } from "@headlessui/react";
 
-let fisrtStart = true;
-
 function MainMenu() {
   const [showMainMenu, setShowMainMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -33,19 +31,13 @@ function MainMenu() {
   const menuButtons = useSelector(mainMenuButtons);
 
   useEffect(() => {
-    if (fisrtStart) {
-      dispatch(getMainMenu());
-    }
-    return () => {
-      fisrtStart = false;
-    };
+    dispatch(getMainMenu());
   }, [dispatch]);
 
   useEffect(() => {
     if (isSuccess) {
       dispatch(mainMenuActions.setMenuButtons());
     }
-    return () => {};
   }, [isSuccess, dispatch]);
 
   useEffect(() => {

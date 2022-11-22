@@ -14,10 +14,10 @@ import {
   mainMenuIsSuccess,
 } from "../../store/mainMenuSlice";
 import { useSelector, useDispatch } from "react-redux";
-
-let fisrtStart = true;
+import { useState } from "react";
 
 function Breadcrumbs() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
 
   const activeMenuId = useSelector(mainMenuActiveMenuID);
@@ -28,25 +28,24 @@ function Breadcrumbs() {
   const isSucces = useSelector(mainMenuIsSuccess);
 
   useEffect(() => {
-    if (fisrtStart) {
-      fisrtStart = false;
-      return;
+    if (activeMenuId && activeSubmenuId) {
+      if (activeMenuId === 0) {
+        return;
+      }
+      dispatch(mainMenuActions.setMenu(activeMenuId));
+      dispatch(
+        mainMenuActions.setSubmenu({
+          menuId: activeMenuId,
+          submenuId: activeSubmenuId,
+        })
+      );
+      setIsLoaded(true);
     }
-    if (activeMenuId === 0) {
-      return;
-    }
-    dispatch(mainMenuActions.setMenu(activeMenuId));
-    dispatch(
-      mainMenuActions.setSubmenu({
-        menuId: activeMenuId,
-        submenuId: activeSubmenuId,
-      })
-    );
   }, [activeMenuId, activeSubmenuId, dispatch]);
 
   return (
     <div className={styles["breadcrumbs"]}>
-      {isSucces ? (
+      {isSucces && isLoaded ? (
         <>
           <NavLink to={"/"}>
             <HomeIcon className={styles["breadcrumbs-home-icon"]} />
