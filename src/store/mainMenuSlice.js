@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import axios from "axios";
-import { enviroportalUrl } from "../common/config";
+import { enviroportalUrlApi } from "../common/config";
 
-const MAIN_MENU_URL = enviroportalUrl + "/menus/1";
+const MAIN_MENU_URL = enviroportalUrlApi + "/menus/1";
 
 export const getMainMenu = createAsyncThunk(
   "mainMenuSlice/getMainMenu",
@@ -53,7 +53,7 @@ const mainMenuSlice = createSlice({
               // mapping menu items
               if (submenu[key].node) {
                 let link = submenu[key].node.link; //getting link of each menu item
-                let isLinkEqual = payload.pathname //compering links
+                let isLinkEqual = state.urlWithoutSlash
                   .toLowerCase()
                   .includes(link.toLowerCase());
                 if (isLinkEqual) {
@@ -91,12 +91,11 @@ const mainMenuSlice = createSlice({
             let menuId = menuChildren[key].node.id; // getting menu IDs from API
             if (menuId === payload.menuId) {
               let excatMenuChildren = menuChildren[key].children; // getting manu children acording to menu id
-
               Object.keys(excatMenuChildren).forEach((key) => {
                 //mapping all children
                 let excatMenuChildrenObject = excatMenuChildren[key].node;
                 if (excatMenuChildrenObject.id === payload.submenuId) {
-                  //getting exact submenu copering children ID with parameter submenu id
+                  //getting exact submenu compering children ID with parameter submenu id
                   state.submenuObject = excatMenuChildrenObject;
                 }
               });

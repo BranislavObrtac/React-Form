@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { enviroportalUrl } from "../common/config";
+import { enviroportalUrlApi } from "../common/config";
 
-const PAGE_URL = enviroportalUrl + "/pages?seoId=";
+const PAGE_URL = enviroportalUrlApi + "/pages?seoId=";
 
 export const getPage = createAsyncThunk("pageSlice/getPage", async (seoID) => {
   try {
