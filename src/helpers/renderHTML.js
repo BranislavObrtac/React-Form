@@ -1,9 +1,12 @@
 import DOMPurify from "dompurify";
 import React from "react";
 
-const renderHTML = (html) => {
+const renderHTML = (html, key) => {
   return (
-    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}></div>
+    <div
+      key={key}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+    ></div>
   );
 };
 

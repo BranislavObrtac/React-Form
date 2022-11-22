@@ -17,13 +17,12 @@ import PageHeader from "../pageblocks/PageHeader";
 import PageBlockLeft from "../pageblocks/PageBlockLeft";
 import PageBlockCenter from "../pageblocks/PageBlockCenter";
 import PageBlockRight from "../pageblocks/PageBlockRight";
-
 function Page() {
   const dispatch = useDispatch();
   const location = useLocation();
-
   const fetchPageDataIsSuccess = useSelector(pageDataIsSuccess);
   const data = useSelector(pageData);
+
   const dataLeftPage = useSelector(pageLeftData);
   const dataCenterPage = useSelector(pageCenterData);
   const dataRightPage = useSelector(pageRightData);

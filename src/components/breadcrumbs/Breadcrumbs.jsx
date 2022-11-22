@@ -11,6 +11,7 @@ import {
   mainMenuActions,
   mainMenuMenuObject,
   mainMenuSubmenuObject,
+  mainMenuIsSuccess,
 } from "../../store/mainMenuSlice";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -24,6 +25,7 @@ function Breadcrumbs() {
   const menuObject = useSelector(mainMenuMenuObject);
   const submenuObject = useSelector(mainMenuSubmenuObject);
   const nameOfPage = useSelector(pageName);
+  const isSucces = useSelector(mainMenuIsSuccess);
 
   useEffect(() => {
     if (fisrtStart) {
@@ -44,40 +46,45 @@ function Breadcrumbs() {
 
   return (
     <div className={styles["breadcrumbs"]}>
-      <NavLink to={"/"}>
-        <HomeIcon className={styles["breadcrumbs-home-icon"]} />
-      </NavLink>
-      <KeyboardArrowRightIcon className={styles["breadcrumbs-arrow-icon"]} />
-
-      {menuObject ? (
+      {isSucces ? (
         <>
-          <p className={styles["breadcrumbs-title"]}>{menuObject.name}</p>
+          <NavLink to={"/"}>
+            <HomeIcon className={styles["breadcrumbs-home-icon"]} />
+          </NavLink>
           <KeyboardArrowRightIcon
             className={styles["breadcrumbs-arrow-icon"]}
           />
-        </>
-      ) : null}
 
-      {submenuObject ? (
-        <>
-          <NavLink
-            className={styles["breadcrumbs-title"]}
-            to={submenuObject.link}
-          >
-            {submenuObject.name}
-          </NavLink>
-          {submenuObject.name !== nameOfPage ? (
+          {menuObject ? (
             <>
+              <p className={styles["breadcrumbs-title"]}>{menuObject.name}</p>
               <KeyboardArrowRightIcon
                 className={styles["breadcrumbs-arrow-icon"]}
               />
-              <p className={styles["breadcrumbs-title"]}>{nameOfPage}</p>
             </>
           ) : null}
+
+          {submenuObject ? (
+            <>
+              <NavLink
+                className={styles["breadcrumbs-title"]}
+                to={submenuObject.link}
+              >
+                {submenuObject.name}
+              </NavLink>
+              {submenuObject.name !== nameOfPage ? (
+                <>
+                  <KeyboardArrowRightIcon
+                    className={styles["breadcrumbs-arrow-icon"]}
+                  />
+                  <p className={styles["breadcrumbs-title"]}>{nameOfPage}</p>
+                </>
+              ) : null}
+            </>
+          ) : null}
+          <p className={styles["breadcrumbs-active-title"]}>{}</p>
         </>
       ) : null}
-
-      <p className={styles["breadcrumbs-active-title"]}>{}</p>
     </div>
   );
 }

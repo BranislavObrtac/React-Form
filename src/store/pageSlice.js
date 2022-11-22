@@ -23,9 +23,9 @@ const initialState = {
   loading: false, //načítava sa
   error: "", //chybova hláška ak nasta chyba pri fetchovaní dát z API
   pageName: "",
-  pageLeftData: {},
-  pageCenterData: {},
-  pageRightData: {},
+  pageLeftData: [],
+  pageCenterData: [],
+  pageRightData: [],
 };
 
 const pageSlice = createSlice({
@@ -35,8 +35,13 @@ const pageSlice = createSlice({
   extraReducers: {
     [getPage.pending]: (state) => {
       state.loading = true;
+      state.isSuccess = false;
     },
     [getPage.fulfilled]: (state, { payload }) => {
+      state.pageLeftData = [];
+      state.pageCenterData = [];
+      state.pageRightData = [];
+
       state.loading = false;
       state.data = payload;
       state.pageName = payload.name;
@@ -44,13 +49,16 @@ const pageSlice = createSlice({
 
       Object.keys(payload.block).forEach((index) => {
         if (payload.block[index].place === "left") {
-          state.pageLeftData = payload.block[index];
+          state.pageLeftData = [...state.pageLeftData, payload.block[index]];
         }
         if (payload.block[index].place === "center") {
-          state.pageCenterData = payload.block[index];
+          state.pageCenterData = [
+            ...state.pageCenterData,
+            payload.block[index],
+          ];
         }
         if (payload.block[index].place === "right") {
-          state.pageRightData = payload.block[index];
+          state.pageRightData = [...state.pageRightData, payload.block[index]];
         }
       });
     },

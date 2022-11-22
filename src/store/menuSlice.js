@@ -4,17 +4,41 @@ import { enviroportalUrl } from "../common/config";
 
 const SIDE_MENU_URL = enviroportalUrl + "/menus/";
 
-export const getMenu = createAsyncThunk("menuSlice/getMenu", async (menuId) => {
-  try {
-    const response = await axios.get(SIDE_MENU_URL + menuId);
-    return response.data;
-  } catch (error) {
-    console.log(error);
+export const getMenu = createAsyncThunk(
+  "menuSlice/getMenu",
+  async (menuId, { getState }) => {
+    const menuDataArray = getState().menu.dataArray;
+    let isEqual = false;
+
+    if (menuDataArray.length === 0) {
+      try {
+        const response = await axios.get(SIDE_MENU_URL + menuId);
+        return response.data;
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      Object.keys(menuDataArray).forEach((key) => {
+        if (menuDataArray[key].id === menuId) {
+          isEqual = true;
+          return;
+        }
+      });
+    }
+
+    if (isEqual === false) {
+      try {
+        const response = await axios.get(SIDE_MENU_URL + menuId);
+        return response.data;
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
-});
+);
 
 const initialState = {
-  data: {},
+  dataArray: [],
   menuLoading: false,
   isFetchMenuSuccess: false,
   menuMessageError: "",
@@ -23,19 +47,17 @@ const initialState = {
 const menuSlice = createSlice({
   name: "menu",
   initialState,
-  reducers: {
-    setSideMenu(state) {
-      console.log(state.sideMenuId);
-    },
-  },
+  reducers: {},
   extraReducers: {
     [getMenu.pending]: (state) => {
       state.menuLoading = true;
     },
     [getMenu.fulfilled]: (state, { payload }) => {
-      state.menuLoading = false;
-      state.data = payload;
-      state.isFetchMenuSuccess = true;
+      if (payload) {
+        state.menuLoading = false;
+        state.isFetchMenuSuccess = true;
+        state.dataArray = [...state.dataArray, payload];
+      }
     },
     [getMenu.rejected]: (state, { payload }) => {
       state.menuMessageError = payload;
@@ -45,7 +67,7 @@ const menuSlice = createSlice({
   },
 });
 
-export const menuData = (state) => state.menu.data;
+export const menuDataArray = (state) => state.menu.dataArray;
 export const menuLoading = (state) => state.menu.menuLoading;
 export const isFetchMenuSuccess = (state) => state.menu.isFetchMenuSuccess;
 export const menuMessageError = (state) => state.menu.menuMessageError;

@@ -67,14 +67,14 @@ const PageMenuItem = ({ menuChildren, menuNode, index, urlWithoutSlash }) => {
                         {({ active }) => (
                           <div
                             key={menuChildrenKey}
-                            className={`
-                            ${active && styles["menu-item-link-active"]}
-                            ${
-                              urlWithoutSlash ===
-                                menuChildren[menuChildrenKey].node.link &&
-                              styles["menu-item-link-active"]
+                            className={
+                              (active ? styles["menu-item-link-active"] : "") +
+                              " " +
+                              (urlWithoutSlash ===
+                              menuChildren[menuChildrenKey].node.link
+                                ? styles["menu-item-link-active"]
+                                : "")
                             }
-                            `}
                           >
                             {menuChildren[menuChildrenKey].node.name}
                           </div>
