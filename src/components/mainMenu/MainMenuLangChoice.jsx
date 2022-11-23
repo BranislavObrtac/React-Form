@@ -6,8 +6,7 @@ import { Menu } from "@headlessui/react";
 import { Link } from "react-router-dom";
 
 function LangChoice() {
-  const [lang, setLang] = useState("Slovenčina");
-
+  const [langSK, setLangSK] = useState(true);
   return (
     <div className={styles["lang"]}>
       <Menu as={"div"} className={styles["menu"]}>
@@ -18,18 +17,18 @@ function LangChoice() {
                 open ? styles["menu-button-active"] : styles["menu-button"]
               }`}
             >
-              {lang}
+              {langSK ? "Slovenčina" : "English"}
               {open ? <ArrowDropUpIcon /> : <KeyboardArrowDownIcon />}
             </Menu.Button>
 
             <Menu.Items as="div" className={styles["menu-items"]}>
-              <Menu.Item as={Link} to={"/en"} className={styles["menu-item"]}>
+              <Menu.Item as={Link} to={"#"} className={styles["menu-item"]}>
                 {({ active }) => (
                   <div
+                    onClick={() => setLangSK(!langSK)}
                     className={`${active && styles["menu-item-link-active"]}`}
-                    onClick={setLang("Angličtina")}
                   >
-                    Angličtina
+                    {langSK ? "English" : "Slovenčina"}
                   </div>
                 )}
               </Menu.Item>
