@@ -59,7 +59,7 @@ const PageMenu = ({ menuID }) => {
               if (menuChildren) {
                 return (
                   <PageMenuItem
-                    key={"key_" + menuKey}
+                    key={"PageMenuItem" + menuKey}
                     index={menuKey}
                     menuChildren={menuChildren}
                     menuNode={menuNode}
@@ -67,23 +67,21 @@ const PageMenu = ({ menuID }) => {
                   />
                 );
               } else {
-                let setActiveLink = false;
-                if (menuNode.link === urlWithoutSlash) {
-                  setActiveLink = true;
-                }
+                let setActiveLink = menuNode.link === urlWithoutSlash;
+
                 return (
                   <Tab
                     as={NavLink}
-                    key={menuNode.id + "_" + menuNode.name}
+                    key={"NavLink" + menuKey}
                     onKeyDown={(event) => onEnterPressed(event, menuNode.link)}
                     to={menuNode.link}
-                    className={`${
+                    className={
                       setActiveLink
                         ? styles["menu-button"] +
                           " " +
                           styles["menu-button-active"]
                         : styles["menu-button"]
-                    }`}
+                    }
                   >
                     {menuNode.name}
                   </Tab>

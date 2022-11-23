@@ -4,7 +4,7 @@ import styles from "./PageBlockLeft.module.scss";
 import renderHTML from "../../helpers/renderHTML";
 
 const PageBlockLeft = ({ data }) => {
-  return (
+  return data.length !== 0 ? (
     <div className={styles["block"]}>
       {Object.keys(data).map((key) => {
         if (data[key].type === "static") {
@@ -21,7 +21,7 @@ const PageBlockLeft = ({ data }) => {
         return null;
       })}
     </div>
-  );
+  ) : null;
 };
 
 export default PageBlockLeft;

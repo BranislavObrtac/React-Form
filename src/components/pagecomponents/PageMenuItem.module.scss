@@ -17,11 +17,14 @@
   font-size: 18px;
   line-height: 25px;
 
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
 }
 
-.menu-button:hover {
-  font-weight: bold;
+.menu-button:hover,
+.menu-button:focus,
+.menu-button:active {
+  border-radius: 1rem;
+  background-color: $hover-color;
 }
 
 .menu-button-active {
@@ -35,7 +38,8 @@
   list-style: none;
 }
 .menu-item-link-active {
-  font-weight: bold;
+  border-radius: 1rem;
+  background-color: $hover-color;
 }
 
 .menu-item div {

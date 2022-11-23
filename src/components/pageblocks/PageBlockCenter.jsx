@@ -5,7 +5,7 @@ import PageMenu from "../pagecomponents/PageMenu";
 import styles from "./PageBlockCenter.module.scss";
 
 const PageBlockCenter = ({ data }) => {
-  return (
+  return data.length !== 0 ? (
     <div className={styles["block"]}>
       <Breadcrumbs />
       <main className={styles["block-main"]}>
@@ -23,7 +23,7 @@ const PageBlockCenter = ({ data }) => {
         })}
       </main>
     </div>
-  );
+  ) : null;
 };
 
 export default PageBlockCenter;

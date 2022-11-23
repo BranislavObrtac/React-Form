@@ -4,7 +4,7 @@ import PageMenu from "../pagecomponents/PageMenu";
 import styles from "./PageBlockRight.module.scss";
 
 const PageBlockRight = ({ data }) => {
-  return (
+  return data.length !== 0 ? (
     <div className={styles["block"]}>
       {Object.keys(data).map((key) => {
         if (data[key].type === "static") {
@@ -19,7 +19,7 @@ const PageBlockRight = ({ data }) => {
         return null;
       })}
     </div>
-  );
+  ) : null;
 };
 
 export default PageBlockRight;

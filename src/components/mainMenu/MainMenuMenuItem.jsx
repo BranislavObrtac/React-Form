@@ -20,7 +20,7 @@ function MenuItem({ items, index, hideMenu }) {
           <Tab
             as={Menu.Button}
             className={`
-                ${activeMenuId === items.node.id ? styles["btn-active"] : null}
+                ${activeMenuId === items.node.id ? styles["btn-active"] : ""}
                 ${open ? styles["menu-button-active"] : styles["menu-button"]}
                 `}
           >

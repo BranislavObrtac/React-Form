@@ -45,6 +45,13 @@
   color: $tab-text-color-active;
 }
 
+.button:hover,
+.button:active,
+.button:focus {
+  border-radius: 1rem;
+  background-color: $hover-color;
+}
+
 @media (max-width: $show-mobile) {
   .arrow {
     display: none !important;
