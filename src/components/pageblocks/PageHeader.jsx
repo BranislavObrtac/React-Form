@@ -5,7 +5,7 @@ import styles from "./PageHeader.module.scss";
 const PageHeader = ({ title }) => {
   return (
     <header className={styles["page-header"]}>
-      <div className={styles["page-header-title"]}>{title}</div>
+      <h1 className={styles["page-header-title"]}>{title}</h1>
       <div className={styles["page-header-search"]}>
         <HpSearch />
       </div>
