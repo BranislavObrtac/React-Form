@@ -29,6 +29,7 @@ function Page() {
 
   useEffect(() => {
     if (location.pathname === "/") {
+      document.title = "Enviroportál";
       return;
     } else {
       const urlWithoutSlash = location.pathname.substring(1);
@@ -43,6 +44,7 @@ function Page() {
         <HomePage />
       ) : fetchPageDataIsSuccess ? (
         <>
+          {(document.title = data.title)}
           {data.name ? <PageHeader title={data.name} /> : null}
           <div className={styles["page-blocks"]}>
             <PageBlockLeft data={dataLeftPage} />
