@@ -20,11 +20,11 @@
 
 .logo {
   text-decoration: none;
-  font-size: clamp(3rem, 5vw, 6rem);
   color: inherit;
 }
 .logo img {
   max-height: clamp(4rem, 4vw, 5rem);
+  vertical-align: auto;
 }
 
 .nav-right {
