@@ -7,6 +7,9 @@
   display: grid;
   justify-items: center;
 }
+.footer-wrapper .footer {
+  animation: footerSmooth 0.3s ease-in-out;
+}
 
 .footer {
   display: grid;
@@ -52,5 +55,14 @@
   .footer {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+@keyframes footerSmooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
