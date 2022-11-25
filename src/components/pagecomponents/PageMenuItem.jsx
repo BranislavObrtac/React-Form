@@ -44,8 +44,10 @@ const PageMenuItem = ({ menuChildren, menuNode, index, urlWithoutSlash }) => {
             : styles["menu-button"]
         }`}
       >
-        {menuNode.name}
-        {showMenu ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        <div className={styles["menu-button-link"]}>
+          {menuNode.name}
+          {showMenu ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        </div>
       </Tab>
       {showMenu ? (
         <Menu.Items
@@ -68,12 +70,14 @@ const PageMenuItem = ({ menuChildren, menuNode, index, urlWithoutSlash }) => {
                           <div
                             key={menuChildrenKey}
                             className={
-                              (active ? styles["menu-item-link-active"] : "") +
+                              (active
+                                ? styles["menu-item-link-active"]
+                                : styles["menu-item"]) +
                               " " +
                               (urlWithoutSlash ===
                               menuChildren[menuChildrenKey].node.link
-                                ? styles["menu-item-link-active"]
-                                : "")
+                                ? styles["menu-item-link"]
+                                : styles["menu-item"])
                             }
                           >
                             {menuChildren[menuChildrenKey].node.name}

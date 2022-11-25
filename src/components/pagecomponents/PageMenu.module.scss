@@ -23,17 +23,25 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-  padding: 0.5rem;
 }
 
 .menu-button-active {
   color: $main-menu-active;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.menu-button:hover,
-.menu-button:focus,
-.menu-button:active {
+.menu-button:hover .menu-button-link,
+.menu-button:focus .menu-button-link,
+.menu-button:active .menu-button-link {
   border-radius: 1rem;
   background-color: $hover-color;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.menu-button-link {
+  display: flex;
+  flex-grow: 1;
+  padding: 0.5rem;
+  transition: 0.3s linear;
 }

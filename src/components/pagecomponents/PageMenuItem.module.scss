@@ -5,41 +5,57 @@
   text-align: start;
   width: 100%;
   cursor: pointer;
-  transition: width 2s;
+  background-color: inherit;
 
   font-size: 16px;
   text-decoration: underline;
   border: none;
-  background-color: inherit;
 
   color: $odkazy-color;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-
-  padding: 0.5rem;
 }
 
-.menu-button:hover,
-.menu-button:focus,
-.menu-button:active {
+.menu-button:hover .menu-button-link,
+.menu-button:focus .menu-button-link,
+.menu-button:active .menu-button-link {
   border-radius: 1rem;
   background-color: $hover-color;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.menu-button-link {
+  display: flex;
+  flex-grow: 1;
+  padding: 0.5rem;
+  transition: 0.3s linear;
 }
 
 .menu-button-active {
   color: $main-menu-active;
-  font-weight: bold;
+  font-weight: 500;
 }
 .menu-items {
   padding-bottom: 1rem;
-}
-.menu-items li {
   list-style: none;
+  animation: menu-dropdawn 0.5s linear;
 }
+
+.menu-item-link {
+  font-weight: 500;
+  padding-left: 20px !important;
+  color: $active-main-menu-btn !important;
+}
+
 .menu-item-link-active {
-  border-radius: 1rem;
   background-color: $hover-color;
+  font-weight: 500;
+}
+
+.menu-item {
+  transition: 0.4s ease-in-out;
 }
 
 .menu-item div {
@@ -47,4 +63,24 @@
   text-decoration: none;
   color: $main-menu-active;
   padding: 0.5rem 0.75rem;
+}
+
+.menu-item:hover .menu-item,
+.menu-item:active .menu-item,
+.menu-item:focus .menu-item {
+  border-radius: 1rem;
+  background-color: $hover-color;
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+@keyframes menu-dropdawn {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
 }

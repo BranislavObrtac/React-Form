@@ -14,20 +14,27 @@ function MenuItem({ items, index, hideMenu }) {
   const activeMenuId = useSelector(mainMenuActiveMenuID);
 
   return (
-    <Menu as={"div"} className={styles["menu"]}>
+    <Menu>
       {({ open }) => (
-        <>
+        <div className={styles["menu"]}>
           <Menu.Button
-            className={`
-                ${activeMenuId === items.node.id ? styles["btn-active"] : ""}
-                ${open ? styles["menu-button-active"] : styles["menu-button"]}
-                `}
+            className={
+              (activeMenuId === items.node.id ? styles["btn-active"] : "") +
+              " " +
+              (open
+                ? styles["menu-button"] + " " + styles["menu-button-active"]
+                : styles["menu-button"])
+            }
           >
             {items.node.name ? items.node.name : ""}
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </Menu.Button>
 
-          <Menu.Items as="div" key={index} className={styles["menu-items"]}>
+          <Menu.Items
+            as="div"
+            key={index}
+            className={open ? styles["menu-items"] : ""}
+          >
             {items.children
               ? Object.keys(items.children).map((key) => {
                   if (items.children[key]) {
@@ -42,9 +49,13 @@ function MenuItem({ items, index, hideMenu }) {
                       >
                         {({ active }) => (
                           <div
-                            className={`${
-                              active && styles["menu-item-link-active"]
-                            }`}
+                            className={
+                              active
+                                ? styles["menu-item-link-active"] +
+                                  " " +
+                                  styles["menu-item-link"]
+                                : styles["menu-item-link"]
+                            }
                           >
                             {submenu.name}
                           </div>
@@ -56,26 +67,10 @@ function MenuItem({ items, index, hideMenu }) {
                 })
               : null}
           </Menu.Items>
-        </>
+        </div>
       )}
     </Menu>
   );
 }
 
 export default MenuItem;
-
-/*   useEffect(() => {
-    setBtnActive(false);
-    let insideOfUrl;
-    items.submenu.map((submenu) => {
-      insideOfUrl = window.location.href
-        .toLowerCase()
-        .includes(submenu.url.toLowerCase());
-      if (insideOfUrl === true) {
-        setBtnActive(true);
-        return dispatch(
-          navActions.activeMenus({ btn: items, submenu: submenu })
-        );
-      }
-    });
-  }, [location, dispatch, items]); */

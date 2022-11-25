@@ -83,7 +83,9 @@ const PageMenu = ({ menuID }) => {
                         : styles["menu-button"]
                     }
                   >
-                    {menuNode.name}
+                    <div className={styles["menu-button-link"]}>
+                      {menuNode.name}
+                    </div>
                   </Tab>
                 );
               }
