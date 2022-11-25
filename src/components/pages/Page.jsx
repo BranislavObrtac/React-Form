@@ -17,6 +17,7 @@ import PageHeader from "../pageblocks/PageHeader";
 import PageBlockLeft from "../pageblocks/PageBlockLeft";
 import PageBlockCenter from "../pageblocks/PageBlockCenter";
 import PageBlockRight from "../pageblocks/PageBlockRight";
+import PageBGImage from "../pageblocks/PageBGImage";
 function Page() {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -39,13 +40,14 @@ function Page() {
   }, [location, dispatch]);
 
   return (
-    <>
+    <div className={styles["page"]}>
       {location.pathname === "/" ? (
         <HomePage />
       ) : fetchPageDataIsSuccess ? (
         <>
           {(document.title = data.title)}
           {data.name ? <PageHeader title={data.name} /> : null}
+          <PageBGImage />
           <div className={styles["page-blocks"]}>
             <PageBlockLeft data={dataLeftPage} />
             <PageBlockCenter data={dataCenterPage} />
@@ -53,7 +55,7 @@ function Page() {
           </div>
         </>
       ) : null}
-    </>
+    </div>
   );
 }
 
