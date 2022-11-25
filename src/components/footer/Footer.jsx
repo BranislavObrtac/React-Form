@@ -2,11 +2,20 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import { pageDataIsSuccess } from "../../store/pageSlice";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Footer(link) {
+  const [url, setUrl] = useState("");
   const fetchPageDataIsSuccess = useSelector(pageDataIsSuccess);
+  let location = useLocation();
 
-  return fetchPageDataIsSuccess ? (
+  useEffect(() => {
+    setUrl(location.pathname);
+  }, [location]);
+
+  return fetchPageDataIsSuccess || url === "/" ? (
     <footer className={styles["footer-wrapper"]}>
       <div className={styles["footer"]}>
         <section className={styles["footer-left"]}>
