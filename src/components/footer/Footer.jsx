@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import { pageDataIsSuccess } from "../../store/pageSlice";
+import { useSelector } from "react-redux";
 
 function Footer(link) {
-  return (
+  const fetchPageDataIsSuccess = useSelector(pageDataIsSuccess);
+
+  return fetchPageDataIsSuccess ? (
     <footer className={styles.footer}>
       <section className={styles["footer-left"]}>
         <div className={styles["footer-left-links"]}>
@@ -33,7 +37,7 @@ function Footer(link) {
         </p>
       </section>
     </footer>
-  );
+  ) : null;
 }
 
 export default Footer;
