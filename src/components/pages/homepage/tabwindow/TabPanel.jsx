@@ -17,19 +17,19 @@ function TabPanel({ data }) {
       }}
     >
       <div className={styles["tab-panel-content"]}>
-        {Object.keys(content).map((key) => {
+        {Object.keys(content).map((key, index) => {
           let type = content[key].type;
           if (type === "col-news-big") {
-            return <ColNewsBig data={content[key]} />;
+            return <ColNewsBig data={content[key]} key={"Col_" + index} />;
           }
           if (type === "menu") {
-            return <ColMenu data={content[key]} />;
+            return <ColMenu data={content[key]} key={"Col_" + index} />;
           }
           if (type === "content") {
-            return <ColContent data={content[key]} />;
+            return <ColContent data={content[key]} key={"Col_" + index} />;
           }
           if (type === "promo") {
-            return <ColPromo data={content[key]} />;
+            return <ColPromo data={content[key]} key={"Col_" + index} />;
           }
         })}
       </div>
