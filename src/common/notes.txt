@@ -1,0 +1,14 @@
+
+používanie MUI knižnice ? Momentálne pre iconky
+
+headless UI -> MENU
+headless UI -> TABS
+headless UI -> ACORDEON
+
+react-cookie-consent NPM knižnica pre cookies !
+
+ID-SK https://github.com/id-sk/id-sk-frontend
+
+DOMPurify ??? -> DOMPurify is a DOM-only, super-fast, uber-tolerant XSS sanitizer for HTML, MathML and SVG.
+                 XSS -> Cross Site Scripting (Cross-site scripting je metóda narušenia WWW stránok využitím bezpečnostných chýb v skriptoch.)
+
