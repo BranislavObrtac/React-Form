@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
 /* *:focus {
   outline: none !important;
   border:2px solid rgb(255, 156, 156) !important;

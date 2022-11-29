@@ -9,7 +9,7 @@ import pageSlice from "./pageSlice";
 const store = configureStore({
   reducer: {
     searchData: searchSlice.reducer,
-    tabs: tabSlice.reducer,
+    tab: tabSlice.reducer,
     mainMenu: mainMenuSlice.reducer,
     menu: menuSlice.reducer,
     page: pageSlice.reducer,

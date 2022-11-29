@@ -1,25 +1,12 @@
 @import "../../../../../common/Colors.scss";
 
 .agendy {
-  /* background-image: url("https://media.istockphoto.com/photos/organic-drop-shadow-on-a-white-wall-picture-id1220932948?b=1&k=20&m=1220932948&s=170667a&w=0&h=ZqpcmywVhXZT8QTVS1vwrDyjfd8LjeTOZTsgBRxuV_c=");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
-  background-image: linear-gradient(
-    to right,
-    $gradient-left,
-    $gradient-middle,
-    $gradient-right
-  );
 }
 
 .agendy-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  padding: 1rem;
-  padding: 1rem 20vw;
   justify-content: center;
 }
 

@@ -4,6 +4,7 @@ import TabWindow from "./tabwindow/TabWindow";
 import { useDispatch } from "react-redux";
 import { getArticles } from "../../../store/homePageStore/tabSlice";
 import { useEffect } from "react";
+import styles from "./HomePage.module.scss";
 
 let fisrtStart = true;
 
@@ -20,10 +21,10 @@ function HomePage() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={styles["home-page"]}>
       <HpHeader />
       <TabWindow />
-    </>
+    </div>
   );
 }
 

@@ -17,6 +17,7 @@ import {
   mainMenuButtons,
   mainMenuActions,
 } from "../../store/mainMenuSlice";
+import PageHeader from "../pageblocks/PageHeader";
 
 function MainMenu() {
   const [showMainMenu, setShowMainMenu] = useState(false);
@@ -60,7 +61,7 @@ function MainMenu() {
   };
 
   return (
-    <>
+    <div className={styles["main-menu-wrraper"]}>
       {isSuccess ? (
         <nav className={styles["main-menu"]}>
           <Link
@@ -111,8 +112,7 @@ function MainMenu() {
           </IconButton>
         </nav>
       ) : null}
-      {/* <Outlet /> */}
-    </>
+    </div>
   );
 }
 

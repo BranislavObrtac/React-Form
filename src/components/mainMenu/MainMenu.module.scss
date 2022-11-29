@@ -1,21 +1,27 @@
 @import "../../common/Colors.scss";
 
-.main-menu {
-  padding-right: 1rem;
-  padding-left: 0.3rem;
-  color: $main-menu;
-  height: 60px;
+.main-menu-wrraper {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  gap: 0.3rem;
-  justify-content: space-between;
-  align-items: center;
   background-color: white;
-  box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  z-index: 100;
+  position: fixed;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.main-menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  max-width: $max-width;
+  height: 3.75rem;
+  background-color: inherit;
+  gap: 10px;
 }
 
 .logo {
@@ -23,7 +29,7 @@
   color: inherit;
 }
 .logo img {
-  max-height: clamp(3rem, 3.5vw, 4rem);
+  max-height: clamp(3rem, 3.5vw, 3.75rem);
   vertical-align: auto;
 }
 

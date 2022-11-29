@@ -17,9 +17,9 @@ function Agendy() {
         <div className={styles["agendy-content"]}>
           {tabData.map((data, index) => (
             <Fragment key={index}>
-              {data.type === "menu" && <ColMenu data={data} />}
-              {data.type === "content" && <ColContent data={data} />}
-              {data.type === "promo" && <ColPromo data={data} />}
+              {data.type === "menu" ? <ColMenu data={data} /> : null}
+              {data.type === "content" ? <ColContent data={data} /> : null}
+              {data.type === "promo" ? <ColPromo data={data} /> : null}
             </Fragment>
           ))}
         </div>

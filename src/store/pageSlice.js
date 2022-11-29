@@ -7,9 +7,10 @@ const PAGE_URL = enviroportalUrlApi + "/pages?seoId=";
 export const getPage = createAsyncThunk("pageSlice/getPage", async (seoID) => {
   try {
     const response = await axios.get(PAGE_URL + seoID);
-    if (response.data["hydra:totalItems"] === 0) {
+    /*    if (response.data["hydra:totalItems"] === 0) {
+      console.log("log");
       window.location.href = "/404";
-    }
+    } */
     return response.data["hydra:member"][0];
   } catch (error) {
     console.log("ERROR page slice get Page");
@@ -32,10 +33,10 @@ const pageSlice = createSlice({
   name: "page",
   initialState,
   reducers: {},
+
   extraReducers: {
     [getPage.pending]: (state) => {
       state.loading = true;
-      state.isSuccess = false;
     },
     [getPage.fulfilled]: (state, { payload }) => {
       state.pageLeftData = [];

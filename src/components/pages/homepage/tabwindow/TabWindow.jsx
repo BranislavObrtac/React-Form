@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 //tabpages
 import TabPageAktualneDianie from "./tabpages/TabPageAktualneDianie";
 import TabPageAgendy from "./tabpages/TabPageAgendy";
@@ -15,26 +15,29 @@ import TabPanel from "./TabPanel";
 import styles from "./TabWindow.module.scss";
 //redux
 import { useSelector } from "react-redux";
-import { tabsData } from "../../../../store/homePageStore/tabSlice";
+import {
+  tabsData,
+  tabDataIsSuccess,
+} from "../../../../store/homePageStore/tabSlice";
 
 function TabWindow() {
   const allTabsData = useSelector(tabsData);
+  const isSuccess = useSelector(tabDataIsSuccess);
+
+  useEffect(() => {
+    if (isSuccess) {
+      console.log(allTabsData);
+    }
+  }, [isSuccess, allTabsData]);
 
   return (
     <main>
-      {allTabsData.isSuccess && (
+      {isSuccess && (
         <Tab.Group manual>
           <Tab.List as="div" className={styles["tab-list"]}>
             {allTabsData.data.map((tab, index) => (
-              <TabBtn key={index} name={tab.name} />
+              <TabBtn key={tab.name + "_" + index} name={tab.name} />
             ))}
-            {/* <TabBtn name={"aktuálne dianie"} />
-            <TabBtn name={"agendy"} />
-            <TabBtn name={"temy"} />
-            <TabBtn name={"Stav ŽP"} />
-            <TabBtn name={"Dokumenty"} />
-            <TabBtn name={"Mapy a dáta"} />
-            <TabBtn name={"Kalendár"} /> */}
           </Tab.List>
 
           <Tab.Panels className={styles["tab-panel"]}>

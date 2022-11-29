@@ -24,7 +24,7 @@ const initialState = {
 };
 
 const tabSlice = createSlice({
-  name: "tabs",
+  name: "tab",
   initialState,
   reducers: {},
   extraReducers: {
@@ -44,6 +44,7 @@ const tabSlice = createSlice({
   },
 });
 
-export const tabsData = (state) => state.tabs;
+export const tabsData = (state) => state.tab;
+export const tabDataIsSuccess = (state) => state.tab.isSuccess;
 
 export default tabSlice;
