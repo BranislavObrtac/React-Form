@@ -4,16 +4,13 @@
   display: flex;
   justify-content: center;
   width: 750px;
-  padding-top: 15vh;
-  padding-bottom: 5vh;
+  padding: 3rem 0;
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
 }
 
 .bg-image {
-  /* background-image: url("https://media.istockphoto.com/vectors/abstract-creative-background-vector-id1222376322?k=20&m=1222376322&s=612x612&w=0&h=04zOjE7m93H7XMn3wKXBEyWkUkbqVw2GcWfd-he-_aw=");
-    background-size: cover; */
   background-image: linear-gradient(to bottom, $gradient-left, $gradient-right);
   padding: 20px;
   max-height: 100px;
@@ -39,6 +36,7 @@
 
 @media only screen and (max-width: $show-mobile) {
   .hp-header {
+    width: 100%;
     padding: 0;
     padding-top: 15vh;
     padding-bottom: 5vh;

@@ -17,7 +17,7 @@ function TabWindow() {
   const isSuccess = useSelector(tabDataIsSuccess);
 
   return (
-    <main>
+    <main className={styles["tab-window"]}>
       {isSuccess && (
         <Tab.Group manual>
           <Tab.List as="div" className={styles["tab-list"]}>

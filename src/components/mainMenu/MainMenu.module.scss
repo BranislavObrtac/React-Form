@@ -29,7 +29,7 @@
   color: inherit;
 }
 .logo img {
-  max-height: clamp(3rem, 3.5vw, 3.75rem);
+  max-height: 3.75rem;
   vertical-align: auto;
 }
 
@@ -79,7 +79,6 @@
     left: 0;
     top: 25px;
     transform: translateY(-50%);
-    max-height: clamp(3.3rem, 4vw, 5rem);
   }
 
   .nav-right {

@@ -4,13 +4,5 @@
   max-width: $max-width;
 }
 
-.wrapper-bgimage {
-  position: absolute;
-  top: 33rem;
-  left: 0;
-  right: 0;
-  z-index: -1;
-
-  height: 250px;
-  width: 100%;
+@media (max-width: $show-mobile) {
 }
