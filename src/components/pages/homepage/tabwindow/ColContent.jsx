@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleContent from "../../../../../articles/ArticleContent";
+import ArticleContent from "../../../articles/ArticleContent";
 import styles from "./ColContent.module.scss";
 
 function ColContent({ data }) {

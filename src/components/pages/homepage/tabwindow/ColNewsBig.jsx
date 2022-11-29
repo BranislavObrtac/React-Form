@@ -1,9 +1,10 @@
 import React from "react";
-import ArticleBig from "../../../../../articles/ArticleBig";
-import ArticleSmall from "../../../../../articles/ArticleSmall";
+import ArticleBig from "../../../articles/ArticleBig";
+import ArticleSmall from "../../../articles/ArticleSmall";
 import styles from "./ColNewsBig.module.scss";
 
 function ColNewsBig({ data }) {
+  console.log(data);
   return (
     <>
       {data.type === "col-news-big" && (

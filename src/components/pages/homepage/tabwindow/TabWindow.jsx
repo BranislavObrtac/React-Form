@@ -1,12 +1,4 @@
 import React, { useEffect } from "react";
-//tabpages
-import TabPageAktualneDianie from "./tabpages/TabPageAktualneDianie";
-import TabPageAgendy from "./tabpages/TabPageAgendy";
-import TabPageTemy from "./tabpages/TabPageTemy";
-import TabPageStavZP from "./tabpages/TabPageStavZP";
-import TabPageDokumenty from "./tabpages/TabPageDokumenty";
-import TabPageMapyData from "./tabpages/TabPageMapyData";
-import TabPageKalendar from "./tabpages/TabPageKalendar";
 //headlessUI
 import { Tab } from "@headlessui/react";
 import TabBtn from "./TabBtn";
@@ -24,12 +16,6 @@ function TabWindow() {
   const allTabsData = useSelector(tabsData);
   const isSuccess = useSelector(tabDataIsSuccess);
 
-  useEffect(() => {
-    if (isSuccess) {
-      console.log(allTabsData);
-    }
-  }, [isSuccess, allTabsData]);
-
   return (
     <main>
       {isSuccess && (
@@ -41,13 +27,9 @@ function TabWindow() {
           </Tab.List>
 
           <Tab.Panels className={styles["tab-panel"]}>
-            <TabPanel podstranka={<TabPageAktualneDianie />} />
-            <TabPanel podstranka={<TabPageAgendy />} />
-            <TabPanel podstranka={<TabPageTemy />} />
-            <TabPanel podstranka={<TabPageStavZP />} />
-            <TabPanel podstranka={<TabPageDokumenty />} />
-            <TabPanel podstranka={<TabPageMapyData />} />
-            <TabPanel podstranka={<TabPageKalendar />} />
+            {allTabsData.data.map((data, index) => (
+              <TabPanel data={data} key={"TabPanel_" + index} />
+            ))}
           </Tab.Panels>
         </Tab.Group>
       )}

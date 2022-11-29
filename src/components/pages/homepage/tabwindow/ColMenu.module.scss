@@ -1,24 +1,26 @@
-@import "../../../../../../common/Colors.scss";
+@import "../../../../common/Colors.scss";
 
 .col-menu-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  min-width: 310px;
+  min-width: 20rem;
 }
 
 .col-menu-headers {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
   background-color: white;
+  padding: 0.5rem;
+  height: 2.5rem;
 }
 
 .col-menu-headers h2 {
+  display: flex;
+  flex-grow: 1;
   font-weight: 400;
-  font-size: 19px;
-  line-height: 25px;
+  font-size: 1.25rem;
   display: flex;
   align-items: center;
 }
