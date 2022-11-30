@@ -3,7 +3,6 @@ import ArticleSimplePromo from "../../../articles/ArticleSimplePromo";
 import styles from "./ColPromo.module.scss";
 
 function ColPromo({ data }) {
-  console.log(data);
   return (
     <>
       {data.type === "promo" && (
