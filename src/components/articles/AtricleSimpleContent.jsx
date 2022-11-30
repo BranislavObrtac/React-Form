@@ -1,13 +1,13 @@
 import React from "react";
-import styles from "./ArticleContent.module.scss";
+import styles from "./AtricleSimpleContent.module.scss";
 import SquareIcon from "@mui/icons-material/Square";
 import AgendyDoPozornosti from "./ArticlePromo";
 
-function ArticleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
+function AtricleSimpleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
   return (
-    <article className={styles["agendy-vyber-obsahu"]}>
+    <article className={styles["article-simple-content"]}>
       {title ? (
-        <p className={styles["agendy-title"]}>
+        <p className={styles["article-simple-content-title"]}>
           <SquareIcon className={styles["square"]}></SquareIcon>
           {title}
         </p>
@@ -18,19 +18,19 @@ function ArticleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
       ) : null}
 
       {subTitle ? (
-        <div className={styles["agendy-subtitle"]}>
+        <div className={styles["article-simple-content-subtitle"]}>
           <a href={link}>{subTitle}</a>
         </div>
       ) : null}
 
       {zakon ? (
-        <p className={styles["agendy-zakon"]}>
+        <p className={styles["article-simple-content-zakon"]}>
           <b>Zákon:</b> {zakon}
         </p>
       ) : null}
 
       {stav ? (
-        <p className={styles["agendy-stav"]}>
+        <p className={styles["article-simple-content-stav"]}>
           <b>Stav:</b> {stav}
         </p>
       ) : null}
@@ -38,4 +38,4 @@ function ArticleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
   );
 }
 
-export default ArticleContent;
+export default AtricleSimpleContent;

@@ -7,6 +7,7 @@ import ColContent from "./ColContent";
 import ColPromo from "./ColPromo";
 
 function TabPanel({ data }) {
+  console.log(data);
   const content = data.content;
 
   return content ? (
@@ -25,12 +26,13 @@ function TabPanel({ data }) {
           if (type === "menu") {
             return <ColMenu data={content[key]} key={"Col_" + index} />;
           }
-          if (type === "content") {
+          if (type === "content-selection") {
             return <ColContent data={content[key]} key={"Col_" + index} />;
           }
           if (type === "promo") {
             return <ColPromo data={content[key]} key={"Col_" + index} />;
           }
+          return null;
         })}
       </div>
     </Tab.Panel>

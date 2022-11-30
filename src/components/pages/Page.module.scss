@@ -2,6 +2,8 @@
 
 .page {
   padding-top: 3.75rem;
+  padding-left: 10px;
+  padding-right: 10px;
   z-index: 0;
 }
 .page .page-blocks {
@@ -24,6 +26,8 @@
   max-width: $max-width;
   display: flex;
   gap: 1rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @keyframes pageSmooth {

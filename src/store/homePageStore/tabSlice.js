@@ -1,14 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const ARTICLES_URL =
-  "https://enviroportal-48da8-default-rtdb.europe-west1.firebasedatabase.app/slides.json";
+const TAB_URL = "http://enviroportal.deviant.sazp.sk/api/homepages/main";
 
 export const getArticles = createAsyncThunk(
   "articleSlice/getArticles",
   async () => {
     try {
-      const response = await axios.get(ARTICLES_URL);
+      const response = await axios.get(TAB_URL);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -33,7 +32,8 @@ const tabSlice = createSlice({
     },
     [getArticles.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.data = payload;
+      //state.data = payload;
+      state.data = payload.content.slider.slides;
       state.isSuccess = true;
     },
     [getArticles.rejected]: (state, { payload }) => {

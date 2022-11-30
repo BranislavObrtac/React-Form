@@ -1,6 +1,6 @@
 @import "../../common/Colors.scss";
 
-.agendy-vyber-obsahu {
+.article-simple-content {
   background-color: rgb(255, 255, 255);
   padding: 0.5rem;
   display: flex;
@@ -9,7 +9,7 @@
   flex-grow: 1;
 }
 
-.agendy-title {
+.article-simple-content-title {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -20,18 +20,18 @@
 
 .square {
   font-size: 1rem;
-  color: $agendy-stvorec-farba;
+  color: $article-simple-content-stvorec-farba;
 }
 
-.agendy-subtitle a {
+.article-simple-content-subtitle a {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: $agendy-subtitle-farba;
+  color: $article-simple-content-subtitle-farba;
 }
 
-.agendy-zakon,
-.agendy-stav {
+.article-simple-content-zakon,
+.article-simple-content-stav {
   display: flex;
   justify-content: flex-start;
   font-size: 14px;
@@ -39,17 +39,17 @@
 }
 
 @media (max-width: $show-mobile) {
-  .agendy-vyber-obsahu {
+  .article-simple-content-vyber-obsahu {
     gap: 0;
   }
 
-  .agendy-title,
-  .agendy-subtitle {
+  .article-simple-content-title,
+  .article-simple-content-subtitle {
     font-size: 16px;
     line-height: 20px;
   }
-  .agendy-zakon,
-  .agendy-stav {
+  .article-simple-content-zakon,
+  .article-simple-content-stav {
     font-size: 14px;
     line-height: 26px;
   }

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Odkazy.module.scss";
+import styles from "./ArticleMenuItem.module.scss";
 
-function Odkazy({ title, link }) {
+function ArticleMenuItem({ title, link }) {
   return (
     <div className={styles["odkazy"]}>
       <a href={link}>{title}</a>
@@ -9,4 +9,4 @@ function Odkazy({ title, link }) {
   );
 }
 
-export default Odkazy;
+export default ArticleMenuItem;

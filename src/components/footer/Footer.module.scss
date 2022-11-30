@@ -1,7 +1,6 @@
 @import "../../common/Colors.scss";
 
 .footer-wrapper {
-  padding: 1.5rem 0;
   display: grid;
   justify-items: center;
 }
@@ -10,6 +9,7 @@
 }
 
 .footer {
+  padding: 1.5rem 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
