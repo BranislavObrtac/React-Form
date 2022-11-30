@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./AtricleSimpleContent.module.scss";
 import SquareIcon from "@mui/icons-material/Square";
-import AgendyDoPozornosti from "./ArticlePromo";
+import AgendyDoPozornosti from "./ArticleSimplePromo";
 
 function AtricleSimpleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
   return (

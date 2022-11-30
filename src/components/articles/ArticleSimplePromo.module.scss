@@ -1,13 +1,13 @@
 @import "../../common/Colors.scss";
 
-.agendy-do-pozornosti {
+.article-do-pozornosti {
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
   flex-grow: 1;
 }
 
-.agendy-do-pozornosti img {
+.article-do-pozornosti img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
   aspect-ratio: 16 / 9;
 }
 
-.agendy-nadpis {
+.article-nadpis {
   padding: 1.75rem 0.75rem;
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 @media (max-width: $show-mobile) {
-  .agendy-nadpis {
+  .article-nadpis {
     padding: 0.3rem;
     font-size: 16px;
   }
