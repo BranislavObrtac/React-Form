@@ -1,6 +1,8 @@
 
 používanie MUI knižnice ? Momentálne pre iconky
 
+Animate CSS ??? -> https://animate.style/ knižnica pre ľahké animácie jednoduché použitie 
+
 headless UI -> MENU
 headless UI -> TABS
 headless UI -> ACORDEON
