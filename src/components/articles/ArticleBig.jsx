@@ -1,19 +1,25 @@
 import React from "react";
 import styles from "./ArticleBig.module.scss";
 
-function ArticleBig({ imgUrl, title, date, category, link }) {
+function ArticleBig({ data }) {
+  const title = data.title;
+  const imgUrl = data.icon;
+  const date = data.date;
+  const link = data.link;
+  const category = data.category;
+
   return (
     <article className={styles["big-article"]}>
-      {imgUrl && title ? <img src={imgUrl} alt={title} /> : null}
+      <img src={imgUrl ? imgUrl : ""} alt={title ? title : ""} />
       <div className={styles["big-article-info"]}>
-        {link && title ? (
-          <h2 className={styles["title"]}>
-            <a href={link}>{title}</a>
-          </h2>
-        ) : null}
-        {date && category ? (
-          <p className={styles["date-category"]}>{date + "- " + category}</p>
-        ) : null}
+        <h2 className={styles["title"]}>
+          <a href={link ? link : "#"}>{title ? title : ""}</a>
+        </h2>
+        <p className={styles["date-category"]}>
+          {(date ? date : "") +
+            (date && category ? "-" : "") +
+            (category ? category : "")}
+        </p>
       </div>
     </article>
   );

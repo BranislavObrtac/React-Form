@@ -14,22 +14,12 @@ function ColNewsBig({ data }) {
           <div className={styles["cbn-articles"]}>
             {data.items.map((item, index) => (
               <div key={index}>
-                {item.type === "big-article" && (
-                  <ArticleBig
-                    imgUrl={item.icon}
-                    title={item.title}
-                    date={item.date}
-                    category={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
-                  />
-                )}
-                {item.type === "small-article" && (
-                  <ArticleSmall
-                    imgUrl={item.icon}
-                    title={item.title}
-                    date={item.date}
-                    category={"Rediakcia | Posudzovanie vplyvov na ŽP | Odpady"}
-                  />
-                )}
+                {item.type === "big-article" ? (
+                  <ArticleBig data={item} />
+                ) : null}
+                {item.type === "small-article" ? (
+                  <ArticleSmall data={item} />
+                ) : null}
               </div>
             ))}
           </div>

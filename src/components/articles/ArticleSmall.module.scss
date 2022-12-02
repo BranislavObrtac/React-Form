@@ -28,6 +28,7 @@
 }
 
 .title {
+  margin: 0;
   padding: 0.5rem;
   color: $artice-title-color;
   font-size: 16px;
@@ -43,6 +44,7 @@
 
 .date-category {
   letter-spacing: 0.3px;
+  margin: 0;
   padding: 0.5rem;
   font-size: 14px;
   color: $article-date-category-color;

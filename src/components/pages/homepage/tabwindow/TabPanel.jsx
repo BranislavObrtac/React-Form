@@ -7,7 +7,6 @@ import ColContent from "./ColContent";
 import ColPromo from "./ColPromo";
 
 function TabPanel({ data }) {
-  console.log(data);
   const content = data.content;
 
   return content ? (

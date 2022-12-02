@@ -8,6 +8,7 @@ import Page from "../components/pages/Page";
 import NotFound from "../components/pages/notfound/NotFound";
 import Footer from "../components/footer/Footer";
 import Wrapper from "../components/pageblocks/Wrapper";
+import Search from "../components/pages/search/Search";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <MainMenu />
       <Routes>
         <Route path="404" element={<NotFound />} />
+        <Route path="search" element={<Search />} />
         <Route path="*" element={<Page />} />
       </Routes>
       <Footer />
