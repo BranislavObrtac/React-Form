@@ -5,7 +5,7 @@ import ArticleMenuItem from "../../../articles/ArticleMenuItem";
 function ColMenu({ data }) {
   return (
     <>
-      {data.type === "menu" && (
+      {data.type === "menu" ? (
         <div className={styles["col-menu-col"]}>
           <div className={styles["col-menu-headers"]}>
             <h2>{data.title}</h2>
@@ -25,7 +25,7 @@ function ColMenu({ data }) {
             })}
           </div>
         </div>
-      )}
+      ) : null}
     </>
   );
 }

@@ -1,13 +1,13 @@
 @import "../../common/Colors.scss";
 
-.article-do-pozornosti {
+.article-simple-promo {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255, 255, 255);
+  background-color: inherit;
   flex-grow: 1;
 }
 
-.article-do-pozornosti img {
+.article-simple-promo img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
   aspect-ratio: 16 / 9;
 }
 
-.article-nadpis {
+.article-simple-promo-title {
   padding: 1.75rem 0.75rem;
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 @media (max-width: $show-mobile) {
-  .article-nadpis {
+  .article-simple-promo-title {
     padding: 0.3rem;
     font-size: 16px;
   }

@@ -1,12 +1,16 @@
 @import "../../common/Colors.scss";
 
 .article-simple-content {
-  background-color: rgb(255, 255, 255);
-  padding: 0.5rem;
   display: flex;
-  gap: 0.75rem;
   flex-direction: column;
-  flex-grow: 1;
+  justify-content: flex-start;
+
+  background-color: inherit;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+.article-simple-content *{
+  margin: 0;
 }
 
 .article-simple-content-title {
@@ -19,7 +23,7 @@
 }
 
 .square {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: $article-simple-content-stvorec-farba;
 }
 
@@ -32,8 +36,6 @@
 
 .article-simple-content-zakon,
 .article-simple-content-stav {
-  display: flex;
-  justify-content: flex-start;
   font-size: 14px;
   line-height: 16px;
 }

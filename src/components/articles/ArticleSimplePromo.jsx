@@ -4,11 +4,14 @@ import styles from "./ArticleSimplePromo.module.scss";
 
 function ArticleSimplePromo({ title, imgUrl, alt, link }) {
   return (
-    <article className={styles["article-do-pozornosti"]}>
-      {imgUrl && alt ? <img src={imgUrl} alt={alt}></img> : null}
+    <article className={styles["article-simple-promo"]}>
+      {imgUrl ? <img src={imgUrl} alt={alt ? alt : ""}></img> : null}
 
-      {title && link ? (
-        <NavLink to={link} className={styles["article-nadpis"]}>
+      {title ? (
+        <NavLink
+          to={link ? link : "#"}
+          className={styles["article-simple-promo-title"]}
+        >
           {title}
         </NavLink>
       ) : null}

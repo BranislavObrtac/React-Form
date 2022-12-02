@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./AtricleSimpleContent.module.scss";
 import SquareIcon from "@mui/icons-material/Square";
-import AgendyDoPozornosti from "./ArticleSimplePromo";
+import ArticleSimplePromo from "./ArticleSimplePromo";
+import { useState } from "react";
 
-function AtricleSimpleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
+function AtricleSimpleContent({ data }) {
+  const title = data.title;
+  const link = data.link;
+  const imgUrl = data.img;
+  const subTitle = data.subtitle;
+
+  const [stav, setStav] = useState("");
+  const [zakon, setZakon] = useState("");
+
+  useEffect(() => {
+    data.labels.forEach((item) => {
+      if (item.label === "zákon") {
+        setZakon(item.text);
+      }
+      if (item.label === "stav") {
+        setStav(item.text);
+      }
+    });
+  }, [data.labels]);
+
   return (
     <article className={styles["article-simple-content"]}>
       {title ? (
@@ -12,24 +32,23 @@ function AtricleSimpleContent({ title, subTitle, zakon, stav, imgUrl, link }) {
           {title}
         </p>
       ) : null}
-
-      {imgUrl && link ? (
-        <AgendyDoPozornosti imgUrl={imgUrl} link={link} />
+      {imgUrl ? (
+        <ArticleSimplePromo
+          imgUrl={imgUrl ? imgUrl : ""}
+          link={link ? link : "#"}
+        />
       ) : null}
-
       {subTitle ? (
         <div className={styles["article-simple-content-subtitle"]}>
-          <a href={link}>{subTitle}</a>
+          <a href={link ? link : "#"}>{subTitle}</a>
         </div>
       ) : null}
-
-      {zakon ? (
+      {zakon !== "" ? (
         <p className={styles["article-simple-content-zakon"]}>
           <b>Zákon:</b> {zakon}
         </p>
       ) : null}
-
-      {stav ? (
+      {stav !== "" ? (
         <p className={styles["article-simple-content-stav"]}>
           <b>Stav:</b> {stav}
         </p>
