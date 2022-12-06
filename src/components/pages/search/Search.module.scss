@@ -17,8 +17,8 @@
 .content {
   padding-top: 2rem;
   display: grid;
-  gap: 5%;
-  grid-template-columns: 27% 68%;
+  gap: 10%;
+  grid-template-columns: 30% 60%;
 }
 
 .aside h2 {
@@ -36,6 +36,9 @@
 
 .main {
   background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .main h2 {
   margin: 0;
@@ -44,6 +47,15 @@
   line-height: 25px;
   color: $text-color;
   text-transform: uppercase;
+  padding: 0.5rem;
+  padding-top: 0;
+}
+.main p {
+  margin: 0;
+}
+
+.main .subtitle {
+  padding: 0 0.5rem;
 }
 
 .result-list-item {
@@ -51,4 +63,12 @@
   padding-bottom: 0.25rem;
   line-height: 24px;
   color: $text-color;
+}
+
+.subtitle-bold {
+  color: $odkazy-color;
+  font-weight: bold;
+}
+.subtitle-light {
+  color: $odkazy-color;
 }

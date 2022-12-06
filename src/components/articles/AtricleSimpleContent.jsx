@@ -26,7 +26,7 @@ function AtricleSimpleContent({ data }) {
 
       {data.labels.map((item, index) => {
         return (
-          <p className={styles["article-simple-content-zakon"]} key={index}>
+          <p className={styles["article-simple-content-label"]} key={index}>
             <b>{item.label ? item.label : ""}</b>{" "}
             {item.text ? ": " + item.text : ""}
           </p>

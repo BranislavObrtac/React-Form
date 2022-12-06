@@ -23,6 +23,7 @@
 }
 
 .square {
+  margin-left: -3px;
   font-size: 0.75rem;
   color: $article-simple-content-stvorec-farba;
 }
@@ -34,8 +35,7 @@
   color: $article-simple-content-subtitle-farba;
 }
 
-.article-simple-content-zakon,
-.article-simple-content-stav {
+.article-simple-content-label {
   font-size: 14px;
   line-height: 16px;
 }
@@ -50,8 +50,7 @@
     font-size: 16px;
     line-height: 20px;
   }
-  .article-simple-content-zakon,
-  .article-simple-content-stav {
+  .article-simple-content-label {
     font-size: 14px;
     line-height: 26px;
   }
