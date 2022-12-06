@@ -1,6 +1,5 @@
 import React from "react";
 import AtricleSimpleContent from "../../../articles/AtricleSimpleContent";
-import AtricleSmall from "../../../articles/ArticleSmall";
 import styles from "./ColContent.module.scss";
 import ArticleBig from "../../../articles/ArticleBig";
 import ArticleSmall from "../../../articles/ArticleSmall";

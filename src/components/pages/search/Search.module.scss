@@ -1,11 +1,54 @@
+@import "../../../common/Colors.scss";
+
 .search-page {
   display: flex;
   justify-content: center;
-  padding-top: 3.75rem;
-
-  height: 100vh;
-  background-color: aquamarine;
+  flex-direction: column;
+  padding: 5.75rem 10px 0 10px;
+  width: 100% !important;
 }
 
 .search-input {
+  background-image: linear-gradient(to bottom, $gradient-left, $gradient-right);
+  padding: 20px;
+  max-height: 100px;
+}
+
+.content {
+  padding-top: 2rem;
+  display: grid;
+  gap: 5%;
+  grid-template-columns: 27% 68%;
+}
+
+.aside h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.aside ul {
+  padding: 0;
+}
+
+.main {
+  background-color: inherit;
+}
+.main h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.result-list-item {
+  display: flex;
+  padding-bottom: 0.25rem;
+  line-height: 24px;
+  color: $text-color;
 }

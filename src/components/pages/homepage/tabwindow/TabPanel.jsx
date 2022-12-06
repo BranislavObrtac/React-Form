@@ -5,6 +5,8 @@ import ColNewsBig from "./ColNewsBig";
 import ColMenu from "./ColMenu";
 import ColContent from "./ColContent";
 import ColPromo from "./ColPromo";
+import ColLinkList from "./ColLinkList";
+import ColCustom from "./ColCustom";
 
 function TabPanel({ data }) {
   const content = data.content;
@@ -30,6 +32,12 @@ function TabPanel({ data }) {
           }
           if (type === "promo") {
             return <ColPromo data={content[key]} key={"Col_" + index} />;
+          }
+          if (type === "link-list") {
+            return <ColLinkList data={content[key]} key={"Col_" + index} />;
+          }
+          if (type === "custom-block") {
+            return <ColCustom data={content[key]} key={"Col_" + index} />;
           }
           return null;
         })}

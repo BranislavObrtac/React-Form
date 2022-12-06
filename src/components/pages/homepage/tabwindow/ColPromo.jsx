@@ -13,15 +13,7 @@ function ColPromo({ data }) {
           <div className={styles["col-promo-article"]}>
             {data.items.map((data, index) => {
               if (data.type === "simple-promo") {
-                return (
-                  <ArticleSimplePromo
-                    key={index}
-                    title={data.title}
-                    alt={data.alt}
-                    link={data.link}
-                    imgUrl={data.img}
-                  />
-                );
+                return <ArticleSimplePromo key={index} data={data} />;
               }
               return null;
             })}

@@ -3,8 +3,9 @@
 .col-promo-col {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 1rem;
-  min-width: 20rem;
+  min-width: 33%;
 }
 
 .col-promo-headers {
@@ -29,5 +30,5 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; 
+  flex-grow: 1;
 }

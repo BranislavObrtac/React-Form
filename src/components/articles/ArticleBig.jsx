@@ -3,7 +3,7 @@ import styles from "./ArticleBig.module.scss";
 
 function ArticleBig({ data }) {
   const title = data.title;
-  const imgUrl = data.icon;
+  const imgUrl = data.img;
   const date = data.date;
   const link = data.link;
   const category = data.category;

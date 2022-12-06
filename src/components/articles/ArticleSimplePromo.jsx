@@ -2,21 +2,23 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./ArticleSimplePromo.module.scss";
 
-function ArticleSimplePromo({ title, imgUrl, alt, link }) {
-  return (
+function ArticleSimplePromo({ data }) {
+  return data.type === "simple-promo" ? (
     <article className={styles["article-simple-promo"]}>
-      {imgUrl ? <img src={imgUrl} alt={alt ? alt : ""}></img> : null}
+      {data.img ? (
+        <img src={data.img} alt={data.alt ? data.alt : ""}></img>
+      ) : null}
 
-      {title ? (
+      {data.title ? (
         <NavLink
-          to={link ? link : "#"}
+          to={data.link ? data.link : "#"}
           className={styles["article-simple-promo-title"]}
         >
-          {title}
+          {data.title}
         </NavLink>
       ) : null}
     </article>
-  );
+  ) : null;
 }
 
 export default ArticleSimplePromo;

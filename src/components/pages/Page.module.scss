@@ -2,8 +2,8 @@
 
 .page {
   padding-top: 3.75rem;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: $max-width-padding;
+  padding-right: $max-width-padding;
   z-index: 0;
 }
 .page .page-blocks {

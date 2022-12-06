@@ -3,7 +3,8 @@
 .small-aricle {
   background-color: white;
   display: grid;
-  grid-template-columns: 30% 70%;
+  gap: 3%;
+  grid-template-columns: 30% 67%;
   flex-grow: 1;
   height: 6rem;
 }
@@ -29,7 +30,7 @@
 
 .title {
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   color: $artice-title-color;
   font-size: 16px;
   font-weight: 400;
@@ -43,9 +44,10 @@
 }
 
 .date-category {
+  text-decoration: none;
   letter-spacing: 0.3px;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   font-size: 14px;
   color: $article-date-category-color;
 }

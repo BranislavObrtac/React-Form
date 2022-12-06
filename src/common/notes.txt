@@ -19,3 +19,5 @@ DOMPurify ??? -> DOMPurify is a DOM-only, super-fast, uber-tolerant XSS sanitize
 www.github.com
 www.github1s.com -> "1s" zobrazenie ako v VSC
 
+tooltip -> https://www.youtube.com/watch?v=OtBpgtqrjyo&ab_channel=WebDevSimplified
+

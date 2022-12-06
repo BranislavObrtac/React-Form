@@ -52,7 +52,7 @@
 .combobox-options a,
 .combobox-options-mobile a {
   text-decoration: none;
-  color: black;
+  color: $text-color;
   padding: 0.5rem 0.75rem;
 }
 
@@ -63,7 +63,7 @@
 
 .combobox-option-inactive {
   background-color: #ffffff;
-  color: #000000;
+  color: $text-color;
 }
 
 .display-none {

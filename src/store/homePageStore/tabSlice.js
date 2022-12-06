@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { enviroportalUrlApi } from "../../common/config";
 
-const TAB_URL = "http://enviroportal.deviant.sazp.sk/api/homepages/main";
+const TAB_URL = enviroportalUrlApi + "/homepages/main";
 
 export const getArticles = createAsyncThunk(
   "articleSlice/getArticles",

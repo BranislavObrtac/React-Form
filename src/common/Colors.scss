@@ -1,17 +1,13 @@
 /* farby */
-$main-menu: #000000;
 $main-menu-active: #312117;
 $main-menu-hover: #dadada;
 $hover-color: rgba(200, 200, 200, 0.3);
-
-$tab-text-color: #11242e;
 
 $tab-text-color-active: #f56520;
 $odkazy-color: #f56520;
 
 $artice-title-color: #6b4732;
 $article-date-category-color: #626a6e;
-$footer-text-color: #000000;
 
 $article-simple-content-stvorec-farba: red;
 $article-simple-content-subtitle-farba: #6b4732;
@@ -27,5 +23,8 @@ $page-header-title: #6b4732;
 $breadcrumbs-color-title: #757993;
 $breadcrumbs-color-active-title: #6b4732;
 
+$text-color: #11242e;
+
 $show-mobile: 1000px;
+$max-width-padding: 10px;
 $max-width: 1300px; //+20px -> padding-left, padding-right -> 10px

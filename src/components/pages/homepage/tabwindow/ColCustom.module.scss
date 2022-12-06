@@ -1,0 +1,13 @@
+@import "../../../../common/Colors.scss";
+
+.custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 1rem;
+  min-width: 33%;
+
+  background-color: white;
+}
